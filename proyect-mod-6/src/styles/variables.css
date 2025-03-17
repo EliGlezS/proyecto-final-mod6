@@ -1,0 +1,42 @@
+:root {
+    /*typography*/
+
+    --font-primary: 'Roboto', Arial, Helvetica, sans-serif; /*Todo texto que no sea h1 y h2*/
+    --font-secondary: 'Playfair', 'Times New Roman', Times, serif; /*h1 y h2*/
+
+    /*font-size REVISAR*/
+
+    /*Playfair*/
+    --size-h1: 4rem;
+    --size-h2: 2em;
+
+    /*Roboto*/
+    --size-p: 1rem;
+
+    /*Inputs Colors*/
+    --input-color-empty-label: #F5F8F9 ;
+    --input-border-focus: #99D0DC;
+
+    /*Text Colors*/
+    --primary-text-color: #0F0200;
+    --secondary-text-color: #5A6F80;
+    --text-placeholder-input: #5A6F80;
+    --text-white-principal: #FFF8F5; /*Texto para fondo oscuro en caso de que no se vea bien poner blanco #fff*/
+    --text-white: #FFFF; /*Texto para fondo oscuro*/
+
+
+    /*Buttons Colors*/ 
+    --primary-color-button-active: #5A6F80;
+    --secondary-color-button-active: #6CBFBF;
+    --hover-button-color-primary: #99D0DC;
+    --hover-button-color-seconday:#84EAFF;
+    --disabled-button-color: #E0D9D0;
+    --pressed-button-color-primary:  #8AA1AB;
+    --pressed-button-color-secondary:  #8AA1AB;
+
+    /*Others colors*/
+    --secondary-color: #6CBFBF; 
+    --support-color: #FBEEC4;
+
+
+}
