@@ -6,7 +6,7 @@ body{
 
 header {
     display: grid;
-    grid-template-areas: 'logo nav login search cart';
+    grid-template-areas: 'logo nav search login cart';
     background: #5A6F80;
     height: fit-content;
     padding: 0 2rem 0 2rem;
@@ -49,6 +49,7 @@ header {
     justify-content: center;
     align-items: center;
     font-family: 'Playfair', 'Times New Roman', Times, serif;
+    font-weight: bold;
     border-radius: 8px;
 
     a {
@@ -67,7 +68,6 @@ header {
             }
         }
     }
-
 }
 
 .login-container :hover {
@@ -93,7 +93,7 @@ header {
     input {
         padding: 0.1rem;
         font-family: 'Roboto', Arial, Helvetica, sans-serif;
-        color: #5a6f80b2;
+        color: #5A6F80;
         border-radius: 8px;
         border: transparent;
     }
@@ -115,11 +115,20 @@ header {
         display: flex;
         justify-items: center;
         align-items: center;
+
+        svg {
+            width: 1.6rem;
+            color: white;
+        }
     }
 
-    svg {
-        width: 1.6rem;
+    span {
         color: white;
+        border-radius: 50%;
+        width: 1rem;
+        height: 1rem;
+        text-align: center;
+        text-anchor: end;
     }
 }
 
@@ -149,16 +158,17 @@ ul li a:hover{
     color: #0F0200;
 }
 
-/*aca configuro como se veria en tablet*/
+
 @media (max-width: 768px){
     .burger{
         background-color: #5A6F80;
         display: block;
     }
     .header {
-        grid-template-areas: 'logo burger' 'nav nav';
+        grid-template-areas: 'logo burger login cart';
     }
     .header-nav{
+        display: none;
         grid-template-rows: repeat(3, auto);
         grid-template-columns: none;
         grid-row-gap: 1.2rem;
@@ -171,6 +181,40 @@ ul li a:hover{
         /* background: rgba(30, 30, 30, 0.5); */
         backdrop-filter: blur(2px);
     }
+    .login-container {
+        color: white;
+        height: 2rem;
+        display: flex;
+        background-color: transparent;
+    
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.4rem;
+            
+            p {
+                display: none;
+            }
+    
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                svg {
+                    width: 1.6rem;
+                }
+            }
+        }
+    }
+    
+    .search-container {
+        display: none;
+    }
+    .cart-container {
+    }
+    
     /* i{
         font-size: 30px;
         background: #1e1e1e;
@@ -195,13 +239,14 @@ ul li a:hover{
     } */
     .boton_menu{
         /* background-image: url('./icono_menu.png'); */
-        background-color: #921c1c;
+        background-color: red;
         color: #FFF8F5;
         background-repeat: no-repeat;
         height: 30px;
         width: 30px;
         background-size: 30px 30px;
         background-position:center;
+        border: none;
     }
     /*con esta clase abro y cierro el menu con toggle*/
     .abrir_menu{
@@ -223,7 +268,7 @@ ul li a:hover{
     }
 }
 /*aca configuro como se veria en celular*/
-@media (max-width: 500px){
+/* @media (max-width: 500px){
     .desplegable{
         width: 100%;
         height: 100vh;
@@ -232,4 +277,4 @@ ul li a:hover{
     button{
         margin: 10px 10px 10px 15px;
     }
-}
+} */
