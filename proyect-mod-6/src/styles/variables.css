@@ -1,14 +1,16 @@
 :root {
+
     /*typography*/
 
     --font-primary: 'Roboto', Arial, Helvetica, sans-serif; /*Todo texto que no sea h1 y h2*/
-    --font-secondary: 'Playfair', 'Times New Roman', Times, serif; /*h1 y h2*/
+    --font-secondary: 'Playfair', 'Times New Roman', Times, serif; /*h1 y h2 h3?*/
 
     /*font-size REVISAR*/
 
     /*Playfair*/
     --size-h1: 4rem;
     --size-h2: 2em;
+    --size-h3: 1.7em;
 
     /*Roboto*/
     --size-p: 1rem;

@@ -1,0 +1,6 @@
+/*Estilos generales para el contenedor de la pág home*/
+.main-home{
+    width: 100%;
+    /* min-width: 130px; */
+    height: auto;
+}
