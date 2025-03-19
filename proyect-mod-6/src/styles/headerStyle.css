@@ -4,28 +4,41 @@ header {
     display: grid;
     grid-template-areas: 
     "burger logo login"
-    ". . . cart";
+    "cart";
     grid-template-columns: 20% 60% 20%;
-    /* grid-template-rows: repeat(2, 1fr); */
+    grid-template-rows: repeat(80%, 20%);
     justify-content: space-around;
     width: 100%;
-    background-image: #FBEEC4;
+    border-bottom: 2px solid #6CBFBF;
+    background: linear-gradient(to top, #E0D9D0, 2%, white);
 }
 
 .burger-container {
     /* background-color: green; */
     grid-area: "burger";
+    grid-row: span 2 / span 2;
+    grid-column: span 1 / span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     #burger {
         background-color: transparent;
-        border: none;
+        border: 2px solid #6CBFBF;
+        border-radius: 5px;
         cursor: pointer;
+        color: #5A6F80;
     }
 }
 
 .logo-container {
     /* background-color: aquamarine; */
     grid-area: "logo";
+    grid-row: span 2 / span 2;
+    grid-column: span 1 / span 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .image-logo-container {
         display: flex;
@@ -43,14 +56,27 @@ header {
     /* background-color: red; */
     grid-area: "login";
     color: #6CBFBF;
+    grid-column-start: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+        width: 2.2rem;
+    }
 }
 
 .cart-container {
     /* background-color: yellow; */
     grid-area: "cart";
+    grid-row-start: 2;
     display: flex;
     align-items: baseline;
-    justify-content: flex-end;
+    justify-content: center;
+    color: #5A6F80;
+    grid-column-start: 3;
+    grid-row-start: 2;
+    padding: 1rem 0 0 1.2rem;
 }
 
 .icon-container {
@@ -67,7 +93,7 @@ span {
     border-radius: 100%;
     text-align: center;
     align-items: center;
-
+    justify-items: center;
     color: white;
     font-family: 'Roboto', Arial, Helvetica, sans-serif
 }
