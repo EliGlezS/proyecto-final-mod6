@@ -7,6 +7,7 @@ import { BooksProvider } from './context/BooksContext'
 
 //importaciones pages
 import Home from './pages/Home'
+import Recommended from './pages/Recommended'
 
 //importaciones components
 
@@ -19,6 +20,7 @@ function App() {
     <BooksProvider>
       <Routes>
         <Route path='/' element={<Home/>} />
+        <Route path='/recommended' element={<Recommended/>}/>
       </Routes>
     </BooksProvider>
     </>

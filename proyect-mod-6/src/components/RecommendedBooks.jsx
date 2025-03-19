@@ -1,31 +1,33 @@
-//Importaciones
-
+//Importaciones 
 import { useContext } from "react"
 import { BooksContext } from "../context/BooksContext"
-import usePagination from "../customHook/usePagination"
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 //Importaciones de los estilos 
-import '../styles/pagination.css'
-import '../styles/booksCards.css'
+import '../styles/recommendedBooks.css'
 
-const BooksCardsComponent = () => {
+
+const RecommendedBooks = () => {
+
 
     //Se trae los datos de los libros usando el BooksContext
     const {books} = useContext(BooksContext);
 
-    //Se trae los datos necesarios para la paginación desde el customHook creado
-    const {currentItems, currentPage, totalPages, nextPage, prevPage } = usePagination(10, books);
+    //Se crea una constante para almacenar los id que se quieren mostrar 
+    const booksIdRecomended = [1, 7, 11, 32, 35, 47];
+     
+    //Se quiere encontrar esos id en el array de objetos (books) por lo que se usa un filter y un include para comprobar si existe los id en el array
+    const booksRecommended = books.filter((book) => booksIdRecomended.includes(book.id));
 
   return (
 
-    <section className="section-books-card">
+    <section className="section-books-recommended-card">
             
-        <h1 className="title-section-books-cards">Catálogo</h1>
+        <h1 className="title-section-books-recommended-cards">Libros Recomendados</h1>
 
         <div className="cards-container">
 
-            {currentItems.map((book) => (
+            {booksRecommended.map((book) => (
 
             <div className="books-card" key={book.id}>
 
@@ -36,8 +38,6 @@ const BooksCardsComponent = () => {
                 <div className="card-info">
                     <div className="book-info-price">
                         <h3>{book.title}</h3>
-                        {/* <p>{book.author}</p>
-                        <p>{book.genre}</p> */}
                         <p>{book.price} €</p>
                     </div>
                     {book.stock ? (
@@ -51,16 +51,9 @@ const BooksCardsComponent = () => {
             </div>
             ))}
         </div>
-        
-
-        <div className="pagination">
-            <button onClick={prevPage} disabled={currentPage === 1}>Anterior</button>
-            <span>{`${currentPage} de ${totalPages}`}</span>
-            <button onClick={nextPage} disabled={currentPage === 7}>Siguiente</button>
-        </div>
 
     </section>
   )
 }
 
-export default BooksCardsComponent
+export default RecommendedBooks

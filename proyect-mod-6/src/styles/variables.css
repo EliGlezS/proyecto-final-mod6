@@ -8,7 +8,8 @@
     /*font-size REVISAR*/
 
     /*Playfair*/
-    --size-h1: 4rem;
+    --size-h1: 4rem; /*Para móvil en recommended pongo --size-h1-smaller: 2.5rem*/
+    --size-h1-smaller: 2.5rem;
     --size-h2: 2rem;
     --size-h3: 1.7rem;
     --size-p-price: 1.1rem;
