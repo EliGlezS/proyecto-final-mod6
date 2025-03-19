@@ -15,7 +15,7 @@
     }
   
     button:hover {
-      background-color: #c5acce;
+      background-color: var(  --pressed-button-color-primary);
       border-color: 2px solid  #1b0725;
     }
   

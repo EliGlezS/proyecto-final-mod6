@@ -3,6 +3,7 @@
 import { useContext } from "react"
 import { BooksContext } from "../context/BooksContext"
 import usePagination from "../customHook/usePagination"
+import {Link} from 'react-router-dom'
 
 //Importaciones de los estilos 
 import '../styles/pagination.css'
@@ -19,7 +20,7 @@ const BooksCardsComponent = () => {
   return (
     <section className="section-books-card">
         
-    <h1 className="title-section-books-cards">Products on sale</h1>
+    <h1 className="title-section-books-cards">Catálogo</h1>
 
     <div className="cards-container">
 
@@ -32,17 +33,18 @@ const BooksCardsComponent = () => {
             </div>
             
             <div className="card-info">
-                <h3>{book.title}</h3>
-                <p>{book.author}</p>
-                <p>{book.genre}</p>
-                <p>{book.price} $</p>
+                <div className="book-info-price">
+                    <h3>{book.title}</h3>
+                    {/* <p>{book.author}</p>
+                    <p>{book.genre}</p> */}
+                    <p>{book.price} €</p>
+                </div>
                 {book.stock ? (
                     <div className="inStock-books"><p>In Stock</p><span className="greenCircle"></span></div>
                     ) : (
                     <div className="noStock-books"><p>Out of stock</p><span className="redCircle"></span></div>
                 )}
-                <p className="see-details-books">See details</p>
-                {/* entre el p va <Link to={`/products/${book.id}`}>See details</Link> */}
+                <p className="see-details-books"><Link to={`/products/${book.id}`}>Ver más</Link></p>
             </div>
 
         </div>
@@ -51,9 +53,9 @@ const BooksCardsComponent = () => {
     
 
     <div className="pagination">
-        <button onClick={prevPage} disabled={currentPage === 1}>Previous</button>
-        <span>{`${currentPage} of ${totalPages}`}</span>
-        <button onClick={nextPage} disabled={currentPage === 7}>Next</button>
+        <button onClick={prevPage} disabled={currentPage === 1}>Anterior</button>
+        <span>{`${currentPage} de ${totalPages}`}</span>
+        <button onClick={nextPage} disabled={currentPage === 7}>Siguiente</button>
     </div>
 
 </section>

@@ -9,8 +9,9 @@
 
     /*Playfair*/
     --size-h1: 4rem;
-    --size-h2: 2em;
-    --size-h3: 1.7em;
+    --size-h2: 2rem;
+    --size-h3: 1.7rem;
+    --size-p-price: 1.1rem;
 
     /*Roboto*/
     --size-p: 1rem;
