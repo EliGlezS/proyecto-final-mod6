@@ -6,7 +6,7 @@ header {
     "burger logo login"
     ". . . cart";
     grid-template-columns: 20% 60% 20%;
-    grid-template-rows: repeat(2, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
     justify-content: space-around;
     width: 100%;
     background-image: #FBEEC4;
