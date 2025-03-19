@@ -13,6 +13,17 @@ header {
     background: linear-gradient(to top, #E0D9D0, 2%, white);
 }
 
+@media screen and (min-width: 768px) {
+    header {
+        grid-template-areas: 
+        "logo navbar login cart";
+        grid-template-columns: 30% 40% 15% 15%;
+        grid-template-rows: 1fr;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
 .burger-container {
     /* background-color: green; */
     grid-area: "burger";
@@ -28,6 +39,13 @@ header {
         border-radius: 5px;
         cursor: pointer;
         color: #5A6F80;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .burger-container {
+        display: none;
+        position: absolute;
     }
 }
 
@@ -48,8 +66,40 @@ header {
     }
 }
 
+@media screen and (min-width: 768px) {
+
+    .logo-container {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
 .header-nav {
     display: none;
+}
+
+@media screen and (min-width: 769px) {
+
+    .header-nav {
+        grid-area: "navbar";
+        grid-column: span 1;
+        grid-row: span 1;
+        display: flex;
+        justify-content: center;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            font-family: 'Playfair', 'Times New Roman', Times, serif;
+            font-size: 1.75rem;
+            gap: 1.75rem;
+
+            li {
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 .login-container {
@@ -66,6 +116,14 @@ header {
     }
 }
 
+@media screen and (min-width: 768px) {
+
+    .login-container {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
 .cart-container {
     /* background-color: yellow; */
     grid-area: "cart";
@@ -77,6 +135,27 @@ header {
     grid-column-start: 3;
     grid-row-start: 2;
     padding: 1rem 0 0 1.2rem;
+
+    span {
+        background-color: #6CBFBF;
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 100%;
+        text-align: center;
+        align-items: center;
+        justify-items: center;
+        color: white;
+        font-family: 'Roboto', Arial, Helvetica, sans-serif
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .cart-container {
+        grid-column: span 1;
+        grid-row: span 1;
+        padding: 0;
+    }
 }
 
 .icon-container {
@@ -86,14 +165,4 @@ header {
     width: 2rem;
 }
 
-span {
-    background-color: #6CBFBF;
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: 100%;
-    text-align: center;
-    align-items: center;
-    justify-items: center;
-    color: white;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif
-}
+

@@ -4,12 +4,21 @@ import SvgLogo from "../img/logos/LuzDeTinta-completo-v5.svg";
 import "../styles/headerStyle.css";
 
 const Header = () => {
-    const [nav, setNav] = useState(false);
+    const [showNav, setShowNav] = useState(false);
+    const [showNavbar, setShowNavbar] = useState(false);
+
+    const toggleNav = () => {
+        setShowNav(!showNav)
+    }
+
+    const handleShowNavbar = () => {
+        setShowNavbar(!showNavbar)
+    }
 
     return (
         <header>
             <div className = "burger-container">
-                <button className='icon-container' id='burger'>
+                <button className='icon-container' id='burger' onClick={handleShowNavbar}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
@@ -26,7 +35,7 @@ const Header = () => {
                     <ul>
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/Recommended">Recomendados</NavLink></li>
-                        <li><a href="">Eventos</a></li>
+                        <li>Eventos</li>
                     </ul>  
                 </nav>
                 <div className="login-container">
@@ -47,7 +56,7 @@ const Header = () => {
                         </svg>
                         </div>
                     </NavLink>
-                    <span className="cart-number" role="number">0</span>
+                    <span className="cart-number">0</span>
                 </div>
         </header>
     )
