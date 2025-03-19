@@ -1,0 +1,73 @@
+header {
+    /* background-color: blue; */
+    padding: 1.2rem;
+    display: grid;
+    grid-template-areas: 
+    "burger logo login"
+    ". . . cart";
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: space-around;
+    width: 100%;
+    background-image: #FBEEC4;
+}
+
+.burger-container {
+    /* background-color: green; */
+    grid-area: "burger";
+
+    #burger {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.logo-container {
+    /* background-color: aquamarine; */
+    grid-area: "logo";
+
+    .image-logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10rem;
+    }
+}
+
+.header-nav {
+    display: none;
+}
+
+.login-container {
+    /* background-color: red; */
+    grid-area: "login";
+    color: #6CBFBF;
+}
+
+.cart-container {
+    /* background-color: yellow; */
+    grid-area: "cart";
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+}
+
+span {
+    background-color: #6CBFBF;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 100%;
+    text-align: center;
+    align-items: center;
+
+    color: white;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif
+}

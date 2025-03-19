@@ -1,5 +1,6 @@
 import './App.css'
-import HeaderComponent from './components/headerComponent'
+// import HeaderComponent from './components/headerComponent'
+import Header from './components/HeaderComponent-v2'
 
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
 
   return (
     <>
-    <HeaderComponent/>
+    <Header/>
     </>
   )
 }
