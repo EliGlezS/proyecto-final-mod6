@@ -698,7 +698,7 @@ const books = [
     },
     {
         id: 47,
-        title: "La puerta del abismo",
+        title: "La puerta al abismo",
         price: 23.40,
         stock: true,
         author: "Ramón Pérez",
