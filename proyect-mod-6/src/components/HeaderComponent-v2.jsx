@@ -4,15 +4,10 @@ import SvgLogo from "../img/logos/LuzDeTinta-completo-v5.svg";
 import "../styles/headerStyle.css";
 
 const Header = () => {
-    const [showNav, setShowNav] = useState(false);
     const [showNavbar, setShowNavbar] = useState(false);
 
-    const toggleNav = () => {
-        setShowNav(!showNav)
-    }
-
     const handleShowNavbar = () => {
-        setShowNavbar(!showNavbar)
+      setShowNavbar(!showNavbar);
     }
 
     return (
@@ -31,15 +26,16 @@ const Header = () => {
                     </div>
                 </NavLink>
             </div>
-                <nav id='header-nav' className="header-nav">
+                <nav id='header-nav' className={`header-nav  ${showNavbar && "active"}`}>
                     <ul>
                         <li><NavLink to="/">Home</NavLink></li>
-                        <li><NavLink to="/Recommended">Recomendados</NavLink></li>
-                        <li>Eventos</li>
+                        <li><NavLink to="/recommended">Recomendados</NavLink></li>
+                        <li><NavLink to="/events">Eventos</NavLink></li>
                     </ul>  
                 </nav>
-                <div className="login-container">
-                    <NavLink to="/Login">
+                <div className="right-menu">
+                    <div className="login-container">
+                    <NavLink to="/login">
                         <p></p>
                         <div className="icon-container">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -47,9 +43,9 @@ const Header = () => {
                             </svg>
                         </div>
                     </NavLink>
-                </div>
-                <div className="cart-container">
-                    <NavLink to="/Cart">
+                    </div>
+                    <div className="cart-container">
+                    <NavLink to="/cart">
                         <div className="icon-container">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
@@ -57,6 +53,7 @@ const Header = () => {
                         </div>
                     </NavLink>
                     <span className="cart-number">0</span>
+                    </div>
                 </div>
         </header>
     )
