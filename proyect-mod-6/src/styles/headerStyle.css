@@ -4,7 +4,8 @@ header {
     padding: 1.2rem;
     display: grid;
     grid-template-areas: 
-    "burger logo right";
+    "burger logo login"
+    "cart";
     grid-template-columns: 20% 60% 20%;
     grid-template-rows: repeat(80%, 20%);
     justify-content: space-around;
@@ -140,17 +141,7 @@ header {
     }
 }
 
-.right-menu {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-content: space-between;
-    padding-top: 1rem;
-
-}
-
 .login-container {
-    /* background-color: red; */
     grid-area: "login";
     color: #6CBFBF;
     grid-column-start: 3;
@@ -172,7 +163,6 @@ header {
 }
 
 .cart-container {
-    /* background-color: yellow; */
     grid-area: "cart";
     grid-row-start: 2;
     display: flex;

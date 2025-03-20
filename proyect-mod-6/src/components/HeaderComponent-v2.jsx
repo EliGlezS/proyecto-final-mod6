@@ -33,8 +33,7 @@ const Header = () => {
                         <li><NavLink to="/events">Eventos</NavLink></li>
                     </ul>  
                 </nav>
-                <div className="right-menu">
-                    <div className="login-container">
+                <div className="login-container">
                     <NavLink to="/login">
                         <p></p>
                         <div className="icon-container">
@@ -43,8 +42,8 @@ const Header = () => {
                             </svg>
                         </div>
                     </NavLink>
-                    </div>
-                    <div className="cart-container">
+                </div>
+                <div className="cart-container">
                     <NavLink to="/cart">
                         <div className="icon-container">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -53,7 +52,6 @@ const Header = () => {
                         </div>
                     </NavLink>
                     <span className="cart-number">0</span>
-                    </div>
                 </div>
         </header>
     )
