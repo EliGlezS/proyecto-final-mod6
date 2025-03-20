@@ -1,5 +1,5 @@
 import './App.css'
-import Header from './components/HeaderComponent-v2'
+import Header from './components/HeaderComponent'
 import { BrowserRouter } from 'react-router-dom' 
 
 
