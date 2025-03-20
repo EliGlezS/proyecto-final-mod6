@@ -32,7 +32,9 @@ const RecommendedBooks = () => {
             <div className="books-card" key={book.id}>
 
                 <div className="container-img">
-                    <img className="books-img" src={book.cover} alt={book.title}/>
+                    <Link to={`/products/${book.id}`}>
+                        <img className="books-img" src={book.cover} alt={book.title}/>
+                    </Link>
                 </div>
                 
                 <div className="card-info">

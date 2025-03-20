@@ -9,6 +9,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    min-width: 252px;
     height: 100%;
     padding: 60px;
     
@@ -24,6 +25,7 @@
         width: 100%;
         min-width: 250px;
         margin-bottom: 20px; 
+        cursor: default;
     }
 
     .cards-container {
@@ -218,22 +220,41 @@
 
             .books-card {
                 width: 280px; 
-                height: 100%; 
+                height: 630px; 
                 margin: 0px;
-
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                
                 .container-img{
                     width: 100%;           
                     height: 370px;          
                     object-fit: cover; 
+                    cursor: pointer;
                 }
+            }
+            .books-card:hover{
+                transform: scale(1.02);
+                box-shadow: 0 3px 8px var(--text-placeholder-input);
             }
 
             .card-info {
                 
-
-                p{
-                    font-size: var(--size-p-price);
+                .book-info-price{
+                    
+                    h3{
+                        cursor: default;
+                    }
+                    
+                    p{
+                        font-size: var(--size-p-price);
+                        cursor: default;
+                    }
                 }
+
+                .inStock-books,
+                .noStock-books {
+                    cursor: default;
+                }
+               
 
                 .see-details-books {
                     display: flex;
