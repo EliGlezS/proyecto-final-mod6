@@ -159,14 +159,14 @@
 /*Para resolver problemas de alineacion de samsung Galaxy */
 @media (width: 360px) {
     .section-books-recommended-card {
-        margin-left: 22px;
+        /* margin-left: 22px; */
     }
 }
 
 /**Para resolver problemas de alineacion de iPhone SE */
 @media (width: 375px) {
     .section-books-recommended-card {
-        margin-left: 15px;
+        /* margin-left: 15px; */
     }
 }
 
@@ -219,8 +219,9 @@
             padding: 30px;
 
             .books-card {
+                box-sizing: border-box;
                 width: 280px; 
-                height: 630px; 
+                height: 615px; 
                 margin: 0px;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
                 

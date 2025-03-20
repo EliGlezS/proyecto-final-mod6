@@ -30,7 +30,7 @@ const BooksCardsComponent = () => {
             <div className="books-card" key={book.id}>
 
                 <div className="container-img">
-                    <Link to={`/products/${book.id}`}>
+                    <Link to={`/books/${book.id}`}>
                         <img className="books-img" src={book.cover} alt={book.title}/>
                     </Link>   
                 </div>
@@ -47,7 +47,7 @@ const BooksCardsComponent = () => {
                         ) : (
                         <div className="noStock-books"><p>Out of stock</p><span className="redCircle"></span></div>
                     )}
-                    <p className="see-details-books"><Link to={`/products/${book.id}`}>Ver más</Link></p>
+                    <p className="see-details-books"><Link to={`/books/${book.id}`}>Ver más</Link></p>
                 </div>
 
             </div>

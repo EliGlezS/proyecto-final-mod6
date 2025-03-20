@@ -6,7 +6,7 @@ import '../styles/recommendedPage.css'
 
 const Recommended = () => {
   return (
-    <div className="main-home">
+    <div className="recommended-page-books-container">
         <RecommendedBooks/>
     </div>
   )

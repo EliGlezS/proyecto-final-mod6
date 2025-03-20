@@ -14,7 +14,7 @@ const RecommendedBooks = () => {
     const {books} = useContext(BooksContext);
 
     //Se crea una constante para almacenar los id que se quieren mostrar 
-    const booksIdRecomended = [1, 7, 11, 32, 35, 47];
+    const booksIdRecomended = [1, 7, 11, 32, 35];
      
     //Se quiere encontrar esos id en el array de objetos (books) por lo que se usa un filter y un include para comprobar si existe los id en el array
     const booksRecommended = books.filter((book) => booksIdRecomended.includes(book.id));
@@ -32,7 +32,7 @@ const RecommendedBooks = () => {
             <div className="books-card" key={book.id}>
 
                 <div className="container-img">
-                    <Link to={`/products/${book.id}`}>
+                    <Link to={`/books/${book.id}`}>
                         <img className="books-img" src={book.cover} alt={book.title}/>
                     </Link>
                 </div>
@@ -47,7 +47,7 @@ const RecommendedBooks = () => {
                         ) : (
                         <div className="noStock-books"><p>Out of stock</p><span className="redCircle"></span></div>
                     )}
-                    <p className="see-details-books"><Link to={`/products/${book.id}`}>Ver más</Link></p>
+                    <p className="see-details-books"><Link to={`/books/${book.id}`}>Ver más</Link></p>
                 </div>
 
             </div>
