@@ -6,10 +6,10 @@ import "../styles/headerStyle.css";
 
 const Header = () => {
 
+    const isDesktop = useMediaQuery('(min-width: 769px)');
+    
     const [showNav, setShowNav] = useState(false);
     
-    const isDesktop = useMediaQuery('(min-width: 769px)');
-
     const toggleShowNav = () => {
         setShowNav(!showNav);
     }
