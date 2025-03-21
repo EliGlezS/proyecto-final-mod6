@@ -53,14 +53,27 @@ const BookDetailsComponent = () => {
                     
                         <div className="container-author-genre-date">
                             <p>{bookDetails.author}</p>
-                            <p>{bookDetails.genre}</p>
-                            <p>{bookDetails.publicationDate}</p>
+                            <div className="container-genre-date">
+                                <p>{bookDetails.genre}</p>
+                                <p>{bookDetails.publicationDate}</p>
+                            </div>
                         </div>
 
                         <p className="book-price">{bookDetails.price} €</p>
 
                         <div className="container-synopsis">
+                            <h4>Sinopsis:</h4>
                             <p>{bookDetails.synopsis}</p>
+                        </div>
+
+                        <div className="container-reviews">
+                            <div className="reviews">
+                                <h4>Opiniones de los lectores:</h4>
+                                <ul>{bookDetails.reviews.map((review, index) => (
+                                    <li key={index}>"{review}"</li>
+                                ))}
+                                </ul>
+                            </div>
                         </div>
 
                     </div>
@@ -93,14 +106,6 @@ const BookDetailsComponent = () => {
 
             </div>
             
-           <div className="container-reviews">
-                <div className="reviews">
-                    <ul>{bookDetails.reviews.map((review, index) => (
-                        <li key={index}>{review}</li>
-                    ))}
-                    </ul>
-                </div>
-           </div>
         </div>
 
     </section>

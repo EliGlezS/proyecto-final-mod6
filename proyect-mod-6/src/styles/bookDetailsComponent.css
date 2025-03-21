@@ -30,17 +30,18 @@
     .book-container {
         box-sizing: border-box;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
         height: 100%; /*Revisar cuando se ponga el header (vh) y footer : revisar contenedor de card en home */
         margin-top: 20px;
-        gap: 50px;
+        gap: 30px;
         margin-bottom: 15px;
         padding-bottom: 20px;
         padding-top: 20px;
         min-width: 250px;
+        
         
 
         .book-card {
@@ -48,20 +49,20 @@
             flex-direction: column;
             align-items: center;
             width: 260px; 
-            height: 650px;
+            height: auto;/*Revisar*/
             border: 1px solid var(--secondary-text-color);
             border-radius: 0.5em;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             font-family: var(--font-primary);
-            border: 1px solid red;
+            
 
             .container-img { 
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 100%;
-                height: 350px; /*REVISAR SI LO QUIERO MAS GRANDE O PEQUEÑO*/
+                height: 340px; /*REVISAR SI LO QUIERO MAS GRANDE O PEQUEÑO*/
 
                 .book-img {
                     width: 100%;
@@ -74,9 +75,9 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                padding: 8px;
+                padding: 10px;
                 width: 100%;
-                /* height: 375px;  */
+                height: 100%;  
                 overflow: hidden;
                 color: var( --primary-text-color);
 
@@ -87,29 +88,73 @@
                     flex-direction: column;
                     align-items: center;
                     width: 100%;
-                    height: 150px;
+                    height: 100%;
+                    margin-bottom: 30px;
+                    border: 1px solid red;
 
                     h3 {
                         font-family: var(--font-secondary);
                         font-size: var(--size-h3);
                         font-weight: 900; /*PREGUNTAR SI TITULOS CON BOLD */
                         text-align: center;
-                        margin: 10px 0;
+                        margin-top: 10px;
+                        color: var(--primary-text-color);
                     }
 
                     .container-author-genre-date{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
+                        margin-top: 20px;
+                        margin-bottom: 10px;
+                        
                         p{
-
+                            text-align: center;
+                            font-size: var(--size-p);
+                            font-family: var(--font-primary);
+                            color: var(--primary-text-color);
+                        }
+                        .container-genre-date{
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-around;
+                            width: 100%;
+                            margin-top: 15px;
+                           
+                        }
+                        .container-genre-date p{
+                            font-size: var(--size-p);
                         }
                     }
 
                     .book-price {
-                        font-size: var(--size-p-price);
-                        margin: 5px 0;
+                        font-size: var(--size-p);
+                        font-weight: 500;
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        border: 1px solid red;
                     }
 
                     .container-synopsis{
-                            
+                            border: 1px solid red ;
+                            text-align: justify;
+                            width: 100%;
+                            height: auto;
+                            margin-top: 20px;
+                            margin-bottom: 15px;
+                    }
+
+                    .container-reviews{
+                        .reviews{
+                            ul{
+                                li{
+            
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -148,33 +193,23 @@
                 }
             }
         }
-
-        .container-reviews{
-            .reviews{
-                ul{
-                    li{
-
-                    }
-                }
-            }
-        }
     }
 }
 
 
 /*Para resolver problemas de alineacion de samsung Galaxy */
-@media (width: 360px) {
+/* @media (width: 360px) {
     .section-book-details {
         margin-left: 22px;
     }
-}
+} */
 
-/**Para resolver problemas de alineacion de iPhone SE */
-@media (width: 375px) {
+/*Para resolver problemas de alineacion de iPhone SE */
+/* @media (width: 375px) {
     .section-book-details {
         margin-left: 15px;
     }
-}
+} */
 
 
 
