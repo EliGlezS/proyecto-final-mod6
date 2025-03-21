@@ -10,9 +10,9 @@ header {
     width: 100%;
     padding: 1.2rem;
     margin-bottom: 2rem;
-    /* border-bottom: 2px solid #6CBFBF; */
+    border-bottom: 2px solid #6CBFBF;
     background: linear-gradient(to top, #E0D9D0, 2%, white);
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
 
     
     .login-container {
@@ -25,7 +25,7 @@ header {
         /* padding-bottom: 1.9rem; */
         flex-grow: 0;
         height: 100%;
-    
+
         div {
             width: 2.8rem;
         }
@@ -39,13 +39,14 @@ header {
         }
 
         .login-container:hover {
-            color: #FBEEC4;
-            background-color: #99D0DC;
+            /* color: #FBEEC4;
+            background-color: #99D0DC; */
             height: fit-content;
             width: fit-content;
-            border-radius: 50%;
-            border: solid 3px #99D0DC;
-            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            transform: scale(105%);
+            /* border-radius: 50%;
+            border: solid 3px #99D0DC; */
+            /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
         }
     }
         
@@ -111,15 +112,16 @@ header {
         }
 
         .cart-container:hover {
-            background-color: var(--disabled-button-color);
-            color: var(--secondary-color);
+            /* background-color: var(--disabled-button-color);
+            color: var(--secondary-color); */
+            background-color: white;
             border-radius: 10px;
             transform: scale(105%);
-            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
 
-            span {
+            /* span {
                 background-color: var(--hover-button-color-primary);
-            }
+            } */
         }
     }
     
@@ -131,6 +133,8 @@ header {
         justify-content: center;
         align-items: center;
         height: fit-content;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
     
         #burger {
             background-color: transparent;
@@ -153,7 +157,7 @@ header {
             position: absolute;
             right: 0;
             top: 10.2rem;
-            background-color: #e0d9d0c1;
+            background-color: rgba(224, 217, 208, 0.75);
             width: 0;
             height: calc(100vh - 60px);
             transition: all 0.3s ease-in;
@@ -165,12 +169,16 @@ header {
                 text-align: center;
                 font-family: 'Playfair', 'Times New Roman', Times, serif;
                 font-size: 1.5rem;
-                gap: 1rem;
                 /* color: #0F0200; */
     
                 li {
-                    margin-right: unset;
-                    margin-top: 22px;
+                    padding: 1.8rem 0;
+                    height: 100%;
+                    margin: 0;
+                }
+
+                .second-li {
+                    background-color: rgb(255, 255, 255, 0.75);
                 }
             }
     }
@@ -185,11 +193,10 @@ header {
         grid-row-start: 1;
         position: relative;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         height: fit-content;
         top: 0;
-        background-color: transparent;
 
         ul {
             display: flex;
@@ -201,6 +208,7 @@ header {
 
             li {
                 padding: 0.4rem;
+                /* border-radius: 10px; */
             }
         }
         
@@ -221,18 +229,15 @@ header {
         }
 
         li:hover {
-            background-color: var(--disabled-button-color);
-            border-radius: 10px;
+            /* background-color: var(--disabled-button-color); */
+            /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
             transform: scale(105%);
-            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
             a::after {
                 background-color: var(--hover-button-color-primary);
             }
         }
-
     }
-
 
     .icon-container {
         display: flex;
@@ -245,10 +250,10 @@ header {
     header {
         grid-template-areas: 
         "logo nav login cart";
-        grid-template-columns: 30% 40% 15% 15%;
+        grid-template-columns: 25% 50% 10% 15%;
         grid-template-rows: 1fr;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
     }
 }
 
