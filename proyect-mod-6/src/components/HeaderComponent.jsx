@@ -54,7 +54,7 @@ const Header = () => {
             </div>
             <nav className={isDesktop ? `header-nav-desktop` : `header-nav ${showNav && "active"}`}>
                 <ul>
-                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/">Portada</NavLink></li>
                     <li className="second-li"><NavLink to="/recommended">Recomendados</NavLink></li>
                     <li><NavLink to="/events">Eventos</NavLink></li>
                 </ul>  
