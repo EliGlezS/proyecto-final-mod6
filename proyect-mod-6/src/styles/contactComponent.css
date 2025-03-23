@@ -12,6 +12,7 @@
         background-color: var(--disabled-button-color);
         display: flex;
         flex-direction: column;
+        align-items: center;
         padding: 2.4rem;
         border-radius: 20px;
         row-gap: 1.5rem;
@@ -30,10 +31,14 @@
                 border: none;
                 height: 2.4rem;
                 border-radius: 10px;
-                padding: 0.5rem 0.75rem;            }
+                padding: 0.5rem 0.75rem;     
+            }
+
+            .form-input:focus, .form-textarea:focus {
+                outline: 3px solid var(--input-border-focus);
+            }
 
             .form-textarea {
-                appearance: none;
                 padding: 0.5rem 0.75rem;
                 resize: vertical;
             }
@@ -52,6 +57,29 @@
                 color: white;
                 border: none;
                 border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
+            }
+
+            .form-button:hover {
+                background-color: var(--hover-button-color-primary);
+                color: var(--support-color);
+            }
+
+            .form-button:active {
+                background-color: var(--pressed-button-color-primary);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .contact {
+        .contact-form {
+            width: 50%;
+
+            .form-field, .form-button-container{
+                width: 60%;
             }
         }
     }

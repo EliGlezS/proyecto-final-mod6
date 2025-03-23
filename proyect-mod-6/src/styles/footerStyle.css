@@ -60,12 +60,17 @@ footer {
                 }
     
                 .newsletter-email {
-                    border: 1px solid var(--primary-color-button-active);
+                    border: none;
+                    /* border: 1px solid var(--primary-color-button-active); */
                     background-color: var(--input-color-empty-label);
                 }
 
                 .newsletter-email::placeholder {
                     color: var(--secondary-text-color)
+                }
+
+                .newsletter-email:focus{
+                    outline: 3px solid var(--input-border-focus);
                 }
     
                 .newsletter-button {
@@ -73,13 +78,21 @@ footer {
                     background-color: var(--primary-color-button-active);
                     color: white;
                 }
+
+                .newsletter-button:hover {
+                    background-color: var(--hover-button-color-primary);
+                    color: var(--support-color);
+                }
+
+                .newsletter-button:active {
+                    background-color: var(--pressed-button-color-primary);
+                }
     
                 .newsletter-checkbox {
                     margin: 0 0.4rem;
                     width: 1rem;
                 }
             }
-
         }
 
         .newsletter-container::before {
