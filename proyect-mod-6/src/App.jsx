@@ -1,11 +1,10 @@
 import { UsuarioProvider } from './context/UserContext';
-import { RegisterProvider } from './context/ResgisterContext';
-import UserList from './components/UserListComponent';
+import UserListComponent from './components/UserListComponent';
 import RegisterComponent from './components/RegisterComponent';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css'
 import LoginComponent from './components/LoginComponent';
-
+import './index.css'
 function App() {
   
 
@@ -13,8 +12,8 @@ function App() {
     <Router>
       <UsuarioProvider>
         <Routes>
-          <Route path="/" element={<UserList/>}/>
-          <Route path="/register" element={<RegisterProvider><RegisterComponent/></RegisterProvider>}/>
+          <Route path="/perfil" element={<UserListComponent/>}/>
+          <Route path="/register" element={<RegisterComponent/>}/>
           <Route path="/login" element={<LoginComponent/>}/>
           
 

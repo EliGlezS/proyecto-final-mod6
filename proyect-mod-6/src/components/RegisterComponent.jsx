@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import {useNavigate} from "react-router-dom";
-import { RegisterContext } from "../context/ResgisterContext";
 import { UserContext } from "../context/UserContext";
 const RegisterComponent = ()=>{
     const {createUser} = useContext(UserContext);
@@ -39,30 +38,45 @@ const RegisterComponent = ()=>{
     const validateForm =()=>{
       const newError ={};
 
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formulario.email)) {
-            newError.email="El correo electrónico no es válido.";
-        }
-        if(/[\d]/.test(formulario.localidad)) {
-          newError.localidad="La localidad no pueden contener números.";
-        }
-        if(/[\d]/.test(formulario.nombre) || /[\d]/.test(formulario.apellidos)) {
-            newError.nombre="El nombre y los apellidos no pueden contener números.";
-          }
-          if (!/^\d{5}$/.test(formulario.codigoPostal)) {
-            newError.codigoPostal="El código postal debe tener exactamente 5 dígitos.";
-          }
-          if (!/^\d{8}[A-Za-z]$/.test(formulario.dni)) {
-            newError.dni="El DNI debe tener 8 números seguidos de una letra.";
-          }
-          if (!/^\d{16}$/.test(formulario.numeroTarjeta)) {
-            newError.numeroTarjeta="El número de tarjeta debe tener exactamente 16 dígitos.";
-          }
-          if (!/^\d{2}\/\d{2}$/.test(formulario.caducidad)) {
-            newError.caducidad="La caducidad debe tener el formato MM/AA.";
-          }
-          if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&])[A-Za-z\d!@#$%^&]{9,12}$/.test(formulario.password)) {
-            newError.password="La contraseña debe tener entre 9-12 caracteres e incluir al menos una letra mayúscula, una minúscula, un número y un carácter especial.";
-          }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formulario.email)) {
+        newError.email = "El correo electrónico no es válido.";
+      }
+  
+      // Validación de Localidad
+      if (/[\d]/.test(formulario.localidad)) {
+        newError.localidad = "La localidad no puede contener números.";
+      }
+  
+      // Validación de Nombre y Apellidos
+      if (/[\d]/.test(formulario.nombre) || /[\d]/.test(formulario.apellidos)) {
+        newError.nombre = "El nombre y los apellidos no pueden contener números.";
+      }
+  
+      // Validación de Código Postal
+      if (!/^\d{5}$/.test(formulario.codigoPostal)) {
+        newError.codigoPostal = "El código postal debe tener exactamente 5 dígitos.";
+      }
+  
+      // Validación de DNI
+      if (!/^\d{8}[A-Za-z]$/.test(formulario.dni)) {
+        newError.dni = "El DNI debe tener 8 números seguidos de una letra.";
+      }
+  
+      // Validación de Número de Tarjeta
+      if (!/^\d{16}$/.test(formulario.numeroTarjeta)) {
+        newError.numeroTarjeta = "El número de tarjeta debe tener exactamente 16 dígitos.";
+      }
+  
+      // Validación de Caducidad
+      if (!/^\d{2}\/\d{2}$/.test(formulario.caducidad)) {
+        newError.caducidad = "La caducidad debe tener el formato MM/AA.";
+      }
+  
+      // Validación de Contraseña
+      if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&])[A-Za-z\d!@#$%^&]{9,12}$/.test(formulario.password)) {
+        newError.password = "La contraseña debe tener entre 9-12 caracteres e incluir al menos una letra mayúscula, una minúscula, un número y un carácter especial.";
+      
+      }
          setError(newError);
          return Object.keys(newError).length ===0;
 } 
@@ -71,6 +85,13 @@ const handleChange =(e)=>{
   const {name,value}=e.target;
   setFormulario((prevFormulario)=>({
     ...prevFormulario,[name]:value,
+  }));
+};
+const handleFileChange =(e)=>{
+  const file = e.target.files[0];
+  setFormulario((prevFormulario)=>({
+    ...prevFormulario,
+    foto: file,
   }));
 };
 return(
@@ -192,9 +213,18 @@ return(
                         required />
 
                     </div>
+                    <div>
+                        <label>Foto</label>
+                        <input type="file"
+                        accept="image/*"
+                        onChange={handleFileChange}
+                        required />
+
+                    </div>
                     <button type="submit">Guardar datos</button>
   </form>
   </div>
 );
 };
 export default RegisterComponent;
+//OK comprobado si no funciona darle para atras a las valaidaciones 2 vece

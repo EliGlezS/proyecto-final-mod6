@@ -1,71 +1,63 @@
 import { createContext,useState,useEffect } from "react";
-export const UserContext = createContext();
-const API_BASE_URL = "https://reqres.in/api/users";
-export const UsuarioProvider = ({children}) =>{
-    const [user, setUser]= useState([]);
+import {useNavigate} from"react-router-dom";
 
-//funcion get    
+export const UserContext = createContext();
+
+export const UsuarioProvider = ({children}) =>{
+  const[isLoggedIn,setIsLoggedIn]=useState(false);
+    const [authUser, setAuthUser]= useState({});
+    const navigate= useNavigate();
     useEffect(()=>{
-        const getUser = async()=>{
-            try {
-                const respuesta = await fetch(`${API_BASE_URL}?per_page=20`);
-                if (!respuesta.ok) {
-                  throw new Error ("ERROR AL TRAER EL ELEMENTO");
-                }
-                    const data= await respuesta.json();
-                    setUser(data.data);        
-              } catch (error){
-                console.error("ERROR AL OBTENER EL ELEMENTO",error);
-                
-              }
-             
-            };
-            getUser();
-        },[]);
- 
-  //FUNCION PUT
-  const updateUser = async(id,datosUpdate)=>{
-        try {
-      await fetch(`${API_BASE_URL}/${id}`,{
-          method : "PUT",
-          headers: {
-            "Content-Type":"application/json",
-          },
-          body: JSON.stringify(datosUpdate),
-        });
-        setUser(
-            user.map((user)=>(user.id ===id ?{...user,...datosUpdate} : user))
-        );} catch(error){
-          console.error("ERROR AL ACTUALIZAR",error);
-          
-        }
-       
-      };
-  //FUNCION DELETE
-  const deleteUser =async(id)=>{
-    try{
-        await fetch(`${API_BASE_URL}/${id}`,{ method:"DELETE"});
-        setUser (user.filter((user)=>user.id !==id));
-    }catch(error){
-        console.error("ERROR AL ELIMINAR EL ELEMENTO",error);
+      const storedIsLoggedIn= localStorage.getItem("isLoggedIn");
+      if(storedIsLoggedIn=== "true"){
+        setIsLoggedIn(true);
+        const storedUser=JSON.parse(localStorage.getItem("userData"));
+        setAuthUser(storedUser);
+
+      }
+    },[]);
+
+    //funcion para iniciar sesion
+    const loginUser=(email, password)=>{
+      const storedUser=JSON.parse(localStorage.getItem("userData"));
+      if(storedUser && storedUser.email === email && storedUser.password === password){
+        setAuthUser(storedUser);
+        setIsLoggedIn(true);
+        localStorage.setItem("isLoggedIn","true");
+        localStorage.setItem("userData",JSON.stringify(storedUser));
+        navigate("/");
+        return true;
     }
-  };
-  //Funcion para traer el usuario registrado
-  const createUser = (myUser) =>{
-    console.log("Nuevo usuario creado:", myUser);
-    setUser((prevUser)=>[...prevUser,myUser]);
-  }
+    return false;
+    }
+//funcion para cerrar sesion
+const logoutUser =()=>{
+  setAuthUser(null);
+  setIsLoggedIn(false);
+  localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("userData");
+  navigate("/login");
+};
+//Funcion para crear el usuario
+const createUser=(newUser)=>{
+  setAuthUser(newUser);
+  setIsLoggedIn(true);
+  localStorage.setItem("userData",JSON.stringify(newUser));
+  localStorage.setItem("isLoggedIn" ,"true");
+
+
+}
+//funcion para actualizar el usuario
+const updatedUser = (newUserData)=>{
+  setAuthUser(newUserData);
+  localStorage.setItem("userData",JSON.stringify(newUserData));
+};
   return(
     <UserContext.Provider
-    value={{user,
-        createUser,
-        updateUser,
-        deleteUser
+    value={{isLoggedIn,authUser,loginUser,logoutUser,updatedUser,createUser
     }}
         >
         {children}
         </UserContext.Provider>
   );
 }
-
-////hola
