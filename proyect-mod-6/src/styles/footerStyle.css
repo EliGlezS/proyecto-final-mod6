@@ -56,12 +56,16 @@ footer {
                     width: 70%;
                     height: 2.4rem;
                     border-radius: 10px;
-                    padding: 0 0.5rem;
+                    padding: 0.5rem 0.75rem;
                 }
     
                 .newsletter-email {
                     border: 1px solid var(--primary-color-button-active);
                     background-color: var(--input-color-empty-label);
+                }
+
+                .newsletter-email::placeholder {
+                    color: var(--secondary-text-color)
                 }
     
                 .newsletter-button {

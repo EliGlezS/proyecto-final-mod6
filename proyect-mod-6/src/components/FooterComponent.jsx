@@ -4,6 +4,7 @@ import Bluesky from '../img/iconos-RRSS/ico-bluesky-negro.svg'
 import Facebook from '../img/iconos-RRSS/ico-facebook-negro.svg'
 import Instagram from'../img/iconos-RRSS/ico-instagram-negro.svg'
 import LogoFooter from '../img/logos/LuzDeTinta-letras-negro.svg'
+// import { Link } from 'react-router-dom'
 
 const Footer = () => {
 
@@ -50,7 +51,9 @@ const Footer = () => {
                 <nav className='info-menu'>
                     <ul>
                         <li>Quiénes somos</li>
-                        <li>Contacto</li>
+                        <li>Contacto
+                            {/* <Link to="/contact">Contacto</Link> */}
+                        </li>
                         <li>Condiciones de venta</li>
                 </ul>
                 </nav>
