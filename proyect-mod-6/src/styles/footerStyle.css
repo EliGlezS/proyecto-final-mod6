@@ -14,15 +14,18 @@ footer {
     font-family: var(--font-primary);
 
     .newsletter {
-        background-color: var(--secondary-color);
-        grid-area: "newsletter";
-        grid-column: span 2 / span 2;
+        /* background-color: var(--secondary-color); */
+        position: relative;
+        z-index: 2;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 1rem 0;
+        /* background-image: url("../img/background-footer/background-plumas.svg");
+        background-position: center;
+        background-size: cover; */
 
         .newsletter-container {
             display: flex;
@@ -36,7 +39,7 @@ footer {
             }
     
             form {
-                color: var(--secondary-text-color);
+                /* color: var(--secondary-text-color); */
                 text-wrap: nowrap;
                 display: flex;
                 flex-direction: column;
@@ -74,8 +77,14 @@ footer {
             }
 
         }
-        
     }
+
+    /* .newsletter:before {
+        content: ' ';
+        position: absolute;
+        z-index: 1;
+        opacity: 0.6;
+    } */
 
     .footer-info {
         padding: 0 1.2rem;
@@ -102,7 +111,6 @@ footer {
                 padding: 2rem 1.2rem;
                 
                 li {
-                    background-color: var(--secondary-color);
                     display: flex;
                     padding: 0 1rem;
                     height: 2rem;

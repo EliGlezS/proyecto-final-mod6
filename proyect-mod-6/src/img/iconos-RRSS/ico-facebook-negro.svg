@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16.14"
+   height="30"
+   viewBox="0 0 16.14 30"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="ico-facebook-negro.svg"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="26.1"
+     inkscape:cx="8.0842912"
+     inkscape:cy="15"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     id="Icon_zocial-facebook"
+     data-name="Icon zocial-facebook"
+     d="M13.257,16.11V10.381h4.621V7.5A7.539,7.539,0,0,1,19.9,2.19,6.439,6.439,0,0,1,24.807,0H29.4V5.73h-4.59A1.011,1.011,0,0,0,24,6.225a2.01,2.01,0,0,0-.36,1.215v2.94H29.4v5.729h-5.76V30h-5.76V16.11Z"
+     transform="translate(-13.257)"
+     fill="#fff"
+     style="fill:#000000;fill-opacity:1" />
+</svg>

@@ -1,8 +1,8 @@
 import '../styles/footerStyle.css'
 import '../styles/variables.css'
-import Bluesky from '../img/iconos-RRSS/ico-bluesky.svg'
-import Facebook from '../img/iconos-RRSS/ico-facebook.svg'
-import Instagram from'../img/iconos-RRSS/ico-instagram.svg'
+import Bluesky from '../img/iconos-RRSS/ico-bluesky-negro.svg'
+import Facebook from '../img/iconos-RRSS/ico-facebook-negro.svg'
+import Instagram from'../img/iconos-RRSS/ico-instagram-negro.svg'
 import LogoFooter from '../img/logos/LuzDeTinta-letras-negro.svg'
 // import { useMediaQuery} from "../customHook/useMediaQuery"
 
