@@ -14,38 +14,38 @@ footer {
     font-family: var(--font-primary);
 
     .newsletter {
-        /* background-color: var(--secondary-color); */
-        position: relative;
-        z-index: 2;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 1rem 0;
-        /* background-image: url("../img/background-footer/background-plumas.svg");
-        background-position: center;
-        background-size: cover; */
-
+    
         .newsletter-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+            width: 100%;
+            padding: 1rem 0;
+
             .newsletter-icon {
                 width: 1.8rem;
                 color: var(--secondary-text-color);
+                z-index: 3;
             }
     
             form {
-                /* color: var(--secondary-text-color); */
+                color: var(--secondary-text-color);
                 text-wrap: nowrap;
                 display: flex;
                 flex-direction: column;
                 width: 100%;
                 align-items: center;
                 gap: 1rem;
+                z-index: 3;
                 
                 h3 {
                     font-family: var(--font-secondary);
@@ -77,14 +77,17 @@ footer {
             }
 
         }
-    }
 
-    /* .newsletter:before {
-        content: ' ';
-        position: absolute;
-        z-index: 1;
-        opacity: 0.6;
-    } */
+        .newsletter-container::before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            opacity: 0.4;
+            width: 100%;
+            height: 100%;
+            background-color: var(--secondary-color);
+        }
+    }
 
     .footer-info {
         padding: 0 1.2rem;
@@ -100,6 +103,10 @@ footer {
         .address, .info-menu, .policies {
             padding: 1rem 0 0.6rem 1.2rem;
         }
+
+        .address {
+            color: var(--secondary-text-color);
+        }
         
         .social-media {
     
@@ -108,7 +115,7 @@ footer {
                 flex-direction: row;
                 justify-content: space-around;
                 align-items: center;
-                padding: 2rem 1.2rem;
+                padding: 3.6rem 1.2rem 2rem 1.2rem;
                 
                 li {
                     display: flex;
@@ -117,14 +124,63 @@ footer {
                 }
             }
         }
-
-        .copyright {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1.2rem;
-            margin-top: 1rem;
-        }
     }
 
+    .copyright-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.2rem;
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    footer {
+        display: grid;
+        grid-template-areas: 
+        "info newsletter"
+        "copyright copyright";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 90% 10%;
+
+        .newsletter {
+            grid-area: "newsletter";
+            grid-column-start: 2;
+            grid-row-start: 1;
+
+            .newsletter-container {
+                padding: 4rem;
+                width: fit-content;
+
+                form {
+                    gap: 2.4rem;
+                    width: 25rem;
+                }
+            }
+        }
+
+        .footer-info {
+            grid-area: "info";
+            grid-column-start: 1;
+            grid-row-start: 1;
+            padding-left: 3rem;
+            padding-top: 2rem;
+
+            .social-media {
+                display: flex;
+                align-self: flex-start;
+
+                ul {
+                    padding-left: 0;
+                }
+            }
+        }
+
+        .copyright-container {
+            grid-area: "copyright";
+            grid-row-start: 2;
+            grid-column: span 2 / span 2;
+        }
+    }
 }
