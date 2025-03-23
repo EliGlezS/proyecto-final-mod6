@@ -157,18 +157,18 @@
 
 
 /*Para resolver problemas de alineacion de samsung Galaxy */
-@media (width: 360px) {
+/* @media (width: 360px) {
     .section-books-card {
         margin-left: 22px;
     }
-}
+} */
 
 /**Para resolver problemas de alineacion de iPhone SE */
-@media (width: 375px) {
+/* @media (width: 375px) {
     .section-books-card {
         margin-left: 15px;
     }
-}
+} */
 
 
 

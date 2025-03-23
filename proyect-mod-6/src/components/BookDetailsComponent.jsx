@@ -77,26 +77,20 @@ const BookDetailsComponent = () => {
                         </div>
 
                     </div>
-                    {/* 
-                    {bookDetails.stock ? (
-                        <div className="inStock-books"><p>In Stock</p><span className="greenCircle"></span></div>
-                        ) : (
-                        <div className="noStock-books"><p>Out of stock</p><span className="redCircle"></span></div>
-                    )} */}
-
-                    <div className="buttons-book-card-or-disable">
+                   
+                    <div className="container-buttons-details">
                         {/*Si el libro que estamos mirando está en stock (true) aparece un botón que lo añade al carrito, pero 
                         si stock es false aparece un botón desabilitado */}
                         {bookDetails.stock ? (
                             <button className="button-addCart" >Añadir al Carrito</button>
                         // <button className="button-addCart" onClick={() => addProductCart(productDetails)}>Add to Cart</button>
                         ) : (
-                            <button className="button-disable" disabled>No disponible en este momento</button>
+                            <button className="button-disable" disabled>No disponible</button>
                         )}
                         
                         <p className="back-home-from-details">
                             <Link to="/"> 
-                                Back Home
+                                Volver
                             </Link>   
                         </p>
 
