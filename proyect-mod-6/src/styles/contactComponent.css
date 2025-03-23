@@ -12,14 +12,12 @@
         background-color: var(--disabled-button-color);
         display: flex;
         flex-direction: column;
-        align-items: center;
         padding: 2.4rem;
         border-radius: 20px;
         row-gap: 1.5rem;
         box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
 
         .form-field {
-            /* background-color: pink; */
 
             .form-input, .form-textarea {
                 width: 100%;
@@ -77,9 +75,11 @@
     .contact {
         .contact-form {
             width: 50%;
+            align-items: center;
 
             .form-field, .form-button-container{
                 width: 60%;
+                min-width: fit-content;
             }
         }
     }
