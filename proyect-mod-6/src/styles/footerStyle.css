@@ -29,7 +29,7 @@ footer {
             justify-content: center;
             position: relative;
             z-index: 2;
-            overflow: hidden;
+            /* overflow: hidden; */
             width: 100%;
             padding: 1rem 0;
 
@@ -231,12 +231,10 @@ footer {
             .newsletter-container {
                 padding: 4rem;
                 width: fit-content;
-                background-color: pink;
                 
                 form {
                     gap: 2.4rem;
                     width: 25rem;
-                    background-color: red;
                 }
             }
         }

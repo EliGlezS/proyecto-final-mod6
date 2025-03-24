@@ -12,7 +12,7 @@ const Footer = () => {
     const [email, setEmail ] = useState("");
     const [isChecked, setIsChecked] = useState(false);
 
-    const handleEmailChange = (e) => {
+    const handleEmail = (e) => {
         setEmail(e.target.value);
     };
 
@@ -43,7 +43,7 @@ const Footer = () => {
                 </div>
                     <form>
                         <h3>Suscríbete a nuestro boletín</h3>
-                        <input type='email' placeholder='Escribe tu email' className='newsletter-email' maxLenght="320" size="20" value={email} onChange={(e) => handleEmailChange(e)} required='required'></input>
+                        <input type='email' placeholder='Escribe tu email' className='newsletter-email' maxLenght="320" size="20" value={email} onChange={(e) => handleEmail(e)} required='required'></input>
                         <button type='submit' className='newsletter-button' onClick={() => handleSubmit()}>Enviar</button>
                         <label>
                             <input type='checkbox' className='newsletter-checkbox' checked={isChecked} onChange={checkHandler} required='required'></input>
