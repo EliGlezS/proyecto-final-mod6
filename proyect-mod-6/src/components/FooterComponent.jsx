@@ -4,7 +4,8 @@ import Bluesky from '../img/iconos-RRSS/ico-bluesky-negro.svg'
 import Facebook from '../img/iconos-RRSS/ico-facebook-negro.svg'
 import Instagram from'../img/iconos-RRSS/ico-instagram-negro.svg'
 import LogoFooter from '../img/logos/LuzDeTinta-letras-negro.svg'
-// import { Link } from 'react-router-dom'
+// import { Link } from "react-router-dom";
+
 
 const Footer = () => {
 

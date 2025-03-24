@@ -5,6 +5,7 @@ const ContactComponent = () => {
     return (
         <div className="contact">
             <form className="contact-form">
+                <h1>Contacto</h1>
                 <div className="form-field">
                     <label className="form-label" htmlFor="name">
                     Nombre
@@ -23,7 +24,7 @@ const ContactComponent = () => {
                     </label>
                     <textarea className="form-textarea" id="message" name="message" />
                 </div>
-                <div class="form-button-container">
+                <div className="form-button-container">
                     <button className="form-button" type="submit">
                     Enviar
                     </button>

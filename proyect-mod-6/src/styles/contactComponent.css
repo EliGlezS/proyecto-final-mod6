@@ -16,6 +16,12 @@
         border-radius: 20px;
         row-gap: 1.5rem;
         box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
+        
+        h1 {
+            font-family: var(--font-secondary);
+            padding: 0.4rem 0;
+            color: var(--secondary-text-color);
+        }
 
         .form-field {
 
