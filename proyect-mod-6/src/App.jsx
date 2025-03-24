@@ -4,14 +4,16 @@ import Contact from './pages/Contact'
 import { Routes,Route } from 'react-router-dom'
 
 function App() {
+
+  document.addEventListener('submit', (e)=>{e.preventDefault();})
   
   return (
 
       <>
-        <Footer/>
         <Routes>
           <Route path="/contact" element={<Contact/>}/>
         </Routes>
+        <Footer/>
       </>
   )
 }

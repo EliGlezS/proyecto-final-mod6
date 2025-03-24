@@ -71,7 +71,7 @@ footer {
                     color: var(--secondary-text-color)
                 }
 
-                .newsletter-email:focus{
+                .newsletter-email:focus, .newsletter-button:focus, .newsletter-checkbox:focus{
                     outline: 3px solid var(--input-border-focus);
                 }
     
@@ -88,6 +88,10 @@ footer {
 
                 .newsletter-button:active {
                     background-color: var(--pressed-button-color-primary);
+                }
+
+                a {
+                    color: var(--secondary-color);
                 }
     
                 .newsletter-checkbox {

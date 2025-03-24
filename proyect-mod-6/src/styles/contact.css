@@ -18,6 +18,7 @@
         row-gap: 1.5rem;
         box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
         min-width: fit-content;
+        width: fit-content;
         
         h1 {
             font-family: var(--font-secondary);
@@ -74,15 +75,15 @@
             .form-button:active {
                 background-color: var(--pressed-button-color-primary);
             }
-        }
-    }
 
-    .message {
-        display: none;
+            .form-button:focus {
+                outline: 3px solid var(--input-border-focus);
+            }
+        }
     }
 }
 
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
 
     .contact {
         .contact-form {
@@ -111,4 +112,4 @@
             }
         }
     }
-}
+} */

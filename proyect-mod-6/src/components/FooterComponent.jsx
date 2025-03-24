@@ -5,9 +5,33 @@ import Facebook from '../img/iconos-RRSS/ico-facebook-negro.svg'
 import Instagram from'../img/iconos-RRSS/ico-instagram-negro.svg'
 import LogoFooter from '../img/logos/LuzDeTinta-letras-negro.svg'
 import { Link } from "react-router-dom";
+import { useState } from 'react'
 
 
 const Footer = () => {
+
+    const [email, setEmail ] = useState("");
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    };
+
+    const checkHandler = () => {
+        setIsChecked(!isChecked);
+      }
+    
+    const handleSubmit = () => {
+
+        if(email.trim()==="" || isChecked === false){
+            alert("Revisa si has escrito tu email y aceptado las condiciones");
+        } else {
+            setEmail("");
+            setIsChecked(false);        
+        }
+    };
+
+    // document.addEventListener('submit', (e)=>{e.preventDefault();})
 
     return (
         <footer>
@@ -20,11 +44,11 @@ const Footer = () => {
                 </div>
                     <form>
                         <h3>Suscríbete a nuestro boletín</h3>
-                        <input type='email' placeholder='Escribe tu email' required className='newsletter-email' maxLenght='320'></input>
-                        <button type='submit' className='newsletter-button'>Enviar</button>
+                        <input type='email' placeholder='Escribe tu email' className='newsletter-email' maxLenght={320} value={email} onChange={(e) => handleEmailChange(e)} required='required'></input>
+                        <button type='submit' className='newsletter-button' onClick={() => handleSubmit()}>Enviar</button>
                         <label>
-                            <input type='checkbox' className='newsletter-checkbox'></input>
-                            Acepto la política de privacidad
+                            <input type='checkbox' className='newsletter-checkbox' checked={isChecked} onChange={checkHandler} required='required'></input>
+                            Acepto la <a href=''>política de privacidad</a>
                         </label>
                     </form>
                 </div>
