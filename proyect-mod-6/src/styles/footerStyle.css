@@ -127,6 +127,10 @@ footer {
         .address {
             color: var(--secondary-text-color);
         }
+
+        .info-menu li, .policies li {
+            cursor: pointer;
+        }
         
         .social-media {
     

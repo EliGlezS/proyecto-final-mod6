@@ -1,4 +1,4 @@
-import '../styles/contactComponent.css'
+import '../styles/contact.css'
 import { useState } from 'react';
 
 const ContactComponent = () => {
@@ -35,7 +35,7 @@ const ContactComponent = () => {
                     <label className="form-label" htmlFor="name">
                     Nombre
                     </label>
-                    <input className="form-input" type="text" id="name" name="name" value={name} onChange={(e) => handleNameChange(e)} autoFocus maxLenght="300"/>
+                    <input className="form-input" type="text" id="name" name="name" value={name} onChange={(e) => handleNameChange(e)} autoFocus maxLenght="300" required/>
                 </div>
                 <div className="form-field">
                     <label className="form-label" htmlFor="email" maxLenght="320">
@@ -47,7 +47,7 @@ const ContactComponent = () => {
                     <label className="form-label" htmlFor="message">
                     Mensaje
                     </label>
-                    <textarea className="form-textarea" id="message" name="message" value={message} onChange={(e) => handleMessageChange(e)} maxLenght="1024"/>
+                    <textarea className="form-textarea" id="message" name="message" value={message} onChange={(e) => handleMessageChange(e)} maxLenght="1024" required/>
                 </div>
                 <div className="form-button-container">
                     <button className="form-button" id="form-button" type="submit" onClick={() => handleClick()}>

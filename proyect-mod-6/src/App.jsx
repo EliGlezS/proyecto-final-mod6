@@ -1,6 +1,6 @@
 import './App.css'
 import Footer from './components/FooterComponent'
-import ContactComponent from './components/ContactComponent'
+import Contact from './pages/Contact'
 import { Routes,Route } from 'react-router-dom'
 
 function App() {
@@ -8,10 +8,9 @@ function App() {
   return (
 
       <>
-        <ContactComponent/>
         <Footer/>
         <Routes>
-          <Route path="/contact" element={<ContactComponent/>}/>
+          <Route path="/contact" element={<Contact/>}/>
         </Routes>
       </>
   )

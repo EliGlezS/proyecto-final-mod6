@@ -52,7 +52,7 @@ const Footer = () => {
                 <nav className='info-menu'>
                     <ul>
                         <li>Quiénes somos</li>
-                        <li>Contacto
+                        <li>
                             <Link to="/contact">Contacto</Link>
                         </li>
                         <li>Condiciones de venta</li>
