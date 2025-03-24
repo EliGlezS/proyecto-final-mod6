@@ -1,10 +1,11 @@
 import { useContext, useState,useEffect } from "react";
 import { UserContext } from "../context/UserContext";
+import defaultImage from "../img/IMGusuario.png"
 const UserListComponent = ()=>{
   const {isLoggedIn,authUser, updatedUser,logoutUser}=useContext(UserContext);
   const[editField, setEditField] = useState(null);
   const [formulario,setFormulario]=useState (authUser||{});
-  const [photo, setPhoto]= useState(authUser.foto ||null);
+  const [photo, setPhoto]= useState(authUser?.foto ||null);
   const [error,setError] = useState({});
   //
   useEffect(()=>{
@@ -77,15 +78,14 @@ const validateForm=()=>{
   if (/[\d]/.test(formulario.nombre) || /[\d]/.test(formulario.apellidos)) {
     newError.nombre = "El nombre y los apellidos no pueden contener números.";
   }
+  //validacion para el numero de la casa
+  if (!/^(?:[1-9][0-9]{0,2}|1000)$/.test(formulario.numero)) {
+    newError.numero = "El número de la casa debe estar entre 1 y 1000.";
+  }
 
   // Validación de Código Postal
   if (!/^\d{5}$/.test(formulario.codigoPostal)) {
     newError.codigoPostal = "El código postal debe tener exactamente 5 dígitos.";
-  }
-
-  // Validación de DNI
-  if (!/^\d{8}[A-Za-z]$/.test(formulario.dni)) {
-    newError.dni = "El DNI debe tener 8 números seguidos de una letra.";
   }
 
   // Validación de Número de Tarjeta
@@ -94,8 +94,8 @@ const validateForm=()=>{
   }
 
   // Validación de Caducidad
-  if (!/^\d{2}\/\d{2}$/.test(formulario.caducidad)) {
-    newError.caducidad = "La caducidad debe tener el formato MM/AA.";
+  if (!/^(0[1-9]|1[0-2])\/(2[5-9]|3[0-9])$/.test(formulario.caducidad)) {
+    newError.caducidad = "La caducidad debe tener el formato MM/AA, con el mes entre 01 y 12 y el año entre 25 y 39.";
   }
 
   // Validación de Contraseña
@@ -115,25 +115,44 @@ const validateForm=()=>{
           <form className="form-perfil" >
             <h2>Tu perfil</h2>
             <div>
-              <h3>Nombre</h3>
-              {editField ==="nombre" ?(
-        <div><input type="text"
-        name="nombre"
-        value={formulario.nombre || ""}
-        onChange={handleChange} /> 
-        <button onClick={()=>handleSave("nombre")}>Guardar</button>
-        <button onClick={handleCancel}>Cancelar</button>
-        {error.nombre && <span style={{color:"red"}}>{error.nombre} </span>}
-        </div>
-
-                
-              ):(
-                <div>
-                  <span>{authUser.nombre}</span>
-                  <button onClick={()=>setEditField("nombre")}>Editar</button>
-                </div>
-              )}
+          <h3>Foto de perfil:</h3>
+          {editField === "foto" ? (
+            <div>
+              <input type="file" 
+              name="foto"
+              accept="image/*"
+              onChange={handleFileChange} />
+              <button type="button" onClick={() => handleSave("foto")}>Guardar</button>
+              <button type="button"  onClick={handleCancel}>Cancelar</button>
+              {error.foto && <span style={{ color: "red" }}>{error.foto}</span>}
             </div>
+          ) : (
+            <div>
+                <img src={photo|| authUser?.foto || defaultImage} alt="Foto de perfil" />
+              <button type="button" onClick={() => setEditField("foto")}>Editar</button>
+            </div>
+          )}
+        </div>
+            <div>
+<h3>Nombre</h3>
+{editField ==="nombre" ?(
+<div><input type="text"
+name="nombre"
+value={formulario.nombre || ""}
+onChange={handleChange} /> 
+<button onClick={()=>handleSave("nombre")}>Guardar</button>
+<button onClick={handleCancel}>Cancelar</button>
+{error.nombre && <span style={{color:"red"}}>{error.nombre} </span>}
+</div>
+
+  
+):(
+  <div>
+    <span>{authUser.nombre}</span>
+    <button onClick={()=>setEditField("nombre")}>Editar</button>
+  </div>
+)}
+</div>
 
             <div>
 <h3>Apellidos</h3>
@@ -222,7 +241,7 @@ onChange={handleChange} />
 <div>
 <h3>Número</h3>
 {editField ==="numero" ?(
-<div><input type="text"
+<div><input type="number"
 name="numero"
 value={formulario.numero || ""}
 onChange={handleChange} /> 
@@ -257,28 +276,6 @@ onChange={handleChange} />
   <div>
     <span>{authUser.codigoPostal}</span>
     <button onClick={()=>setEditField("codigoPostal")}>Editar</button>
-  </div>
-)}
-</div>
-
-<div>
-<h3>DNI</h3>
-{editField ==="dni" ?(
-<div><input type="text"
-name="dni"
-value={formulario.dni || ""}
-onChange={handleChange} /> 
-
-<button onClick={()=>handleSave("dni")}>Guardar</button>
-<button onClick={handleCancel}>Cancelar</button>
-{error.dni && <span style={{color:"red"}}>{error.dni} </span>}
-</div>
-
-  
-):(
-  <div>
-    <span>{authUser.dni}</span>
-    <button onClick={()=>setEditField("dni")}>Editar</button>
   </div>
 )}
 </div>
@@ -339,31 +336,12 @@ onChange={handleChange} />
   
 ):(
   <div>
-    <span>{authUser.password}</span>
+    <span>************</span>
     <button onClick={()=>setEditField("password")}>Editar</button>
   </div>
 )}
 </div>
-<div>
-          <h3>Foto de perfil:</h3>
-          {editField === "foto" ? (
-            <div>
-              <input type="file" onChange={handleFileChange} />
-              <button onClick={() => handleSave("foto")}>Guardar</button>
-              <button onClick={handleCancel}>Cancelar</button>
-              {error.foto && <span style={{ color: "red" }}>{error.foto}</span>}
-            </div>
-          ) : (
-            <div>
-              {photo ? (
-                <img src={photo} alt="Foto de perfil" style={{ width: "100px", height: "100px" }} />
-              ) : (
-                <span>Foto de perfil</span>
-              )}
-              <button onClick={() => setEditField("foto")}>Editar</button>
-            </div>
-          )}
-        </div>
+
             <div>
               <button onClick={logoutUser}>Cerrar sesion</button>
             </div>

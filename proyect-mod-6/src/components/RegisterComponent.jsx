@@ -12,7 +12,6 @@ const RegisterComponent = ()=>{
             calle:"",
             numero:"",
             codigoPostal:"",
-            dni:"",
             numeroTarjeta:"",
             caducidad:"",
             titularTarjeta:"",
@@ -21,8 +20,8 @@ const RegisterComponent = ()=>{
     
         });
 
-    const[error,setError]=useState("");
-
+    const[error,setError]=useState({});
+//FUNCION PARA MANEJAR EL ENVIO DEL FORMULARIO
     const handleSubmit = (e)=>{
       e.preventDefault();
       if(validateForm()){
@@ -35,13 +34,17 @@ const RegisterComponent = ()=>{
         navigate("/login")
       }
     }
+    //FUNCION PARA VALIDAR EL FORMULARIO
     const validateForm =()=>{
       const newError ={};
 
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formulario.email)) {
         newError.email = "El correo electrónico no es válido.";
       }
-  
+    //validacion para el numero de la casa
+    if (!/^(?:[1-9][0-9]{0,2}|1000)$/.test(formulario.numero)) {
+      newError.numero = "El número de la casa debe estar entre 1 y 1000.";
+    }
       // Validación de Localidad
       if (/[\d]/.test(formulario.localidad)) {
         newError.localidad = "La localidad no puede contener números.";
@@ -57,19 +60,15 @@ const RegisterComponent = ()=>{
         newError.codigoPostal = "El código postal debe tener exactamente 5 dígitos.";
       }
   
-      // Validación de DNI
-      if (!/^\d{8}[A-Za-z]$/.test(formulario.dni)) {
-        newError.dni = "El DNI debe tener 8 números seguidos de una letra.";
-      }
-  
       // Validación de Número de Tarjeta
       if (!/^\d{16}$/.test(formulario.numeroTarjeta)) {
         newError.numeroTarjeta = "El número de tarjeta debe tener exactamente 16 dígitos.";
       }
   
       // Validación de Caducidad
-      if (!/^\d{2}\/\d{2}$/.test(formulario.caducidad)) {
-        newError.caducidad = "La caducidad debe tener el formato MM/AA.";
+    
+      if (!/^(0[1-9]|1[0-2])\/(2[5-9]|3[0-9])$/.test(formulario.caducidad)) {
+        newError.caducidad = "La caducidad debe tener el formato MM/AA, con el mes entre 01 y 12 y el año entre 25 y 39.";
       }
   
       // Validación de Contraseña
@@ -81,12 +80,14 @@ const RegisterComponent = ()=>{
          return Object.keys(newError).length ===0;
 } 
 
+//FUNCION QUE MANEJA LOS CAMBIOS 
 const handleChange =(e)=>{
   const {name,value}=e.target;
   setFormulario((prevFormulario)=>({
     ...prevFormulario,[name]:value,
   }));
 };
+//ESTA FUNCION ES SOLO PARA LA FOTO
 const handleFileChange =(e)=>{
   const file = e.target.files[0];
   setFormulario((prevFormulario)=>({
@@ -143,7 +144,7 @@ return(
                     </div>
                     <div>
                         <label>Número</label>
-                        <input type="text"
+                        <input type="number"
                         name ="numero"
                         value={formulario.numero}
                         onChange={handleChange}
@@ -168,15 +169,7 @@ return(
                         required />
 
                     </div>
-                    <div>
-                        <label>DNI</label>
-                        <input type="text"
-                        name ="dni"
-                        value={formulario.dni}
-                        onChange={handleChange}
-                        required />
-
-                    </div>
+                
                     <div>
                         <label>Número de tarjeta</label>
                         <input type="text"
@@ -227,4 +220,3 @@ return(
 );
 };
 export default RegisterComponent;
-//OK comprobado si no funciona darle para atras a las valaidaciones 2 vece

@@ -43,11 +43,11 @@ const LoginComponent = ()=>{
                 </div>
                 <button type="submit">Iniciar sesión</button>
             </form>
-           {error &&(
+           
             <div>
                 <p>¿No tienes cuenta aun?<button onClick={()=>navigate("/register")}>Crear cuenta</button></p>
             </div>
-           )}
+           
             
         </div>
       )
