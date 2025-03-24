@@ -4,7 +4,7 @@ import Bluesky from '../img/iconos-RRSS/ico-bluesky-negro.svg'
 import Facebook from '../img/iconos-RRSS/ico-facebook-negro.svg'
 import Instagram from'../img/iconos-RRSS/ico-instagram-negro.svg'
 import LogoFooter from '../img/logos/LuzDeTinta-letras-negro.svg'
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Footer = () => {
@@ -20,7 +20,7 @@ const Footer = () => {
                 </div>
                     <form>
                         <h3>Suscríbete a nuestro boletín</h3>
-                        <input type='email' placeholder='Escribe tu email' required className='newsletter-email'></input>
+                        <input type='email' placeholder='Escribe tu email' required className='newsletter-email' maxLenght='320'></input>
                         <button type='submit' className='newsletter-button'>Enviar</button>
                         <label>
                             <input type='checkbox' className='newsletter-checkbox'></input>
@@ -53,7 +53,7 @@ const Footer = () => {
                     <ul>
                         <li>Quiénes somos</li>
                         <li>Contacto
-                            {/* <Link to="/contact">Contacto</Link> */}
+                            <Link to="/contact">Contacto</Link>
                         </li>
                         <li>Condiciones de venta</li>
                 </ul>

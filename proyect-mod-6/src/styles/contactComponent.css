@@ -7,6 +7,7 @@
     font-family: var(--font-primary);
     font-size: 1rem;
     line-height: 1.5rem;
+    min-width: fit-content;
     
     .contact-form {
         background-color: var(--disabled-button-color);
@@ -16,6 +17,7 @@
         border-radius: 20px;
         row-gap: 1.5rem;
         box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
+        min-width: fit-content;
         
         h1 {
             font-family: var(--font-secondary);
@@ -74,9 +76,13 @@
             }
         }
     }
+
+    .message {
+        display: none;
+    }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
 
     .contact {
         .contact-form {
@@ -85,6 +91,22 @@
 
             .form-field, .form-button-container{
                 width: 60%;
+                min-width: fit-content;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024) {
+
+    .contact {
+        .contact-form {
+            width: 50%;
+            align-items: center;
+
+
+            .form-field, .form-button-container{
+                width: 100%;
                 min-width: fit-content;
             }
         }

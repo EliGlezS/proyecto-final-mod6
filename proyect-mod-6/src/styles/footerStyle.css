@@ -12,6 +12,7 @@ footer {
     background: linear-gradient(to bottom, var(--disabled-button-color), 2%, white);
     box-shadow: rgba(0, 0, 0, 0.30) 0px -5px 15px 0px;
     font-family: var(--font-primary);
+    min-width: fit-content;
 
     .newsletter {
         width: 100%;
@@ -19,6 +20,7 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        min-width: fit-content;
     
         .newsletter-container {
             display: flex;
@@ -111,6 +113,7 @@ footer {
         width: 100%;
         display: flex;
         flex-direction: column;
+        min-width: fit-content;
 
         .footer-logo-container {
             padding: 2.4rem 0 0.8rem 1.2rem;
@@ -152,7 +155,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     footer {
         display: grid;
         grid-template-areas: 
@@ -173,6 +176,59 @@ footer {
                 form {
                     gap: 2.4rem;
                     width: 25rem;
+                }
+            }
+        }
+
+        .footer-info {
+            grid-area: "info";
+            grid-column-start: 1;
+            grid-row-start: 1;
+            padding-left: 3rem;
+            padding-top: 2rem;
+
+            .social-media {
+                display: flex;
+                align-self: flex-start;
+
+                ul {
+                    padding-left: 0;
+                }
+            }
+        }
+
+        .copyright-container {
+            grid-area: "copyright";
+            grid-row-start: 2;
+            grid-column: span 2 / span 2;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024) {
+    
+    footer {
+        display: grid;
+        grid-template-areas: 
+        "info newsletter"
+        "copyright copyright";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 90% 10%;
+
+        .newsletter {
+            grid-area: "newsletter";
+            grid-column-start: 2;
+            grid-row-start: 1;
+
+            .newsletter-container {
+                padding: 4rem;
+                width: fit-content;
+                background-color: pink;
+                
+                form {
+                    gap: 2.4rem;
+                    width: 25rem;
+                    background-color: red;
                 }
             }
         }
