@@ -1,0 +1,31 @@
+.to-top-button {
+    position: relative;
+  
+    .icon-position {
+      position: fixed;
+      bottom: 40px;
+      right: 25px;
+      z-index: 20;
+    }
+
+    .icon-style {
+      background-color: var(--primary-color-button-active);
+      border: none;
+      border-radius: 50%;
+      height: 48px;
+      width: 48px;
+      color: #fff;
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
+      transition: all .2s ease-in-out;
+    }
+
+    .icon-style:hover {
+      background: var(--hover-button-color-primary);
+      color: var(--support-color);
+    }
+
+    .icon-style:active {
+        background: var(--pressed-button-color-primary);
+    }
+}
