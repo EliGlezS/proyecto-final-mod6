@@ -6,7 +6,7 @@ footer {
     width: 100%;
     height: fit-content;
     margin-bottom: 0;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     bottom: 0;
     border-top: 2px solid var(--secondary-color);
     background: linear-gradient(to bottom, var(--disabled-button-color), 2%, white);
@@ -46,12 +46,15 @@ footer {
                 flex-direction: column;
                 width: 100%;
                 align-items: center;
-                gap: 1rem;
+                gap: 1.6rem;
                 z-index: 3;
+                padding: 0.4rem 0;
+                max-width: 30rem;
                 
                 h3 {
                     font-family: var(--font-secondary);
                     font-size: 1.75rem;
+                    padding-bottom: 0.2rem;
                 }
     
                 .newsletter-email, .newsletter-button {
@@ -93,9 +96,13 @@ footer {
                 a {
                     color: var(--secondary-color);
                 }
+
+                label {
+                    padding: 0.6rem 0;
+                }
     
                 .newsletter-checkbox {
-                    margin: 0 0.4rem;
+                    margin: 0.4rem;
                     width: 1rem;
                 }
             }
@@ -163,7 +170,8 @@ footer {
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    
     footer {
         display: grid;
         grid-template-areas: 
@@ -178,12 +186,10 @@ footer {
             grid-row-start: 1;
 
             .newsletter-container {
-                padding: 4rem;
-                width: fit-content;
-
+                
                 form {
                     gap: 2.4rem;
-                    width: 25rem;
+                    max-width: 30rem;
                 }
             }
         }
@@ -213,8 +219,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024) {
-    
+@media screen and (min-width: 1024px) {
     footer {
         display: grid;
         grid-template-areas: 
@@ -229,12 +234,10 @@ footer {
             grid-row-start: 1;
 
             .newsletter-container {
-                padding: 4rem;
-                width: fit-content;
-                
+
                 form {
                     gap: 2.4rem;
-                    width: 25rem;
+                    max-width: 30rem;
                 }
             }
         }
