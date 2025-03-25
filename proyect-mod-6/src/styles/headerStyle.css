@@ -12,7 +12,8 @@ header {
     margin-bottom: 2rem;
     border-bottom: 2px solid var(--secondary-color);
     background: linear-gradient(to top, var(--disabled-button-color), 2%, white);
-    box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
+    box-shadow: rgba(0, 0, 0, 0.30) 0px 2px 5px 0px;
+    min-width: fit-content;
 
     
     .login-container {
@@ -38,14 +39,9 @@ header {
         }
 
         .login-container:hover {
-            /* color: #FBEEC4;
-            background-color: #99D0DC; */
             height: fit-content;
             width: fit-content;
             transform: scale(105%);
-            /* border-radius: 50%;
-            border: solid 3px #99D0DC; */
-            /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
         }
     }
         
@@ -111,16 +107,9 @@ header {
         }
 
         .cart-container:hover {
-            /* background-color: var(--disabled-button-color);
-            color: var(--secondary-color); */
             background-color: white;
             border-radius: 10px;
             transform: scale(105%);
-            /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
-
-            /* span {
-                background-color: var(--hover-button-color-primary);
-            } */
         }
     }
     
@@ -168,7 +157,6 @@ header {
                 text-align: center;
                 font-family: var(--font-secondary);
                 font-size: 1.5rem;
-                /* color: #0F0200; */
     
                 li {
                     padding: 1.8rem 0;
@@ -207,7 +195,6 @@ header {
 
             li {
                 padding: 0.4rem;
-                /* border-radius: 10px; */
             }
         }
         
@@ -228,8 +215,6 @@ header {
         }
 
         li:hover {
-            /* background-color: var(--disabled-button-color); */
-            /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
             transform: scale(105%);
 
             a::after {
@@ -245,7 +230,7 @@ header {
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024) {
     header {
         grid-template-areas: 
         "logo nav login cart";
@@ -256,5 +241,14 @@ header {
     }
 }
 
-
+@media screen and (min-width: 1024px) {
+    header {
+        grid-template-areas: 
+        "logo nav login cart";
+        grid-template-columns: 25% 50% 10% 15%;
+        grid-template-rows: 1fr;
+        align-items: center;
+        justify-content: center;
+    }
+}
 

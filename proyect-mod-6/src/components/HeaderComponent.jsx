@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useMediaQuery} from "../customHook/useMediaQuery"
+import { useContext } from "react";
+import { ProductsCartContext } from "../context/ProductsCartContext";
 import SvgLogo from "../img/logos/LuzDeTinta-completo-v5.svg";
 import "../styles/headerStyle.css";
 
@@ -12,8 +14,8 @@ const Header = () => {
     
     const toggleShowNav = () => {
         setShowNav(!showNav);
-    }
-    
+    } 
+
     return (
         <header>
             <div className="login-container">
@@ -40,7 +42,7 @@ const Header = () => {
                         </svg>
                     </div>
                 </NavLink>
-                <span className="cart-number">0</span>
+                <span className="cart-number">{0}</span>
             </div>
             <div className="burger-container">
                 <button className='icon-container' id='burger' onClick={toggleShowNav}>
