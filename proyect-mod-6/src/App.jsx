@@ -3,21 +3,23 @@ import { Routes,Route } from 'react-router-dom'
 
 //importaciones proveedores
 import { BooksProvider } from './context/BooksContext'
-import { UsuarioProvider } from './context/UserContext';
+import { UsuarioProvider } from './context/UserContext'
+import { ProductsCartProvider } from './context/ProductsCartContext'
+import { ModalProvider } from './context/ModalContextCart'
 
 //importaciones pages
 import Home from './pages/Home'
 import Recommended from './pages/Recommended'
 import BooksDetailsPage from './pages/BooksDetailsPage'
 import Header from './components/HeaderComponent'
+import ShoppingCart from './pages/ShoppingCart'
 
 //importaciones components
 import UserListComponent from './components/UserListComponent';
 import RegisterComponent from './components/RegisterComponent';
 import LoginComponent from './components/LoginComponent';
 
-/*TODO Colocar css index en lugar adecuado */
-import './index.css'
+//Estilado del App
 import './App.css'
 
 
@@ -27,19 +29,24 @@ function App() {
   
 
   return (
+    <ModalProvider>
     <BooksProvider>
-      <UsuarioProvider>
-        <Header/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/books/:id' element={<BooksDetailsPage/>}/>
-          <Route path='/recommended' element={<Recommended/>}/>
-          <Route path="/perfil" element={<UserListComponent/>}/>
-          <Route path="/register" element={<RegisterComponent/>}/>
-          <Route path="/login" element={<LoginComponent/>}/>
-        </Routes>
-      </UsuarioProvider>
+      <ProductsCartProvider>
+        <UsuarioProvider>
+          <Header/>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/books/:id' element={<BooksDetailsPage/>}/>
+            <Route path='/cart' element={<ShoppingCart/>}/>
+            <Route path='/recommended' element={<Recommended/>}/>
+            <Route path="/perfil" element={<UserListComponent/>}/>
+            <Route path="/register" element={<RegisterComponent/>}/>
+            <Route path="/login" element={<LoginComponent/>}/>
+          </Routes>
+        </UsuarioProvider>
+      </ProductsCartProvider>
     </BooksProvider>
+    </ModalProvider>
   )
 }
 
