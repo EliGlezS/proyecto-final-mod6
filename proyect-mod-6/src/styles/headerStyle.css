@@ -1,0 +1,260 @@
+header {
+    display: grid;
+    grid-template-areas: 
+    "login logo cart"
+    "login logo burger";
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 80%, 20%;
+    align-items: end;
+    justify-items: center;
+    width: 100%;
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--secondary-color);
+    background: linear-gradient(to top, var(--disabled-button-color), 2%, white);
+    box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
+
+    
+    .login-container {
+        grid-area: "login";
+        grid-row: span 2 / span 2;
+        color: var(--secondary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 0;
+        height: 100%;
+
+        div {
+            width: 2.8rem;
+        }
+    } 
+    
+    @media screen and (min-width: 768px) {
+        
+        .login-container {
+            grid-column-start: 3;
+            grid-row-start: 1;
+        }
+
+        .login-container:hover {
+            /* color: #FBEEC4;
+            background-color: #99D0DC; */
+            height: fit-content;
+            width: fit-content;
+            transform: scale(105%);
+            /* border-radius: 50%;
+            border: solid 3px #99D0DC; */
+            /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
+        }
+    }
+        
+    .logo-container {
+        grid-area: "logo";
+        grid-column-start: 2;
+        grid-row: span 2 / span 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        
+        .image-logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 10rem;
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        
+        .logo-container {
+            grid-column-start: 1;
+            grid-row-start: 1;
+        }
+    }
+
+    .cart-container {
+        grid-area: "cart";
+        grid-column-start: 3;
+        grid-row-start: 1;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        color: var(--secondary-text-color);
+        margin-left: 1rem;
+        padding-bottom: 2.2rem;
+        flex-grow: 0;
+    
+        div{
+            width: 2rem;
+        }
+    
+        span {
+            background-color: var(--secondary-color);
+            width: 1.3rem;
+            height: 1.3rem;
+            border-radius: 50%;
+            text-align: center;
+            align-items: center;
+            justify-items: center;
+            color: white;
+            font-family: var(--font-primary);
+        }
+    }
+    
+    @media screen and (min-width: 769px) {
+    
+        .cart-container {
+            grid-column-start: 4;
+            grid-row-start: 1;
+            padding: 0.4rem;
+        }
+
+        .cart-container:hover {
+            /* background-color: var(--disabled-button-color);
+            color: var(--secondary-color); */
+            background-color: white;
+            border-radius: 10px;
+            transform: scale(105%);
+            /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
+
+            /* span {
+                background-color: var(--hover-button-color-primary);
+            } */
+        }
+    }
+    
+    .burger-container {
+        grid-area: burger;
+        grid-column: span 2 / span 2;
+        grid-column-start: 3;         
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+    
+        #burger {
+            background-color: transparent;
+            border: 2px solid var(--secondary-color);
+            border-radius: 5px;
+            cursor: pointer;
+            color: var(--secondary-text-color);
+            width: 2.4rem;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .burger-container {
+            display: none;
+            position: absolute;
+        }
+    }
+
+    .header-nav {
+            position: absolute;
+            right: 0;
+            top: 10.2rem;
+            background-color: rgba(224, 217, 208, 0.75);
+            width: 0;
+            height: calc(100vh - 60px);
+            transition: all 0.3s ease-in;
+            overflow: hidden;
+    
+            ul {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                font-family: var(--font-secondary);
+                font-size: 1.5rem;
+                /* color: #0F0200; */
+    
+                li {
+                    padding: 1.8rem 0;
+                    height: 100%;
+                    margin: 0;
+                }
+
+                .second-li {
+                    background-color: rgb(255, 255, 255, 0.75);
+                }
+            }
+    }
+    
+    .header-nav.active {
+        width: 100%;
+    }
+    
+    .header-nav-desktop {
+        grid-area: "nav";
+        grid-column-start: 2;
+        grid-row-start: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+        top: 0;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            font-size: 1.75rem;
+            text-align: center;
+            font-family: 'Playfair', 'Times New Roman', Times, serif;
+            gap: 1.75rem;    
+
+            li {
+                padding: 0.4rem;
+                /* border-radius: 10px; */
+            }
+        }
+        
+        a.active {
+            color: var(--secondary-text-color);
+            font-weight: 500;
+            position: relative;
+        }
+        
+        a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        li:hover {
+            /* background-color: var(--disabled-button-color); */
+            /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
+            transform: scale(105%);
+
+            a::after {
+                background-color: var(--hover-button-color-primary);
+            }
+        }
+    }
+
+    .icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    header {
+        grid-template-areas: 
+        "logo nav login cart";
+        grid-template-columns: 25% 50% 10% 15%;
+        grid-template-rows: 1fr;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+

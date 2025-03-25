@@ -1,0 +1,597 @@
+
+/*Estilos para Mobile First */
+
+.section-book-details {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 252px;
+    height: 100%;
+    padding: 60px;
+    
+    .title-book-details {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-family: var(--font-secondary);
+        font-size: var(--size-h1-smaller);
+        color: var(--primary-text-color);
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+        min-width: 250px;
+        margin-bottom: 20px; 
+        cursor: default;
+    }
+
+    .book-container {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%; /*Revisar cuando se ponga el header (vh) y footer : revisar contenedor de card en home */
+        margin-top: 20px;
+        gap: 30px;
+        margin-bottom: 15px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        min-width: 250px;
+
+        .book-card {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 260px; 
+            height: auto;/*Revisar*/
+            border: 1px solid var(--secondary-text-color);
+            border-radius: 0.5em;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            font-family: var(--font-primary);
+            
+
+            .container-img { 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 380px; /*REVISAR SI LO QUIERO MAS GRANDE O PEQUEÑO*/
+
+                .book-img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .card-info {
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+                width: 100%;
+                height: 100%;  
+                overflow: hidden;
+                color: var( --primary-text-color);
+
+                .book-information{
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    margin-bottom: 30px;
+
+                    h3 {
+                        font-family: var(--font-secondary);
+                        font-size: var(--size-h3);
+                        font-weight: 900; /*PREGUNTAR SI TITULOS CON BOLD */
+                        text-align: center;
+                        margin-top: 10px;
+                        color: var(--primary-text-color);
+                    }
+
+                    .container-author-genre-date{
+                        box-sizing: border-box;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
+                        margin-top: 20px;
+                        margin-bottom: 10px;
+                        
+                        p{
+                            text-align: center;
+                            font-size: var(--size-p);
+                            font-family: var(--font-primary);
+                            color: var(--primary-text-color);
+                        }
+                        .container-genre-date{
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-around;
+                            width: 100%;
+                            margin-top: 15px;
+                           
+                        }
+                        .container-genre-date p{
+                            font-size: var(--size-p);
+                        }
+                    }
+
+                    .book-price {
+                        font-size: var(--size-p);
+                        font-weight: 500;
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        
+                    }
+
+                    .container-synopsis{
+                        text-align: justify;
+                        width: 100%;
+                        height: auto;
+                        margin-top: 5px;
+                        margin-bottom: 10px;
+                    }
+
+                    .container-synopsis h4{
+                        color: var(--secondary-text-color);
+                        margin-bottom: 5px;
+                    }
+
+                    .container-synopsis p{
+                        padding: 10px;
+                    }
+
+                    .container-reviews{
+                        text-align: justify;
+                        width: 100%;
+                        height: auto;
+
+                        .reviews{
+                            width: 100%;
+                            height: auto;
+                            h4{
+                                color: var(--secondary-text-color);
+                                margin-bottom: 5px; 
+                            }
+                            ul{
+                                width: 100%;
+                                height: auto;
+                                li{
+                                    padding: 10px;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .container-buttons-details {
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    width: 100%; 
+                    height: auto;
+                    text-align: center;
+                    gap: 20px;
+
+                    .button-addCart{
+                        width: 140px;
+                        height: 50px;
+                        border: 1px solid var(--primary-color-button-active);
+                        border-radius: 2rem;
+                        background-color: var(--primary-color-button-active);
+                        color:var(--text-white);
+                        font-weight: bold;
+                        box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
+                    }
+                    .button-addCart:hover{
+                        border: 1px solid var( --pressed-button-color-primary);
+                        border-radius: 2rem;
+                        background-color: var( --pressed-button-color-primary);
+                        color:var(--support-color);
+                    }
+
+                    .button-disable{
+                        border: 1px solid var(--primary-color-button-active);
+                        border-radius: 2rem;
+                        color: rgb(122, 114, 114);
+                        background-color: var(--disabled-button-color);
+                        width: 145px;
+                        height: 50px;
+                    }
+
+                    .back-home-from-details{
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+
+                        a {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 130px; 
+                            height: 50px;
+                            border: 1px solid var(--primary-color-button-active);
+                            border-radius: 2rem;
+                            background-color: var(--primary-color-button-active);
+                            color:var(--text-white);
+                            font-weight: bold;
+                            box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
+                        }
+                    } 
+                }
+            }
+        }
+    }
+    .modal-addCart{
+        box-sizing: border-box;
+        display: none; /* El modal estará oculto por defecto */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--hover-button-color-primary);
+        color: var(--primary-text-color);
+        border-radius: 10px;
+        padding: 20px;
+        z-index: 1000;
+        text-align: center;
+        width: 80%;  /* Para que sea un 80% del ancho de la pantalla */
+        max-width: 400px; /* Limitar su ancho a 400px en pantallas más grandes */
+        
+
+        /*Estilos para el botón de cierre*/
+        .modal-close-button{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: var(--size-h3);
+            color: white;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+            z-index: 1010; /*Botón encima del contenido*/
+        }
+
+        p{
+            font-family: var(--font-secondary);
+            font-size: var(--size-modal-mobile);
+            margin: 0;
+            text-align: center; /* Aseguramos que el texto esté centrado */
+            padding-top: 20px; /* Un poco de espacio arriba */
+        }
+
+         /* Mostrar el modal cuando la clase 'show' esté presente */
+        &.show {
+            display: block;
+        }
+    }
+}
+
+
+/*Para resolver problemas de alineacion de samsung Galaxy */
+/* @media (width: 360px) {
+    .section-book-details {
+        margin-left: 22px;
+    }
+} */
+
+/*Para resolver problemas de alineacion de iPhone SE */
+/* @media (width: 375px) {
+    .section-book-details {
+        margin-left: 15px;
+    }
+} */
+
+
+/* Tablets */
+@media (min-width: 768px)  {
+
+    .section-book-details {
+        width: 100%;
+        
+        .title-book-details {
+            font-size: var(--size-h1);
+            margin-bottom: 20px;
+        }
+    
+        .book-container {
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%; /*Revisar cuando se ponga el header (vh) y footer : revisar contenedor de card en home */
+            gap: 50px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            min-width: 250px;
+            margin-bottom: 500px; /*Revisar cuando este el footer*/
+           
+    
+            .book-card {
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%; 
+                height: 100%; 
+                margin: 0px;
+                padding: 10px;
+                border: 1px solid var(--hover-button-color-primary);
+                
+    
+                .container-img { 
+                    width: 690px;           
+                    height: 550px;  
+                    margin-right: 10px;        
+                    object-fit: cover; 
+    
+                    .book-img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+    
+                .card-info {
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 10px;
+                    width: 80%;
+                    height: 100%;  
+                    overflow: hidden;
+                    color: var( --primary-text-color);
+    
+                    .book-information{
+                        box-sizing: border-box;
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+                        margin-bottom: 30px;
+    
+                        h3 {
+                           font-size: var(--size-h3);
+                           font-family: var(--font-secondary);
+                        }
+    
+                        .container-author-genre-date{
+                            
+                            p{
+                               font-size: var(--size-p); 
+                            }
+    
+                        }
+    
+                        .container-reviews{
+                            .reviews ul{
+                                li{
+                                    padding: 5px;
+                                }
+ 
+                            }
+                        }
+    
+                    }
+    
+                    .container-buttons-details {
+                       flex-wrap: wrap;
+                       width: 100%;
+                       height: auto;
+                       margin-top: 0;
+                       margin-bottom: 0;
+                       
+                        .button-addCart{
+                            width: 51%;
+                        }
+                        .button-addCart:hover{
+                            border: 1px solid var(--pressed-button-color-primary);
+                            border-radius: 2rem;
+                            background-color: var( --pressed-button-color-primary);
+                            color:var(--support-color);
+                        }
+    
+                        .button-disable{
+                          width: 50%;
+                        }
+    
+                        .back-home-from-details{
+                            width: 40%;
+                        } 
+                    }
+                }
+            }
+        }
+        .modal-addCart{
+            width: 60%;  /* El modal ocupará el 60% del ancho */
+            padding: 25px;
+
+            p {
+                font-size: var(--size-h3);
+            }
+
+            .modal-close-button {
+                font-size: 1.7rem;
+            }
+        }
+        
+    }
+}
+
+
+/* Pantalla de ordenador  */
+@media (min-width: 1024px) {
+
+    .section-book-details {
+        width: 100%;
+        height: 100%;
+        
+        .title-book-details {
+            font-size: var(--size-h1);
+            margin-top: 80px;
+            margin-bottom: 40px;
+        }
+    
+        .book-container {
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 1000px;
+            height: 100%; /*Revisar cuando se ponga el header (vh) y footer : revisar contenedor de card en home */
+            cursor: default;
+            padding: 50px;
+           
+    
+            .book-card {
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: row;
+                width: 100%; 
+                height: 100%; 
+                margin: 0px;
+                padding: 10px;
+                border: 1px solid var(--hover-button-color-primary);
+                
+    
+                .container-img { 
+                    width: 690px;           
+                    height: 600px;  
+                    margin-right: 10px;        
+                    object-fit: cover; 
+                    
+                    .book-img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 0.5rem;
+    
+                    }
+                }
+    
+                .card-info {
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 10px;
+                    width: 80%;
+                    height: 100%;  
+                    color: var( --primary-text-color);
+    
+                    .book-information{
+                        box-sizing: border-box;
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+                        margin-bottom: 30px;
+    
+                        h3 {
+                           font-size: var(--size-h3);
+                           font-family: var(--font-secondary);
+                        }
+    
+                        .container-author-genre-date{
+                            
+                            p{
+                               font-size: var(--size-p); 
+                            }
+    
+                        }
+
+                        .container-synopsis{
+                           padding-right: 20px;
+                           padding-left: 20px;
+                        }
+    
+                        .container-reviews{
+                            padding-right: 20px;
+                            padding-left: 20px;
+
+                            .reviews ul{
+                                li{
+                                    padding: 5px;
+                                }
+ 
+                            }
+                        }
+    
+                    }
+    
+                    .container-buttons-details {
+                        flex-wrap: wrap;
+                        width: 100%;
+                        height: auto;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        padding-right: 20px;
+                        padding-left: 20px;
+                       
+                        .button-addCart{
+                            width: 40%;
+                            cursor: pointer;
+                            
+                        }
+                        .button-addCart:hover{
+                            background-color: var(--hover-button-color-primary);
+                            color: var(--support-color);   
+                            border: 1px solid var(--hover-button-color-primary);  
+                        }
+                        .button-disable{
+                          width: 50%;
+                        }
+    
+                        .back-home-from-details{
+                            width: 40%;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .modal-addCart{
+            width: 30%;  /* El modal ocupará el 30% del ancho */
+            padding: 30px;
+
+            p {
+                font-family: var(--font-secondary);
+                font-size: var(--size-modal);
+            }
+
+            .modal-close-button {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
