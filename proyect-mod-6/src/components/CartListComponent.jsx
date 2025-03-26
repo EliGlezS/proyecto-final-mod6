@@ -99,7 +99,7 @@ const CartListComponent = () => {
                                 <button onClick={() => increaseProductQuantity(product)}>+</button>
                             </div>
 
-                            <button className="delete-button" onClick={() => deleteProductCart(product.id)}>Delete Product</button>
+                            <button className="delete-button" onClick={() => deleteProductCart(product.id)}>Eliminar</button>
                         </div>
 
                     </div>

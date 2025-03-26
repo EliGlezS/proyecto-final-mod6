@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-width: 252px;
+    min-width: 329px;
     height: 100%;
     padding: 60px;
     
@@ -276,8 +276,8 @@
             font-family: var(--font-secondary);
             font-size: var(--size-modal-mobile);
             margin: 0;
-            text-align: center; /* Aseguramos que el texto esté centrado */
-            padding-top: 20px; /* Un poco de espacio arriba */
+            text-align: center; 
+            padding-top: 20px; 
         }
 
          /* Mostrar el modal cuando la clase 'show' esté presente */
@@ -328,7 +328,7 @@
             padding-bottom: 20px;
             padding-top: 20px;
             min-width: 250px;
-            margin-bottom: 500px; /*Revisar cuando este el footer*/
+            margin-bottom: 100px; /*Revisar cuando este el footer*/
            
     
             .book-card {
@@ -429,18 +429,17 @@
             }
         }
         .modal-addCart{
-            width: 60%;  /* El modal ocupará el 60% del ancho */
+            width: 60%; 
             padding: 25px;
 
             p {
-                font-size: var(--size-h3);
+                font-size: var( --size-modal);
             }
 
             .modal-close-button {
                 font-size: 1.7rem;
             }
-        }
-        
+        } 
     }
 }
 
