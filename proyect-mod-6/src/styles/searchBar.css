@@ -5,21 +5,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: fit-content;
+    width: 100%;
+    min-width: 285px;
     box-sizing: border-box;
     font-family: var(--font-primary);
 
     .searchbar-form {
-        background-color: pink;
         display: flex;
         flex-direction: column;
-        padding: 0.8rem;
-        align-items: center;
         justify-content: center;
-        min-width: fit-content;
+        align-items: center;
         
         .searchbar-search {
-            color: var(--primary-color-button-active);
             display: flex;
             padding: 0.1rem;
             border: 1px solid var(--primary-color-button-active);
@@ -58,20 +55,16 @@
             }
     
             .searchbar-input:focus, .searchbar-button:focus {
-                box-shadow: 0 0 3px 0 #1183d6;
-                border-color: #1183d6;
                 outline: none;
             }
-    
         }
-    
-        label {
-            background-color: orange;
+        
+        .searchbar-label {
             display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: flex-start;
-            text-wrap: wrap;
+            background-color: orange;
+            color: var(--secondary-text-color);
+            text-align: left;
+            align-items: center; 
         }
     }
 }

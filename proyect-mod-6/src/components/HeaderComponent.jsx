@@ -10,8 +10,10 @@ import "../styles/header.css";
 const Header = () => {
 
     // Custom hook para mostrar o no el menú dentro del header
-
+    
     const isDesktop = useMediaQuery('(min-width: 768px)');
+    
+    // Toggle para mostrar el menu en mobile
     
     const [showNav, setShowNav] = useState(false);
     
@@ -20,11 +22,11 @@ const Header = () => {
     } 
 
     // Contexto para saber si está iniciada la sesión y conocer los datos del usuario
-
+    
     const { isLoggedIn, authUser } = useContext(UserContext);
 
     // Contexto para saber cuántos productos hay en el carrito
-
+    
     const { getTotalProductsInCardt } = useContext(ProductsCartContext);
 
     const totalCart = getTotalProductsInCardt();
@@ -71,6 +73,7 @@ const Header = () => {
                 </button>
             </div>
             <nav className={isDesktop ? `header-nav-desktop` : `header-nav ${showNav && "active"}`}>
+            {/* <nav className={`header-nav ${showNav && "active"}`}> */}
                 <ul>
                     <li><NavLink to="/" onClick={toggleShowNav}>Portada</NavLink></li>
                     <li className="second-li" onClick={toggleShowNav}><NavLink to="/recommended">Recomendados</NavLink></li>

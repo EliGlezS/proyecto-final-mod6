@@ -11,11 +11,11 @@ const SearchBar = () => {
             <form className='searchbar-form'>
                 <div className='searchbar-search'>
                     <input className='searchbar-input' type="search" placeholder="Encuentra tu libro..."/>
-                    <button className='searchbar-button' type="submit">Buscar</button>
+                    <button className='searchbar-button' type="submit" aria-label="Search">Buscar</button>
                 </div>
-                <label>
+                <label className='searchbar-label'>
                     <input className='searchbar-checkbox' type="checkbox"/>
-                    Mostrar solo productos en stock
+                    En stock
                 </label>
             </form>
         </div>

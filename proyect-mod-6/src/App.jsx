@@ -36,8 +36,8 @@ function App() {
       <ProductsCartProvider>
         <UsuarioProvider>
           <Header/>
-          <SearchBar/>
           <ToTopButton/>
+          <SearchBar/>
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/books/:id' element={<BooksDetailsPage/>}/>

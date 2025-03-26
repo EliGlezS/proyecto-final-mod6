@@ -3,20 +3,22 @@ header {
     grid-template-areas: 
     "login logo cart"
     "login logo burger";
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 25% 50% 25%;
     grid-template-rows: 80%, 20%;
+    column-gap: 0.4rem;
     align-items: center;
     align-content: center;
     justify-content: center;
     justify-items: center;
     width: 100%;
-    min-width: fit-content;
+    min-width: 285px;
     height: 12rem;
     box-sizing: border-box;
     padding: 1.2rem;
     margin-bottom: 2rem;
     border-bottom: 2px solid var(--secondary-color);
-    background: linear-gradient(to top, var(--disabled-button-color), 2%, white);
+    /* background: linear-gradient(to top, var(--support-color), 2%, white); */
+    /* background: linear-gradient(to top, var(--disabled-button-color), 2%, white); */
     box-shadow: rgba(0, 0, 0, 0.30) 0px 2px 5px 0px;
 
     
@@ -127,7 +129,8 @@ header {
             position: absolute;
             right: 0;
             top: 12rem;
-            background-color: rgba(224, 217, 208, 0.75);
+            /* background-color: rgba(224, 217, 208, 0.75); */
+            background-color: #fff;
             width: 0;
             height: calc(100vh - 60px);
             transition: all 0.3s ease-in;
@@ -145,6 +148,7 @@ header {
                     padding: 1.8rem 0;
                     height: 100%;
                     margin: 0;
+                    border-bottom: 1px solid var(--disabled-button-color);
                 }
 
                 .second-li {
