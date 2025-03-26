@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { ProductsCartContext } from "../context/ProductsCartContext";
 import SvgLogo from "../img/logos/LuzDeTinta-completo-v5.svg";
-import "../styles/headerStyle.css";
+import "../styles/header.css";
 
 const Header = () => {
 

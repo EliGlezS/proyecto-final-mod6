@@ -21,6 +21,7 @@ import RegisterComponent from './components/RegisterComponent';
 import LoginComponent from './components/LoginComponent';
 import Footer from './components/FooterComponent'
 import ToTopButton from './components/ToTopButtonComponent'
+import SearchBar from './components/SearchBarComponent'
 
 //Estilado del App
 import './App.css'
@@ -35,6 +36,7 @@ function App() {
       <ProductsCartProvider>
         <UsuarioProvider>
           <Header/>
+          <SearchBar/>
           <ToTopButton/>
           <Routes>
             <Route path='/' element={<Home/>}/>

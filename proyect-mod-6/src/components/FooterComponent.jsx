@@ -1,4 +1,4 @@
-import '../styles/footerStyle.css'
+import '../styles/footer.css'
 import '../styles/variables.css'
 import Bluesky from '../img/iconos-RRSS/ico-bluesky-negro.svg'
 import Facebook from '../img/iconos-RRSS/ico-facebook-negro.svg'
