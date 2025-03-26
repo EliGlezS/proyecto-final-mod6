@@ -115,6 +115,7 @@ header {
             height: calc(100vh - 60px);
             transition: all 0.3s ease-in;
             overflow: hidden;
+            z-index: 20;
     
             ul {
                 display: flex;
@@ -149,6 +150,7 @@ header {
         justify-content: center;
         height: fit-content;
         top: 0;
+        margin: 0 1.2rem;
 
         ul {
             display: flex;
@@ -197,27 +199,30 @@ header {
 }
 
 
-@media screen and (min-width: 768px) and (max-width: 1024) {
-    
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
     header {
         grid-template-areas: 
         "logo nav login cart";
         grid-template-columns: 25% 50% 10% 15%;
         grid-template-rows: 1fr;
+        height: 9rem;
 
         .login-container {
-            background-color: red;
             grid-column-start: 3;
             grid-row-start: 1;
         }
         
         .logo-container {
-            background-color: pink;
             grid-column-start: 1;
             grid-row-start: 1;
         
             .image-logo-container {
                 width: auto;
+
+                img {
+                    max-height: 8rem;
+                }
             }
         }
     

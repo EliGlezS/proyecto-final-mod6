@@ -8,7 +8,7 @@ import "../styles/headerStyle.css";
 
 const Header = () => {
 
-    const isDesktop = useMediaQuery('(min-width: 769px)');
+    const isDesktop = useMediaQuery('(min-width: 768px)');
     
     const [showNav, setShowNav] = useState(false);
     
@@ -56,9 +56,9 @@ const Header = () => {
             </div>
             <nav className={isDesktop ? `header-nav-desktop` : `header-nav ${showNav && "active"}`}>
                 <ul>
-                    <li><NavLink to="/">Portada</NavLink></li>
-                    <li className="second-li"><NavLink to="/recommended">Recomendados</NavLink></li>
-                    <li><NavLink to="/events">Eventos</NavLink></li>
+                    <li><NavLink to="/" onClick={toggleShowNav}>Portada</NavLink></li>
+                    <li className="second-li" onClick={toggleShowNav}><NavLink to="/recommended">Recomendados</NavLink></li>
+                    <li><NavLink to="/events" onClick={toggleShowNav}>Eventos</NavLink></li>
                 </ul>  
             </nav>
         </header>
