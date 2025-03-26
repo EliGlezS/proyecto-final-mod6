@@ -5,15 +5,19 @@ header {
     "login logo burger";
     grid-template-columns: 20% 60% 20%;
     grid-template-rows: 80%, 20%;
-    align-items: end;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
     justify-items: center;
     width: 100%;
+    min-width: fit-content;
+    height: 12rem;
+    box-sizing: border-box;
     padding: 1.2rem;
     margin-bottom: 2rem;
     border-bottom: 2px solid var(--secondary-color);
     background: linear-gradient(to top, var(--disabled-button-color), 2%, white);
     box-shadow: rgba(0, 0, 0, 0.30) 0px 2px 5px 0px;
-    min-width: fit-content;
 
     
     .login-container {
@@ -23,27 +27,13 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-grow: 0;
         height: 100%;
+        box-sizing: border-box;
 
         div {
             width: 2.8rem;
         }
     } 
-    
-    @media screen and (min-width: 768px) {
-        
-        .login-container {
-            grid-column-start: 3;
-            grid-row-start: 1;
-        }
-
-        .login-container:hover {
-            height: fit-content;
-            width: fit-content;
-            transform: scale(105%);
-        }
-    }
         
     .logo-container {
         grid-area: "logo";
@@ -52,20 +42,17 @@ header {
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        box-sizing: content-box;
+        max-height: 12rem;
         
         .image-logo-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 10rem;
-        }
-    }
-    
-    @media screen and (min-width: 768px) {
-        
-        .logo-container {
-            grid-column-start: 1;
-            grid-row-start: 1;
+
+            img {
+                max-height: 10rem;
+            }
         }
     }
 
@@ -98,21 +85,6 @@ header {
         }
     }
     
-    @media screen and (min-width: 769px) {
-    
-        .cart-container {
-            grid-column-start: 4;
-            grid-row-start: 1;
-            padding: 0.4rem;
-        }
-
-        .cart-container:hover {
-            background-color: white;
-            border-radius: 10px;
-            transform: scale(105%);
-        }
-    }
-    
     .burger-container {
         grid-area: burger;
         grid-column: span 2 / span 2;
@@ -134,17 +106,10 @@ header {
         }
     }
 
-    @media screen and (min-width: 768px) {
-        .burger-container {
-            display: none;
-            position: absolute;
-        }
-    }
-
     .header-nav {
             position: absolute;
             right: 0;
-            top: 10.2rem;
+            top: 12rem;
             background-color: rgba(224, 217, 208, 0.75);
             width: 0;
             height: calc(100vh - 60px);
@@ -191,6 +156,7 @@ header {
             font-size: 1.75rem;
             text-align: center;
             font-family: 'Playfair', 'Times New Roman', Times, serif;
+            font-size: 1.5rem;
             gap: 1.75rem;    
 
             li {
@@ -230,25 +196,93 @@ header {
     }
 }
 
+
 @media screen and (min-width: 768px) and (max-width: 1024) {
+    
     header {
         grid-template-areas: 
         "logo nav login cart";
         grid-template-columns: 25% 50% 10% 15%;
         grid-template-rows: 1fr;
-        align-items: center;
-        justify-content: center;
+
+        .login-container {
+            background-color: red;
+            grid-column-start: 3;
+            grid-row-start: 1;
+        }
+        
+        .logo-container {
+            background-color: pink;
+            grid-column-start: 1;
+            grid-row-start: 1;
+        
+            .image-logo-container {
+                width: auto;
+            }
+        }
+    
+        .cart-container {
+            grid-column-start: 4;
+            grid-row-start: 1;
+            padding: 0.4rem;
+        }
+    
+        .burger-container {
+            display: none;
+            position: absolute;
+        }
     }
 }
 
 @media screen and (min-width: 1024px) {
+
     header {
+
         grid-template-areas: 
         "logo nav login cart";
         grid-template-columns: 25% 50% 10% 15%;
         grid-template-rows: 1fr;
-        align-items: center;
-        justify-content: center;
+        height: 6rem;
+
+        .login-container {
+            grid-column-start: 3;
+            grid-row-start: 1;
+        }
+        
+        .login-container:hover {
+            height: fit-content;
+            width: fit-content;
+            transform: scale(105%);
+        }
+
+        .logo-container {
+            grid-column-start: 1;
+            grid-row-start: 1;
+        
+            .image-logo-container {
+                width: auto;
+
+                img {
+                    max-height: 5rem;
+                }
+            }
+        }
+    
+        .cart-container {
+            grid-column-start: 4;
+            grid-row-start: 1;
+            padding: 0.4rem;
+        }
+        
+        .cart-container:hover {
+            background-color: white;
+            border-radius: 10px;
+            transform: scale(105%);
+        }
+    
+        .burger-container {
+            display: none;
+            position: absolute;
+        }
     }
 }
-
