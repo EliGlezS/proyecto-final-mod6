@@ -1,6 +1,6 @@
 import '../styles/searchBar.css'
-import { useState, useContext } from "react";
-import { BooksContext } from '../context/BooksContext';
+// import { useState, useContext } from "react";
+// import { BooksContext } from '../context/BooksContext';
 
 
 const SearchBar = () => {

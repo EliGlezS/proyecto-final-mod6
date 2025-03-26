@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { useMediaQuery} from "../customHook/useMediaQuery"
-import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { ProductsCartContext } from "../context/ProductsCartContext";
 import SvgLogo from "../img/logos/LuzDeTinta-completo-v5.svg";
@@ -10,8 +9,8 @@ import "../styles/header.css";
 const Header = () => {
 
     // Custom hook para mostrar o no el menú dentro del header
-    
-    const isDesktop = useMediaQuery('(min-width: 768px)');
+
+    const isDesktop = useMediaQuery('(min-width: 769px)');
     
     // Toggle para mostrar el menu en mobile
     

@@ -219,7 +219,7 @@ header {
 }
 
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
 
     header {
         grid-template-areas: 
@@ -259,7 +259,7 @@ header {
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
 
     header {
 
