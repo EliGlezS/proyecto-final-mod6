@@ -150,7 +150,6 @@ header {
         justify-content: center;
         height: fit-content;
         top: 0;
-        margin: 0 1.2rem;
 
         ul {
             display: flex;
@@ -159,8 +158,8 @@ header {
             text-align: center;
             font-family: 'Playfair', 'Times New Roman', Times, serif;
             font-size: 1.5rem;
-            gap: 1.75rem;    
-
+            gap: 1.75rem;
+            
             li {
                 padding: 0.4rem;
             }
@@ -204,7 +203,7 @@ header {
     header {
         grid-template-areas: 
         "logo nav login cart";
-        grid-template-columns: 25% 50% 10% 15%;
+        grid-template-columns: 25% 55% 10% 10%;
         grid-template-rows: 1fr;
         height: 9rem;
 
@@ -245,7 +244,7 @@ header {
 
         grid-template-areas: 
         "logo nav login cart";
-        grid-template-columns: 25% 50% 10% 15%;
+        grid-template-columns: 25% 55% 10% 10%;
         grid-template-rows: 1fr;
         height: 6rem;
 
