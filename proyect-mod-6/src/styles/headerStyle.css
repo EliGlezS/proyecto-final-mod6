@@ -32,6 +32,19 @@ header {
 
         div {
             width: 2.8rem;
+
+            .user-img {
+                background-color: var(--disabled-button-color);
+                clip-path: circle(50%);
+                height: 2.8rem;
+                width: 2.8rem;
+                object-fit: cover;
+                border: none;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
     } 
         
