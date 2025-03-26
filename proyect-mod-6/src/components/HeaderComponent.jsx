@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useMediaQuery} from "../customHook/useMediaQuery"
 import { useContext } from "react";
@@ -9,7 +9,7 @@ import "../styles/headerStyle.css";
 
 const Header = () => {
 
-    // Custom hook useMediaQuery para mostrar o no el menú dentro del header
+    // Custom hook para mostrar o no el menú dentro del header
 
     const isDesktop = useMediaQuery('(min-width: 768px)');
     
@@ -19,18 +19,15 @@ const Header = () => {
         setShowNav(!showNav);
     } 
 
-    // Contexto para saber si está iniciada la sesión
+    // Contexto para saber si está iniciada la sesión y conocer los datos del usuario
 
     const { isLoggedIn, authUser } = useContext(UserContext);
 
-    const [photo, setPhoto]= useState(authUser.foto);
+    // Contexto para saber cuántos productos hay en el carrito
 
-    useEffect(()=>{
-        if (authUser) {
-          setPhoto(authUser.foto);
-        }
-      },[authUser]);
+    const { getTotalProductsInCardt } = useContext(ProductsCartContext);
 
+    const totalCart = getTotalProductsInCardt();
 
     return (
         <header>
@@ -61,7 +58,7 @@ const Header = () => {
                         </svg>
                     </div>
                 </NavLink>
-                <span className="cart-number">{0}</span>
+                <span className="cart-number">{totalCart}</span>
             </div>
             <div className="burger-container">
                 <button className='icon-container' id='burger' onClick={toggleShowNav}>

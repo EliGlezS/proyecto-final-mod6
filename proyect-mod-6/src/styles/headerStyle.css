@@ -83,18 +83,22 @@ header {
     
         div{
             width: 2rem;
+            align-items: center;
+            justify-content: center;
         }
     
         span {
+            display: flex;
             background-color: var(--secondary-color);
             width: 1.3rem;
             height: 1.3rem;
             border-radius: 50%;
             text-align: center;
             align-items: center;
-            justify-items: center;
+            justify-content: center;
             color: white;
             font-family: var(--font-primary);
+            border: none;
         }
     }
     
@@ -291,10 +295,12 @@ header {
             padding: 0.4rem;
         }
         
-        .cart-container:hover {
-            background-color: white;
-            border-radius: 10px;
-            transform: scale(105%);
+
+        .cart-container {
+            
+            .icon-container:hover {
+                transform: scale(105%);
+            }
         }
     
         .burger-container {
