@@ -8,11 +8,11 @@ import "../styles/header.css";
 
 const Header = () => {
 
-    // Custom hook para mostrar o no el menú dentro del header
+    // Custom hook para mostrar version movil/escritorio del menu
 
     const isDesktop = useMediaQuery('(min-width: 769px)');
     
-    // Toggle para mostrar el menu en mobile
+    // Toggle para mostrar/ocultar el menu en movil
     
     const [showNav, setShowNav] = useState(false);
     
