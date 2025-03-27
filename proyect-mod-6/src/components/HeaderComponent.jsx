@@ -24,7 +24,7 @@ const Header = () => {
     
     const { isLoggedIn, authUser } = useContext(UserContext);
 
-    // Contexto para saber cuántos productos hay en el carrito
+    // Contexto para cuántos productos hay en el carrito
     
     const { getTotalProductsInCardt } = useContext(ProductsCartContext);
 

@@ -21,7 +21,7 @@ import RegisterComponent from './components/RegisterComponent';
 import LoginComponent from './components/LoginComponent';
 import Footer from './components/FooterComponent'
 import ToTopButton from './components/ToTopButtonComponent'
-import SearchBar from './components/SearchBarComponent'
+// import FilterGenre from './components/FilterGenreComponent'
 
 //Estilado del App
 import './App.css'
@@ -37,7 +37,7 @@ function App() {
         <UsuarioProvider>
           <Header/>
           <ToTopButton/>
-          <SearchBar/>
+          {/* <FilterGenre/> */}
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/books/:id' element={<BooksDetailsPage/>}/>

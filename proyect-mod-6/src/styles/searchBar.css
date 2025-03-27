@@ -1,6 +1,6 @@
 .searchbar-container {
     height: 4rem;
-    margin-top: 4rem;
+    margin: 4rem 0 2rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,6 +20,7 @@
             display: flex;
             padding: 0.1rem;
             border: 1px solid var(--primary-color-button-active);
+            /* border: 1px solid var(--secondary-color); */
             border-radius: 20px;
             margin-bottom: 0.8rem;
     
@@ -58,13 +59,24 @@
                 outline: none;
             }
         }
-        
-        .searchbar-label {
+
+        .searchbar-check {
             display: flex;
-            background-color: orange;
-            color: var(--secondary-text-color);
-            text-align: left;
-            align-items: center; 
-        }
+            flex-direction: row;
+            width: 100%;
+            padding: 0 1rem;
+            justify-content: flex-start;
+            align-items: flex-start;
+            
+            .searchbar-label {
+                color: var(--secondary-text-color);
+                text-align: left;
+                
+                .searchbar-checkbox {
+                    width: fit-content;
+                    margin-right: 0.4rem;
+                }
+            }
+        } 
     }
 }
