@@ -1,0 +1,71 @@
+/* Estilos para el contenedor del carrusel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;  /* Cambia esto si quieres un tamaño diferente */
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: none; /* Por defecto, las imágenes no se muestran */
+  }
+  
+  .slide.active {
+    display: block;  /* Solo la imagen activa se muestra */
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Estilos para las flechas */
+  button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  button.prev {
+    left: 10px;
+  }
+  
+  button.next {
+    right: 10px;
+  }
+  
+  /* Estilos para los bullets */
+  .carousel-bullets {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .carousel-bullets span {
+    display: inline-block;
+    margin: 0 5px;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .carousel-bullets span.active {
+    background-color: #fff;
+  }
