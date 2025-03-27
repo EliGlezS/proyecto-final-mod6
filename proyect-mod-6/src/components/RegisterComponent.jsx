@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import {useNavigate} from "react-router-dom";
 import { UserContext } from "../context/UserContext";
+import "../styles/register.css"
 const RegisterComponent = ()=>{
     const {createUser} = useContext(UserContext);
     const navigate =useNavigate();
@@ -96,9 +97,11 @@ const handleFileChange =(e)=>{
   }));
 };
 return(
-  <div>
-  <h1>Registro de usuario</h1>
-  <form onSubmit={handleSubmit}>
+  <section className="section-register">
+
+  <div className="div-register">
+  <h1 className="title-register">Registro de usuario</h1>
+  <form className="form-register" onSubmit={handleSubmit}>
                     {Object.keys(error).length > 0 && (
                       <div style={{color:"red"}}>
                         {Object.entries(error).map(([key,message])=>(
@@ -106,6 +109,9 @@ return(
                         ))}
                       </div>
                     )}
+                    <div className="div-form">
+
+                    </div>
                     <div>
                         <label>Nombre</label>
                         <input type="text"
@@ -206,17 +212,30 @@ return(
                         required />
 
                     </div>
-                    <div>
-                        <label>Foto</label>
-                        <input type="file"
-                        accept="image/*"
-                        onChange={handleFileChange}
-                        required />
+  <div className="button-img">
 
-                    </div>
-                    <button type="submit">Guardar datos</button>
+      <label className="file-label"></label>
+      <input
+      type="file"
+      accept="image/*"
+      onChange={handleFileChange}
+      required />
+
+  </div>
+  
+  
+  <label className="div--img"></label>
+  <label className="div--img2"></label>
+  <div className="div-save">
+
+                    <button className="button-save" type="submit">Guardar</button>
+  </div>
+                  
+
+               
   </form>
   </div>
+  </section>
 );
-};
+}; 
 export default RegisterComponent;

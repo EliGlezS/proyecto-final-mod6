@@ -1,0 +1,103 @@
+.section-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
+    .section-login p,
+    .section-login label{
+        font-family: var(--font-secondary);
+    }
+    .div-login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 260px; 
+        height: 400px;
+        border: 1px solid var(--secondary-text-color);
+        border-radius: 0.5em;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        font-family: var(--font-primary);
+    }
+        .title-login {
+            font-family: var(--font-secondary);
+            font-size: var(--size-h1-smaller);
+            color: var(--primary-text-color);
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            min-width: 250px;
+      
+         
+        }
+        
+        .button-init{
+            display: block;
+            margin: 10px auto 10px auto;
+            width: 120px; 
+            height: 40px;
+            border: 1px solid var(--primary-color-button-active);
+            background-color: var(--secondary-color-button-active);
+            color:var( --primary-text-color);
+            font-weight: bold;
+            border-radius: 0.25rem;
+            font-family: var(--font-secondary);
+        }
+        .button-init:hover{
+         
+        
+           
+            background-color: var(--hover-button-color-primary);
+            font-weight: bold;
+        }
+       
+     .p-create{
+       margin-top: 20px;
+     }
+     .button-create{
+        display: block;
+        margin: 10px auto 10px auto;
+        width: 120px; 
+        height: 40px;
+        border: 1px solid var(--primary-color-button-active);
+        background-color: var(--secondary-color-button-active);
+        color:var( --primary-text-color);
+        font-weight: bold;
+        border-radius: 0.25rem;
+        font-family: var(--font-secondary);
+     }
+ 
+     .form-email, .form-pass{
+        display: flex;
+        flex-direction: column;
+       
+     }
+ 
+@media (min-width: 768px)  {
+    
+         
+}
+@media (min-width: 1024px) {
+
+.button-init{
+   
+    transform: translate(17%);
+
+}
+.div-login{
+ 
+    width: 460px; 
+    height: 400px;
+   
+}
+    .title-login {
+ 
+        font-size: var(--size-h1);
+    }
+    
+    .button-init{
+        margin: 20px;
+      
+    }
+}
+ 

@@ -1,0 +1,136 @@
+
+.section-register{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  }
+  
+  .form-register label{
+    display: block;
+  
+    width: 100%;
+
+  }
+  .section-register p,
+  .section-register label{
+      font-family: var(--font-secondary);
+  }
+
+  .div-register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.4rem;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    border: 2px solid var(--secondary-text-color);
+    border-radius: 3px;
+    width: 300px;
+    height: 1000px;
+    font-weight: bold;
+    background-color: var(--disabled-button-color);
+  }
+      .title-register {
+        font-family: var(--font-secondary);
+        padding: 0.4rem 0;
+        color: var(--secondary-text-color);
+       
+      }
+      .div-save{
+        position: relative;
+      }
+      .button-save{
+        position: absolute;
+       top:-50px ;
+       transform: translate(34%);
+          width: 120px; 
+          height: 40px;
+          border: 1px solid var(--primary-color-button-active);
+          background-color: var(--secondary-color-button-active);
+          color:var( --primary-text-color);
+          font-weight: bold;
+          border-radius: 0.25rem;
+          font-family: var(--font-secondary);
+
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="password"]
+      {
+        width: 200px;
+        font-family: var(--font-secondary);
+        font-weight: bold;
+      }
+      input[type="file"]{
+        display: block;
+        margin: 40px auto 40px auto;
+        width: 120px; 
+        height: 40px;
+        border: 1px solid var(--primary-color-button-active);
+        background-color: var(--secondary-color-button-active);
+        color:var( --primary-text-color);
+        font-weight: bold;
+        border-radius: 0.25rem;
+        font-family: var(--font-secondary);
+      }
+      
+      .button-save:hover{
+      
+         
+          background-color: var(--hover-button-color-primary);
+          font-weight: bold;
+      }
+     
+    
+      .container {
+      
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+      }
+ 
+      
+      .file-label::before {
+       
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M471.6...'%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 8px;
+      }
+    
+      .div--img{
+      position: relative;
+      background-color: var(--disabled-button-color);
+      top: -161px;
+        height: 40px;
+      
+      }
+      .div--img2{
+        position: relative;
+        background-color: var(--disabled-button-color);
+        top: -120px;
+          height: 50px;
+      } 
+      input[type="file"] {
+        background-image: url("../img/Bot.png"); 
+       
+        background-size: 120px;
+        width: 120px;
+        height: 120px;
+      }
+   
+      
+@media (min-width: 768px)  {
+  
+       
+}
+@media (min-width: 1024px) {
+}
+

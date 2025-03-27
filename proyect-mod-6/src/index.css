@@ -35,26 +35,4 @@ a {
   text-decoration: none;
 }
 
- button{
- background-color:#5A6F80 ;
- color:#F5F8F9 
- ;
-}
-button:hover{
-  background-color: #99D0DC ;
-}
-input{
-  background-color: #F5F8F9   ;
-  width:300px ;
-}
-.div-perfil{
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;;
-text-align: left;
-border: 1px solid ;
-}
-.form-perfil{
-  gap: 20px;
-}
+

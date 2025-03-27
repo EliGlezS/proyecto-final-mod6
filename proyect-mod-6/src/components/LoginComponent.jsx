@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import{UserContext} from "../context/UserContext";
-
+import "../styles/login.css"
 const LoginComponent = ()=>{
     const navigate =useNavigate();
     const{loginUser}=useContext(UserContext);
@@ -29,27 +29,34 @@ const LoginComponent = ()=>{
             setFormulario((prevFormulario)=>({...prevFormulario,[name]:value}));
       };
       return(
-        <div>
-            <h1>Iniciar sesión</h1>
-            <form onSubmit={handleLogin}>
+        <section className="section-login">
+
+        <div className="div-login">
+            <h1 className="title-login">Iniciar sesión</h1>
+            <form className="form-login" onSubmit={handleLogin}>
                 {error && <div style={{color:"red"}}>{error}</div>}
-                <div> 
+                <div className="form-email"> 
                     <label>Correo</label>
                     <input type="email" name="email" value={formulario.email} onChange={handleChange} required/>
                 </div>
-                <div> 
+                <div className="form-pass"> 
                     <label>Contraseña</label>
                     <input type="password" name="password" value={formulario.password} onChange={handleChange} required/>
                 </div>
-                <button type="submit">Iniciar sesión</button>
+                <div className="div-init">
+                    
+                <button className="button-init" type="submit">Iniciar sesión</button>
+                </div>
             </form>
            
             <div>
-                <p>¿No tienes cuenta aun?<button onClick={()=>navigate("/register")}>Crear cuenta</button></p>
+                <p className="p-create">¿No tienes cuenta aun?</p>
+                    <button className="button-create" onClick={()=>navigate("/register")}>Crear cuenta</button>
             </div>
            
             
         </div>
+        </section>
       )
     }
 
