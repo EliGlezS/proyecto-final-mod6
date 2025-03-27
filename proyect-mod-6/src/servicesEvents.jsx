@@ -2,7 +2,7 @@
 import Event1 from './img/eventPhotos/Event1.jpg'
 import Event2 from './img/eventPhotos/Event2.jpg'
 import Event3 from './img/eventPhotos/Event3.jpg'
-import Event4 from './img/eventPhotos/Event4.jpg'
+import Event4 from './img/eventPhotos/Event4(1).jpg'
 import Event5 from './img/eventPhotos/Event5.jpg'
 
 const events = [
@@ -67,7 +67,7 @@ const events = [
         { time: "18:00", activity: "Clausura del evento" }
       ]
     },
-      {
+    {
       id: 5,
       title: "El Festival Literario de Viajes",
       description: "Viaja a través de las palabras en este festival que une la literatura con la pasión por explorar el mundo. Escritores de crónicas de viaje, fotógrafos y periodistas compartirán sus relatos más impactantes, experiencias transformadoras y consejos para escribir sobre viajes. El evento contará con exposiciones de fotografías, sesiones de firma de libros y mesas redondas sobre cómo la literatura puede capturar la esencia de los lugares y culturas. Además, habrá un espacio donde los asistentes podrán compartir sus propias historias de viaje y participar en concursos de escritura inspirados en destinos exóticos.",
