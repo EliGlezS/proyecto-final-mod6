@@ -1,7 +1,7 @@
 //Importaciones
 
-// import { useContext } from "react"
-// import { BooksContext } from "../context/BooksContext"
+import { useContext } from "react"
+import { BooksContext } from "../context/BooksContext"
 import usePagination from "../customHook/usePagination"
 import {Link} from 'react-router-dom'
 
@@ -9,13 +9,13 @@ import {Link} from 'react-router-dom'
 import '../styles/pagination.css'
 import '../styles/booksCards.css'
 
-const BooksCardsComponent = ({books}) => {
+const BooksCardsComponent = () => {
 
     //Se trae los datos de los libros usando el BooksContext
-    // const {books} = useContext(BooksContext);
+    const {filteredBooks} = useContext(BooksContext);
 
     //Se trae los datos necesarios para la paginación desde el customHook creado
-    const {currentItems, currentPage, totalPages, nextPage, prevPage } = usePagination(10, books);
+    const {currentItems, currentPage, totalPages, nextPage, prevPage } = usePagination(10, filteredBooks);
 
   return (
 

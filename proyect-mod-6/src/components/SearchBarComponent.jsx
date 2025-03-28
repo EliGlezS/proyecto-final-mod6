@@ -1,18 +1,22 @@
 import '../styles/searchBar.css'
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { BooksContext } from '../context/BooksContext';
 
-const SearchBarComponent = ({ onSearch, onStockChange }) => {
+const SearchBarComponent = () => {
+
+    const { handleSearch, handleStockChange } = useContext(BooksContext);
+
     const [query, setQuery] = useState('');
     const [inStock, setInStock] = useState(false);
 
     const handleSearchChange = (e) => {
         setQuery(e.target.value);
-        onSearch(e.target.value); 
+        handleSearch(e.target.value); 
     };
 
     const handleInStockChange = (e) => {
         setInStock(e.target.checked);
-        onStockChange(e.target.checked); 
+        handleStockChange(e.target.checked); 
     };
 
     const handleSubmit = (e) => {
