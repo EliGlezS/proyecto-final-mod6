@@ -23,10 +23,6 @@ const SearchBarComponent = () => {
         e.preventDefault();
     };
 
-    const handleClick = () => {
-        setQuery("");
-    }
-
     return (
         <div className='searchbar-container'>
             <form className='searchbar-form' onSubmit={handleSubmit}>
