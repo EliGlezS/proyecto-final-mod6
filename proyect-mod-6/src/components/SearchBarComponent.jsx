@@ -23,6 +23,10 @@ const SearchBarComponent = () => {
         e.preventDefault();
     };
 
+    const handleClick = () => {
+        setQuery("");
+    }
+
     return (
         <div className='searchbar-container'>
             <form className='searchbar-form' onSubmit={handleSubmit}>
@@ -34,7 +38,7 @@ const SearchBarComponent = () => {
                         value={query} 
                         onChange={handleSearchChange}
                     />
-                    <button className='searchbar-button' type="submit" aria-label="Search">Buscar</button>
+                    <div className='searchbar-button'>Buscar</div>
                 </div>
                 <div className='searchbar-check'>
                     <label className='searchbar-label'>
