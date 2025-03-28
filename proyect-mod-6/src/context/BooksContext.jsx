@@ -21,8 +21,26 @@ export function BooksProvider({children}){
         setBooks(GetAllBooks());
     }, [])
 
+    const [searchQuery, setSearchQuery] = useState('');
+    const [onlyInStock, setOnlyInStock] = useState(false);
+
+    const handleSearch = (query) => {
+        setSearchQuery(query);
+    };
+
+    const handleStockChange = (inStock) => {
+        setOnlyInStock(inStock);
+    };
+
+    const filteredBooks = books.filter((book) => {
+        const matchesSearchQuery = book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        book.author.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesStockStatus = onlyInStock ? book.stock > 0 : true;
+        return matchesSearchQuery && matchesStockStatus;
+    });
+
     return(
-        <BooksContext.Provider value={{books}}>
+        <BooksContext.Provider value={{books, handleSearch, handleStockChange, filteredBooks}}>
             {children}
         </BooksContext.Provider>
     )

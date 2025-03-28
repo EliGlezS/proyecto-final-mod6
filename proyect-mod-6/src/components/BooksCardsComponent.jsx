@@ -12,10 +12,10 @@ import '../styles/booksCards.css'
 const BooksCardsComponent = () => {
 
     //Se trae los datos de los libros usando el BooksContext
-    const {books} = useContext(BooksContext);
+    const {filteredBooks} = useContext(BooksContext);
 
     //Se trae los datos necesarios para la paginación desde el customHook creado
-    const {currentItems, currentPage, totalPages, nextPage, prevPage } = usePagination(10, books);
+    const {currentItems, currentPage, totalPages, nextPage, prevPage } = usePagination(10, filteredBooks);
 
   return (
 

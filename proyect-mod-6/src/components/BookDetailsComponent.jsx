@@ -1,13 +1,15 @@
 //Importaciones
 import { useContext, useEffect, useState } from "react"
-// import { ProductsCartContext } from "../context/ProductsCartContext"
+import { ProductsCartContext } from "../context/ProductsCartContext"
 import {BooksContext } from "../context/BooksContext"
+import { ModalContext } from "../context/ModalContextCart"
 import { Link, useParams } from "react-router-dom"
 import "../styles/bookDetailsComponent.css" 
 
 const BookDetailsComponent = () => {
 
     //Se usa más adelante el contexto del carrito
+    const {addProductCart} = useContext(ProductsCartContext);
 
     //Se usa el contexto BooksContext 
     const {books} = useContext(BooksContext);
@@ -17,6 +19,9 @@ const BookDetailsComponent = () => {
 
     //Se usa useState para almacenar el libro del que se mostrará los detalles 
     const [bookDetails, setBookDetails] = useState(null);
+
+    //Se usa el contexto del modal 
+    const {showModal, openModal, closeModal} = useContext(ModalContext);
 
     //Se usa useEffect para renderizar los detalles del libro
     useEffect(() => {
@@ -29,7 +34,15 @@ const BookDetailsComponent = () => {
         return <p>Libro no encontrado</p>;
     }
 
-    console.log(books);
+    //Manejador para añadir el libro al carrito y que aparezca el modal
+    const handleAddToCart = () => {
+        addProductCart(bookDetails);
+        openModal(); // Abre el modal cuando se añade al carrito
+
+        setTimeout(() => {
+            closeModal(); // Cierra el modal después de 3 segundos
+        }, 2000);
+    };
 
   return (
     <section className="section-book-details">
@@ -82,8 +95,7 @@ const BookDetailsComponent = () => {
                         {/*Si el libro que estamos mirando está en stock (true) aparece un botón que lo añade al carrito, pero 
                         si stock es false aparece un botón desabilitado */}
                         {bookDetails.stock ? (
-                            <button className="button-addCart" >Añadir al Carrito</button>
-                        // <button className="button-addCart" onClick={() => addProductCart(productDetails)}>Add to Cart</button>
+                            <button className="button-addCart" onClick={handleAddToCart}>Añadir al Carrito</button>
                         ) : (
                             <button className="button-disable" disabled>No disponible</button>
                         )}
@@ -101,6 +113,15 @@ const BookDetailsComponent = () => {
             </div>
             
         </div>
+
+        {/*Se agrega el modal*/}
+
+        {showModal && (
+            <div className={`modal-addCart ${showModal ? 'show' : ''}`}>
+                <button className="modal-close-button" onClick={closeModal}>x</button>
+                <p>Producto agregado a tu cesta</p>
+            </div>
+        )}
 
     </section>
   )

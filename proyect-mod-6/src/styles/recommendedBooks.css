@@ -9,9 +9,11 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-width: 252px;
+    min-width: 329px;
     height: 100%;
     padding: 60px;
+    margin-bottom: 50px;
+    margin-top: 50px;
     
     .title-section-books-recommended-cards {
         display: flex;
@@ -130,7 +132,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    margin-top: 35px;
+                    margin-top: 30px;
                     margin-bottom: 30px;
                     width: 100%; 
                     height: 50px;
@@ -143,10 +145,11 @@
                         width: 100px; 
                         height: 50px;
                         border: 1px solid var(--primary-color-button-active);
-                        border-radius: 0.5rem;
+                        border-radius: 1rem;
                         background-color: var(--primary-color-button-active);
-                        color:var(--text-white-principal);
+                        color:var(--text-white);
                         font-weight: bold;
+                        box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
                     }
                     
                 }
@@ -204,6 +207,7 @@
     .section-books-recommended-card {
         margin-top: 50px;
         margin: 0 auto;
+        margin-bottom: 150px;
 
         .title-section-books-cards{
             font-family: var(--font-secondary);
@@ -281,7 +285,8 @@
                     }
                     a:hover{
                         background-color: var(--hover-button-color-primary);
-                        color: var(--primary-text-color) ;    
+                        color: var(--support-color) ;   
+                        border: 1px solid var(--hover-button-color-primary); 
                     }
                  
                 }

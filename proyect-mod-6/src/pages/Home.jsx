@@ -6,15 +6,18 @@ import BooksCardsComponent from "../components/BooksCardsComponent"
 //Importacion de estilos
 import '../styles/home.css'
 
+import SearchBarComponent from '../components/SearchBarComponent'
+
 /*Poner un componente carrusel si da tiempo */
 
 const Home = () => {
 
-  useScrollToTop()
+  useScrollToTop()  
 
   return (
     <div className="main-home">
-        <BooksCardsComponent/>
+        <SearchBarComponent />
+        <BooksCardsComponent />
     </div>
   )
 }
