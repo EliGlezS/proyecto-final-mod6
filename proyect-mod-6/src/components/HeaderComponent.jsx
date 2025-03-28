@@ -19,6 +19,10 @@ const Header = () => {
     const toggleShowNav = () => {
         setShowNav(!showNav);
     } 
+    
+    const closeNav = () => {
+        setShowNav(false);
+    } 
 
     // Contexto para saber si está iniciada la sesión y conocer los datos del usuario
     
@@ -72,11 +76,10 @@ const Header = () => {
                 </button>
             </div>
             <nav className={isDesktop ? `header-nav-desktop` : `header-nav ${showNav && "active"}`}>
-            {/* <nav className={`header-nav ${showNav && "active"}`}> */}
                 <ul>
-                    <li><NavLink to="/" onClick={toggleShowNav}>Portada</NavLink></li>
-                    <li className="second-li" onClick={toggleShowNav}><NavLink to="/recommended">Recomendados</NavLink></li>
-                    <li><NavLink to="/events" onClick={toggleShowNav}>Eventos</NavLink></li>
+                    <li><NavLink to="/" onClick={closeNav}>Portada</NavLink></li>
+                    <li className="second-li" onClick={closeNav}><NavLink to="/recommended">Recomendados</NavLink></li>
+                    <li><NavLink to="/events" onClick={closeNav}>Eventos</NavLink></li>
                 </ul>  
             </nav>
         </header>
