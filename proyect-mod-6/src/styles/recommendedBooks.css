@@ -9,9 +9,11 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-width: 252px;
+    min-width: 329px;
     height: 100%;
     padding: 60px;
+    margin-bottom: 50px;
+    margin-top: 50px;
     
     .title-section-books-recommended-cards {
         display: flex;
@@ -205,6 +207,7 @@
     .section-books-recommended-card {
         margin-top: 50px;
         margin: 0 auto;
+        margin-bottom: 150px;
 
         .title-section-books-cards{
             font-family: var(--font-secondary);

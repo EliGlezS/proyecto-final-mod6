@@ -14,6 +14,8 @@ import BooksDetailsPage from './pages/BooksDetailsPage'
 import Header from './components/HeaderComponent'
 import ShoppingCart from './pages/ShoppingCart'
 import Contact from './pages/Contact'
+import Checkout from './pages/Checkout'
+import EventsPage from './pages/EventsPage'
 
 //importaciones components
 import UserListComponent from './components/UserListComponent';
@@ -32,26 +34,27 @@ function App() {
   
   return (
     <ModalProvider>
-    <BooksProvider>
-      <ProductsCartProvider>
-        <UsuarioProvider>
-          <Header/>
-          <ToTopButton/>
-          {/* <FilterGenre/> */}
-          <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/books/:id' element={<BooksDetailsPage/>}/>
-            <Route path='/cart' element={<ShoppingCart/>}/>
-            <Route path='/recommended' element={<Recommended/>}/>
-            <Route path="/perfil" element={<UserListComponent/>}/>
-            <Route path="/register" element={<RegisterComponent/>}/>
-            <Route path="/login" element={<LoginComponent/>}/>
-            <Route path="/contact" element={<Contact/>}/>
-          </Routes>
-          <Footer/>
-        </UsuarioProvider>
-      </ProductsCartProvider>
-    </BooksProvider>
+      <BooksProvider>
+        <ProductsCartProvider>
+          <UsuarioProvider>
+            <Header/>
+            <ToTopButton/>
+            <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/books/:id' element={<BooksDetailsPage/>}/>
+              <Route path='/cart' element={<ShoppingCart/>}/>
+              <Route path='/checkout' element={<Checkout/>}/>
+              <Route path='/recommended' element={<Recommended/>}/>
+              <Route path="/perfil" element={<UserListComponent/>}/>
+              <Route path="/register" element={<RegisterComponent/>}/>
+              <Route path="/login" element={<LoginComponent/>}/>
+              <Route path="/contact" element={<Contact/>}/>
+              <Route path="/events" element={<EventsPage/>}/>
+            </Routes>
+            <Footer/>
+          </UsuarioProvider>
+        </ProductsCartProvider>
+      </BooksProvider>
     </ModalProvider>
   )
 }
