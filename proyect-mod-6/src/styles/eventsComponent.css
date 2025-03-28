@@ -135,15 +135,28 @@
       }
   
       button {
-        padding: 8px 12px;
+
         margin-top: 5px;
+        margin-bottom: 10px;
         cursor: pointer;
-        border: 1px solid var(--primary-color-button-active);
+        border: none;
         border-radius: 0.5rem;
-        background-color: var(--primary-color-button-active);
-        color:var(--text-white);
+        background-color: transparent;
+        color:var(--secondary-text-color);
         font-weight: bold;
-        box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 10px 0px;
+
+        span{
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 5px;
+
+          svg{
+            width: 20px;
+          }
+        }
       
       }
   
@@ -221,24 +234,6 @@
         font-size: 1.6rem;
       }
 
-      button {
-        padding: 8px 12px;
-        margin-top: 5px;
-        cursor: pointer;
-        border: 1px solid var(--primary-color-button-active);
-        border-radius: 0.5rem;
-        background-color: var(--primary-color-button-active);
-        color:var(--text-white);
-        font-weight: bold;
-        box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 10px 0px;
-        
-        &:hover {
-          border: 1px solid var( --pressed-button-color-primary);
-          border-radius: 0.5rem;
-          background-color: var( --pressed-button-color-primary);
-          color:var(--support-color);
-        }
-      }
     }
   }
 }
