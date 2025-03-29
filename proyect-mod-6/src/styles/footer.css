@@ -132,6 +132,69 @@ footer {
             height: 100%;
             background-color: var(--secondary-color);
         }
+
+        .modal-footer{
+            box-sizing: border-box;
+            display: none; 
+            position: absolute;
+            background-color: transparent;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            color: var(--primary-text-color);
+            z-index: 1000;
+            width: 80%;
+            max-width: 400px; /* Limitar su ancho a 400px en pantallas más grandes */
+            box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
+            padding: 1.6rem 0;
+    
+            /*Estilos para el botón de cierre*/
+            .modal-close-button{
+                text-indent: -2000px;
+                position: absolute;
+                background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>') no-repeat center;
+                border: none;
+                cursor: pointer;
+                z-index: 1010; /*Botón encima del contenido*/
+                width: 1.6rem;
+                top: 0.4rem;
+                right: 0.8rem;
+                opacity: 0.6;
+            }
+    
+            .modal-close-button:hover {
+                opacity: 1;
+            }
+    
+            .modal-message {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 0.8rem 2rem;
+                
+                .modal-heart {
+                    width: 30px;
+                    color: var(--secondary-color);
+                    border-bottom: 2px solid transparent; 
+                    margin-bottom: 0.8rem;
+                }
+    
+                p{
+                    font-family: var(--font-secondary);
+                    font-size: var(--size-modal-mobile);
+                    text-align: center; 
+                    line-height: 1.5;  
+                    padding-bottom: 1.6rem;         
+                }
+            }
+    
+             /* Mostrar el modal cuando la clase 'show' esté presente */
+            &.show {
+                display: block;
+            }
+        }
     }
 
     .footer-info {

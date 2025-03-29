@@ -166,7 +166,7 @@
         filter: blur(3px);
     }
 
-    .modal-addCart{
+    .modal-contact{
         box-sizing: border-box;
         display: none; 
         position: absolute;
@@ -278,7 +278,7 @@
             }
         }
 
-        .modal-addCart{
+        .modal-contact{
             width: fit-content;
             padding: 1.8rem;
 

@@ -37,6 +37,10 @@ const ContactComponent = () => {
             
             openModal();
             }
+
+            setTimeout(() => {
+                closeModal(); 
+            }, 4000);
     }
 
     const handleCloseModal = () => {
@@ -152,7 +156,7 @@ const ContactComponent = () => {
                 </div>
             </div>
             {showModal && (
-            <div className={`modal-addCart ${showModal ? 'show' : ''}`}>
+            <div className={`modal-contact ${showModal ? 'show' : ''}`}>
                 <button className="modal-close-button" onClick={handleCloseModal}>Cerrar</button>
                 <div className='modal-message'>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="modal-heart">
