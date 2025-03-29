@@ -190,11 +190,11 @@ footer {
                 }
             }
     
-             /* Mostrar el modal cuando la clase 'show' esté presente */
-            .modal-message.show-footer {
-                display: block;
-            }
         }
+        /* Mostrar el modal cuando la clase 'show' esté presente */
+       .modal-footer.show-footer {
+           display: block;
+       }
     }
 
     .footer-info {

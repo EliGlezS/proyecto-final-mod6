@@ -5,7 +5,7 @@ import Facebook from '../img/iconos-RRSS/ico-facebook-negro.svg'
 import Instagram from'../img/iconos-RRSS/ico-instagram-negro.svg'
 import LogoFooter from '../img/logos/LuzDeTinta-letras-negro.svg'
 import { Link } from "react-router-dom";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Footer = () => {
 
@@ -18,10 +18,6 @@ const Footer = () => {
     const [isChecked, setIsChecked] = useState(false);
     const [error, setError] = useState("");
     const [showFooterModal, setShowFooterModal] = useState(false);
-
-    // useEffect(() => {
-    //     console.log("Estado de error actualizado:", error);
-    // }, [error]); 
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
@@ -43,7 +39,11 @@ const Footer = () => {
             setEmail("");
             setIsChecked(false);
             setShowFooterModal(true);
-            console.log("Modal debería abrirse");
+
+            setTimeout(() => {
+                setShowFooterModal(true);
+                console.log("Modal debería mostrarse ahora:", showFooterModal);
+            }, 0);
 
             // setTimeout(() => {
             //     closeModal();
@@ -89,7 +89,6 @@ const Footer = () => {
                     {error ? <p className="error-message">{error}</p> : <p className="error-hidden">Error</p>}
                 </form>
                 </div>
-                {showFooterModal && (
                 <div className={`modal-footer ${showFooterModal ? 'show-footer' : ''}`}>
                 <button className="modal-close-button" onClick={handleCloseFooterModal}>Cerrar</button>
                 <div className='modal-message'>
@@ -99,7 +98,6 @@ const Footer = () => {
                     <p>En breve recibirás un correo de confirmación</p>
                 </div>
             </div>
-        )}
             </div>
             <div className='footer-info'>
                     <div className='footer-logo-container'>
