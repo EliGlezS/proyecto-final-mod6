@@ -191,7 +191,7 @@ footer {
             }
     
              /* Mostrar el modal cuando la clase 'show' esté presente */
-            &.show {
+            .modal-message.show-footer {
                 display: block;
             }
         }

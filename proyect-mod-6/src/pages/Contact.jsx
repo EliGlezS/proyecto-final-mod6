@@ -1,6 +1,5 @@
 import '../styles/contact.css'
-import { useState, useContext } from 'react';
-import { ModalContext } from "../context/ModalContextCart"
+import { useState } from 'react';
 
 const ContactComponent = () => {
 
@@ -9,8 +8,7 @@ const ContactComponent = () => {
     const [message, setMessage ] = useState("");
     const [isReadOnly, setIsReadOnly] = useState(false);
     const [isComplete, setIsComplete] = useState(true);
-
-    const {showModal, openModal, closeModal} = useContext(ModalContext);
+    const [showContactModal, setShowContactModal] = useState(false);
 
     const handleName = (e) => {
       setName(e.target.value);
@@ -24,7 +22,8 @@ const ContactComponent = () => {
         setMessage(e.target.value);
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault(); 
 
         if(name.trim()==="" || email.trim()==="" || message.trim()===""){
            setIsComplete(false);
@@ -34,24 +33,23 @@ const ContactComponent = () => {
             setMessage("");
             setIsReadOnly(true);
             setIsComplete(true);
-            
-            openModal();
+            setShowContactModal(true);
             }
 
-            setTimeout(() => {
-                closeModal(); 
-            }, 4000);
+            // setTimeout(() => {
+            //     closeModal(); 
+            // }, 4000);
     }
 
-    const handleCloseModal = () => {
-        closeModal();
+    const handleCloseContactModal = () => {
+        setShowContactModal(false);
         setIsReadOnly(false);
     }
 
 
     return (
         <section className="contact">
-            <div className={!showModal ? `contact-container` : `contact-container contact-modal`}>
+            <div className={!showContactModal ? `contact-container` : `contact-container contact-modal`}>
                 <h1>Contacto</h1>
                 <form className="contact-form">
                     <div className="form-field">
@@ -62,22 +60,22 @@ const ContactComponent = () => {
                         <label className="form-label" htmlFor="name">
                         Nombre
                         </label>
-                        <input className="form-input" type="text" id="name" name="name" value={name} size="20" onChange={(e) => handleName(e)} autoFocus maxLength="50" required="required" disabled={isReadOnly}/>
+                        <input className="form-input" type="text" id="name" name="name" value={name} onChange={handleName} autoFocus maxLength="50" disabled={isReadOnly}/>
                     </div>
                     <div className="form-field">
                         <label className="form-label" htmlFor="email">
                         Email
                         </label>
-                        <input className="form-input" type="email" id="email" name="email" size="20" maxLength="320" value={email} onChange={(e) => handleEmail(e)} required="required" disabled={isReadOnly} />
+                        <input className="form-input" type="email" id="email" name="email" maxLength="320" value={email} onChange={handleEmail} disabled={isReadOnly} />
                         </div>
                     <div className="form-field">
                         <label className="form-label" htmlFor="message">
                         Mensaje
                         </label>
-                        <textarea className="form-textarea" id="message" name="message" cols="20" rows="6" value={message} onChange={(e) => handleMessage(e)} required minLength="5" maxLength="1024" disabled={isReadOnly}/>
+                        <textarea className="form-textarea" id="message" name="message" cols="20" rows="6" value={message} onChange={handleMessage} required minLength="5" maxLength="1024" disabled={isReadOnly}/>
                     </div>
                     <div className="form-button-container">
-                        <button className="form-button" type="submit" onClick={() => handleSubmit()} disabled={isReadOnly} >
+                        <button className="form-button" type="submit" onClick={handleSubmit} disabled={isReadOnly} >
                         Enviar
                         </button>
                     </div>
@@ -155,9 +153,9 @@ const ContactComponent = () => {
                     </nav>
                 </div>
             </div>
-            {showModal && (
-            <div className={`modal-contact ${showModal ? 'show' : ''}`}>
-                <button className="modal-close-button" onClick={handleCloseModal}>Cerrar</button>
+            {showContactModal && (
+            <div className={`modal-contact ${showContactModal ? 'show-contact' : ''}`}>
+                <button className="modal-close-button" onClick={handleCloseContactModal}>Cerrar</button>
                 <div className='modal-message'>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="modal-heart">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />

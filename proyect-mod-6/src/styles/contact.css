@@ -222,12 +222,11 @@
                 padding-bottom: 1.6rem;         
             }
         }
-
-         /* Mostrar el modal cuando la clase 'show' esté presente */
-        &.show {
-            display: block;
-        }
     }
+    /* Mostrar el modal cuando la clase 'show' esté presente */
+   .modal-contact.show-contact {
+       display: block;
+   }
 }
 
 

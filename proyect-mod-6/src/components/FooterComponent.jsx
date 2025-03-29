@@ -5,8 +5,7 @@ import Facebook from '../img/iconos-RRSS/ico-facebook-negro.svg'
 import Instagram from'../img/iconos-RRSS/ico-instagram-negro.svg'
 import LogoFooter from '../img/logos/LuzDeTinta-letras-negro.svg'
 import { Link } from "react-router-dom";
-import { useState, useContext } from 'react'
-import { ModalContext } from "../context/ModalContextCart"
+import { useState } from 'react'
 
 const Footer = () => {
 
@@ -18,8 +17,7 @@ const Footer = () => {
     const [email, setEmail ] = useState("");
     const [isChecked, setIsChecked] = useState(false);
     const [error, setError] = useState("");
-    const {showModal, openModal, closeModal} = useContext(ModalContext);
-
+    const [showFooterModal, setShowFooterModal] = useState(false);
 
     // useEffect(() => {
     //     console.log("Estado de error actualizado:", error);
@@ -44,22 +42,23 @@ const Footer = () => {
             setError("");
             setEmail("");
             setIsChecked(false);
-            openModal();
+            setShowFooterModal(true);
+            console.log("Modal debería abrirse");
 
-            setTimeout(() => {
-                closeModal();
-            }, 4000);
+            // setTimeout(() => {
+            //     closeModal();
+            // }, 4000);
         }
     };
 
-    const handleCloseModal = () => {
-        closeModal();
+    const handleCloseFooterModal = () => {
+        setShowFooterModal(false);
         setIsReadOnly(false);
     }
 
     return (
         <footer>
-            <div className={!showModal ? `newsletter` : `newsletter newsletter-modal`}>
+            <div className={!showFooterModal ? `newsletter` : `newsletter newsletter-modal`}>
                 <div className='newsletter-container'>
                     <div className='newsletter-icon'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -90,9 +89,9 @@ const Footer = () => {
                     {error ? <p className="error-message">{error}</p> : <p className="error-hidden">Error</p>}
                 </form>
                 </div>
-                {showModal && (
-                <div className={`modal-footer ${showModal ? 'show' : ''}`}>
-                <button className="modal-close-button" onClick={handleCloseModal}>Cerrar</button>
+                {showFooterModal && (
+                <div className={`modal-footer ${showFooterModal ? 'show-footer' : ''}`}>
+                <button className="modal-close-button" onClick={handleCloseFooterModal}>Cerrar</button>
                 <div className='modal-message'>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="modal-heart">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
