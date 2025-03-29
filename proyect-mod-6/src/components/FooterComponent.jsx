@@ -42,7 +42,6 @@ const Footer = () => {
 
             setTimeout(() => {
                 setShowFooterModal(true);
-                console.log("Modal debería mostrarse ahora:", showFooterModal);
             }, 0);
 
             // setTimeout(() => {
