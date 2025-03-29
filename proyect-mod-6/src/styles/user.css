@@ -1,17 +1,18 @@
 .div-perfil{
-max-width: 350px;
-
-
+max-width: 350px; 
 
 }
+
+.form-perfil{
+  
   input[type="text"],
   input[type="number"],
   input[type="password"]
   {
    max-width: 140px;
-   
-    
+  
   }
+}
 .form-perfil{
   position: relative;
   left: 20px;
@@ -24,6 +25,7 @@ max-width: 350px;
 .edit-button-img{
   position: relative;
   right:18px;
+  
 }
 .b1{
   position: relative;
@@ -37,160 +39,176 @@ max-width: 350px;
  position: relative;
  right: 20px;
 }
-button{
+.form-perfil{
+  button{
   position: relative;
- right: 20px; 
+  right: 20px; 
 }
-@media (min-width: 768px)  {
-  
-  
 }
+
+
 @media (min-width: 1024px) {
-}
-span{
-  font-family: var(--font-secondary);
-  font-size: 1.3rem;
-}
-.section-perfil{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
+
+  .form-perfil{
+    span{
+    font-family: var(--font-secondary);
+    font-size: 1.3rem;
     }
-    
-    .form-perfil label{
-      display: block;
-    
-      width: 100%;
-  
-    }
-    .section-perfil h3,
-    .section-perfil label{
-        font-family: var(--font-secondary);
-    }
-
-    .div-perfil{
-      margin-top: 20px;
-      margin-bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-family: var(--font-primary);
-      font-size: 1rem;
-      border: 2px solid var(--secondary-text-color);
-      border-radius: 3px;
-      width: 400px;
-      height: 1200px;
-      font-weight: bold;
-      background-color: var(--disabled-button-color);
-
-    }
-        .title-perfil {
-          font-family: var(--font-secondary);
-          padding: 0.4rem 0;
-          color: var(--secondary-text-color);
-         text-align: center;
-         margin-top: 40px;
-
-         
-        }
-        
-        input[type="text"],
-        input[type="number"],
-        input[type="password"]
-        {
-          font-family: var(--font-secondary);
-          font-weight: bold;
-          color:var( --primary-text-color);
-          border: 1px solid var(--primary-color-button-active);
-          width: 30px; 
-          height: 30px; 
-          
-        }
-       .input-container{
-        display: flex;
-        align-items: center;
-        gap: 5px;
-
-       }
-       .button-container{
-     
-      margin-bottom: 20px;
-    } 
-       .button-container .edit-button{
-            display: flex;
-            flex-direction: column;
-          margin-left: 260px;
-          margin-bottom: 0px;
-          margin-top: -35px;
-        } 
-        
-        .image-perfil {
-        border-radius: 50%;
-        width:150px; 
-        height: 150px;
-     }
-
-.edit-button{
-    border: none;
-   background-color: var(--disabled-button-color);
-
-}
-
-  .edit-button svg{
-    fill: var(--secondary-color-button-active);
   }
-  .edit-button-img{
- border: none;
-    background-color:  var(--disabled-button-color);
-    z-index: 1;
-   
-
-}
-.edit-button-img:focus,
-.edit-button-img:active {
-  outline: none;
-  box-shadow: none;
-  background-color: transparent;
-}
-
-.edit-button-img svg{
-  background-color: var(--disabled-button-color);
-  top: -120px;
-  fill: var(--secondary-color-button-active);
-  margin-left: 109px;
- 
-}
-.edit-button-img {
-  background-color: var(--disabled-button-color);
-}
-button{
   
-  width: 80px; 
-  height: 40px;
-  border: 1px solid var(--primary-color-button-active);
-  background-color: var(--secondary-color-button-active);
-  color:var( --primary-text-color);
-  font-weight: bold;
-  border-radius: 0.25rem;
-  font-family: var(--font-secondary);
-
-}
-button:hover{
+  .section-perfil{
+      display: flex;
+      justify-content: center;
+      align-items: center;
     
+      }
+      
+      .form-perfil label{
+        display: block;
+      
+        width: 100%;
+    
+      }
+      .section-perfil h3,
+      .section-perfil label{
+          font-family: var(--font-secondary);
+      }
+  
+      .div-perfil{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: var(--font-primary);
+        font-size: 1rem;
+        border: 2px solid var(--secondary-text-color);
+        border-radius: 3px;
+        width: 400px;
+        height: 1200px;
+        font-weight: bold;
+        background-color: var(--disabled-button-color);
+  
+      }
+          .title-perfil {
+            font-family: var(--font-secondary);
+            padding: 0.4rem 0;
+            color: var(--secondary-text-color);
+           text-align: center;
+           margin-top: 40px;
+  
+           
+          }
+          
+          .form-perfil{
+            input[type="text"],
+            input[type="number"],
+            input[type="password"]
+            {
+              font-family: var(--font-secondary);
+              font-weight: bold;
+              color:var( --primary-text-color);
+              border: 1px solid var(--primary-color-button-active);
+              width: 30px; 
+              height: 30px; 
+            }
+          }
+  
+         .input-container{
+          display: flex;
+          align-items: center;
+          gap: 5px;
+  
+         }
+         .button-container{
        
-  background-color: var(--hover-button-color-primary);
-  font-weight: bold;
-}
-.div-close button{
- width: 120px;
- display: block;
- margin: 40px auto 40px auto;
-
-}
-
-.input-container input[type="file"] {
-  background-image:none;
-  height: 26px;
-  width: 114px;
+        margin-bottom: 20px;
+  
+      } 
+         .button-container .edit-button{
+              display: flex;
+              flex-direction: column;
+            margin-left: 260px;
+            margin-bottom: 0px;
+            margin-top: -35px;
+            
+          } 
+          
+          .image-perfil {
+          border-radius: 50%;
+          width:150px; 
+          height: 150px;
+       }
+  
+  .edit-button{
+    border: none;
+     background-color: var(--disabled-button-color);
+  
+  }
+  
+    .edit-button svg{
+      fill: var(--secondary-color-button-active);
+    }
+    .edit-button-img{
+      border: none;
+      background-color:  var(--disabled-button-color);
+      z-index: 1;
+     
+  
+  }
+  .edit-button-img:focus,
+  .edit-button-img:active {
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+  }
+  
+  .edit-button-img svg{
+    background-color: var(--disabled-button-color);
+    top: -120px;
+    fill: var(--secondary-color-button-active);
+    margin-left: 109px;
+   
+  }
+  .edit-button-img {
+    background-color: var(--disabled-button-color);
+  }
+  
+  .form-perfil{
+  
+    button{
+      width: 80px; 
+      height: 40px;
+      color:var( --primary-text-color);
+      font-weight: bold;
+      border-radius: 0.25rem;
+      font-family: var(--font-secondary);
+    
+    }
+    button:hover{  
+      background-color: var(--hover-button-color-primary);
+      font-weight: bold;
+    }
+  }
+  .div-close {
+    .Logout-Button{
+      width: 120px;
+      display: block;
+      margin: 40px auto 40px auto;
+      border: 1px solid var(--primary-color-button-active);
+      background-color: var(--secondary-color-button-active);
+      color:var( --primary-text-color);
+      font-weight: bold;
+      border-radius: 0.25rem;
+      font-family: var(--font-secondary);
+    }
+  }
+   
+  
+  
+  .input-container input[type="file"] {
+    background-image:none;
+    height: 26px;
+    width: 114px;
+  }
 }

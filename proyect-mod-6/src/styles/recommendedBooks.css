@@ -21,7 +21,7 @@
         flex-wrap: wrap;
         font-family: var(--font-secondary);
         font-size: var(--size-h1-smaller);
-        color: var(--primary-text-color);
+        color: var(--secondary-text-color);
         font-weight: bold;
         text-align: center;
         width: 100%;

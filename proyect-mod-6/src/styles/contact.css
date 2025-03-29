@@ -7,7 +7,7 @@
     font-family: var(--font-primary);
     font-size: 1rem;
     line-height: 1.5rem;
-    min-width: fit-content;
+    min-width: 329px;
     width: 100%;
     padding: 2.4rem;
     margin-bottom: 1rem;
@@ -159,13 +159,11 @@
 @media screen and (min-width: 768px) {
 
     .contact {
-        min-width: fit-content;
 
         .contact-container {
-
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 10% 90%;
+            grid-template-rows: 20% 80%;
             justify-items: center;
             align-items: center;
             justify-content: center;
@@ -177,9 +175,11 @@
             h1 {
                 /* color: #000; */
                 border-bottom: 2px solid var(--secondary-color);
+                margin-top: 100px;
             }
 
             .contact-card {
+                margin-top: 1.6rem;
                 grid-row-start: 2;
                 box-shadow: none;
                 aspect-ratio: unset;
