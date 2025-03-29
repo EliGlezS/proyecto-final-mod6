@@ -50,6 +50,7 @@ footer {
                 z-index: 3;
                 padding: 0.4rem 0;
                 max-width: 30rem;
+                box-sizing: border-box;
                 
                 h3 {
                     font-family: var(--font-secondary);
@@ -95,15 +96,29 @@ footer {
 
                 a {
                     color: var(--secondary-color);
+                    text-decoration: underline;
                 }
 
                 label {
-                    padding: 0.6rem 0;
+                    padding: 0;
                 }
     
                 .newsletter-checkbox {
-                    margin: 0.4rem;
+                    margin: 0 0.4rem;
                     width: 1rem;
+                }
+
+                .error-hidden {
+                    color: transparent;
+                }
+
+                .error-message {
+                    display: flex;
+                    color: rgb(160, 0, 0);
+                    width: fit-content;
+                    font-size: 1rem;
+                    text-align: center;
+                    margin: 0;
                 }
             }
         }

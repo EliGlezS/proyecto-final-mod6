@@ -9,8 +9,18 @@ import { useState } from 'react'
 
 const Footer = () => {
 
+    const isEmailValid = (email) => {
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        return emailPattern.test(email);
+      };
+
     const [email, setEmail ] = useState("");
     const [isChecked, setIsChecked] = useState(false);
+    const [error, setError] = useState("");
+
+    // useEffect(() => {
+    //     console.log("Estado de error actualizado:", error);
+    // }, [error]); 
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
@@ -19,18 +29,21 @@ const Footer = () => {
     const checkHandler = () => {
         setIsChecked(!isChecked);
       }
-    
-    const handleSubmit = () => {
 
-        if(email.trim()==="" || isChecked === false){
-            alert("Revisa si has escrito tu email y aceptado las condiciones");
+      const handleSubmit = (e) => {
+        e.preventDefault();
+    
+        if (!isEmailValid(email)) {
+            setError("* Formato de correo no válido");
+        } else if (email.trim() === "" || !isChecked) {
+            setError("* Revisa si has aceptado las condiciones");
         } else {
+            setError("");
             setEmail("");
-            setIsChecked(false);        
+            setIsChecked(false);
         }
     };
-
-    // document.addEventListener('submit', (e)=>{e.preventDefault();})
+    
 
     return (
         <footer>
@@ -41,15 +54,29 @@ const Footer = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                         </svg>
                     </div>
-                    <form>
-                        <h3>Suscríbete a nuestro boletín</h3>
-                        <input type='email' placeholder='Escribe tu email' className='newsletter-email' maxLength="320" size="20" value={email} onChange={(e) => handleEmail(e)} required='required'></input>
-                        <button type='submit' className='newsletter-button' onClick={() => handleSubmit()}>Enviar</button>
-                        <label>
-                            <input type='checkbox' className='newsletter-checkbox' checked={isChecked} onChange={checkHandler} required='required'></input>
-                            Acepto la <a href=''>política de privacidad</a>
-                        </label>
-                    </form>
+                    <form onSubmit={handleSubmit}>
+                    <h3>Suscríbete a nuestro boletín</h3>
+                    <input 
+                        type='email' 
+                        placeholder='Escribe tu email' 
+                        className='newsletter-email' 
+                        maxLength="320" 
+                        size="20" 
+                        value={email} 
+                        onChange={handleEmail}
+                    />
+                    <button type='submit' className='newsletter-button' onClick={handleSubmit}>Enviar</button>
+                    <label>
+                        <input 
+                            type='checkbox' 
+                            className='newsletter-checkbox' 
+                            checked={isChecked} 
+                            onChange={checkHandler}
+                        />
+                        Acepto la <a href=''>política de privacidad</a>
+                    </label>
+                    {error ? <p className="error-message">{error}</p> : <p className="error-hidden">Error</p>}
+                </form>
                 </div>
             </div>
             <div className='footer-info'>

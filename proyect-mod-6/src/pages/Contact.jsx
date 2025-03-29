@@ -36,8 +36,6 @@ const ContactComponent = () => {
             setIsComplete(true);
             
             openModal();
-            
-            // e.preventDefault();
             }
     }
 
