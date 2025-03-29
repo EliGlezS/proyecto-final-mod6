@@ -1,62 +1,81 @@
 import '../styles/contact.css'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { ModalContext } from "../context/ModalContextCart"
 
 const ContactComponent = () => {
 
     const [name, setName] = useState("");
     const [email, setEmail ] = useState("");
     const [message, setMessage ] = useState("");
+    const [isReadOnly, setIsReadOnly] = useState(false);
+    const [isComplete, setIsComplete] = useState(true);
+
+    const {showModal, openModal, closeModal} = useContext(ModalContext);
 
     const handleName = (e) => {
       setName(e.target.value);
-    };
+    }
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
-      };
+      }
     
     const handleMessage = (e) => {
         setMessage(e.target.value);
-    };
+    }
 
     const handleSubmit = () => {
 
         if(name.trim()==="" || email.trim()==="" || message.trim()===""){
-            alert("Revisa si has rellenado todo el formulario");
+           setIsComplete(false);
         } else {
             setName("");
             setEmail("");
             setMessage("");
-        }
-    };
+            setIsReadOnly(true);
+            setIsComplete(true);
+            
+            openModal();
+            
+            // e.preventDefault();
+            }
+    }
 
-    // document.addEventListener('submit', (e)=>{e.preventDefault();})
-    
+    const handleCloseModal = () => {
+        closeModal();
+        setIsReadOnly(false);
+    }
+
+
     return (
-        <div className="contact">
-            <div className="contact-container">
+        <section className="contact">
+            <div className={!showModal ? `contact-container` : `contact-container contact-modal`}>
                 <h1>Contacto</h1>
                 <form className="contact-form">
                     <div className="form-field">
+                        {/* {!isComplete ? <p className='alert-message'>* Revisa si has rellenado todo el formulario</p> : ""} */}
+                        <p className={!isComplete ? 'alert-message' : 'message-hidden'}>
+                            * Revisa si has rellenado todo el formulario
+                        </p>
                         <label className="form-label" htmlFor="name">
                         Nombre
                         </label>
-                        <input className="form-input" type="text" id="name" name="name" value={name} size="20" onChange={(e) => handleName(e)} autoFocus maxLength="50" required="required"/>
+                        <input className="form-input" type="text" id="name" name="name" value={name} size="20" onChange={(e) => handleName(e)} autoFocus maxLength="50" required="required" disabled={isReadOnly}/>
                     </div>
                     <div className="form-field">
                         <label className="form-label" htmlFor="email">
                         Email
                         </label>
-                        <input className="form-input" type="email" id="email" name="email" size="20" maxLength="320" value={email} onChange={(e) => handleEmail(e)} required="required" />
+                        <input className="form-input" type="email" id="email" name="email" size="20" maxLength="320" value={email} onChange={(e) => handleEmail(e)} required="required" disabled={isReadOnly} />
                         </div>
                     <div className="form-field">
                         <label className="form-label" htmlFor="message">
                         Mensaje
                         </label>
-                        <textarea className="form-textarea" id="message" name="message" cols="20" rows="6" value={message} onChange={(e) => handleMessage(e)} required minLength="5" maxLength="1024"/>
+                        <textarea className="form-textarea" id="message" name="message" cols="20" rows="6" value={message} onChange={(e) => handleMessage(e)} required minLength="5" maxLength="1024" disabled={isReadOnly}/>
                     </div>
                     <div className="form-button-container">
-                        <button className="form-button" id="form-button" type="submit" onClick={() => handleSubmit()}>
+                        <button className="form-button" type="submit" onClick={() => handleSubmit()} disabled={isReadOnly} >
                         Enviar
                         </button>
                     </div>
@@ -134,7 +153,18 @@ const ContactComponent = () => {
                     </nav>
                 </div>
             </div>
-        </div>
+            {showModal && (
+            <div className={`modal-addCart ${showModal ? 'show' : ''}`}>
+                <button className="modal-close-button" onClick={handleCloseModal}>Cerrar</button>
+                <div className='modal-message'>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="modal-heart">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                    </svg>
+                    <p>Gracias por ponerte en contacto con nosotras</p>
+                </div>
+            </div>
+        )}
+        </section>
       );
 }
 

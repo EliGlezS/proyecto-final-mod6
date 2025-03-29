@@ -11,9 +11,18 @@
     width: 100%;
     padding: 2.4rem;
     margin-bottom: 1rem;
-    /* position: relative;
-    z-index: 2;
+    /* position: relative; */
+    /* z-index: 2;
     overflow: hidden; */
+
+    .alert-message {
+        color: rgb(160, 0, 0);
+        width: 20rem;
+    }
+
+    .message-hidden {
+        color: transparent;
+    }
     
     .contact-container {
         display: flex;
@@ -21,6 +30,7 @@
         align-items: center;
         justify-content: center;
         min-width: fit-content;
+        position: relative;
         
         h1 {
             font-family: var(--font-secondary);
@@ -29,7 +39,7 @@
             padding: 1rem 0 3rem 0; 
             /* z-index: 3; */
         }
-
+        
         .contact-form {
             background-color: var(--disabled-button-color);
             display: flex;
@@ -41,7 +51,7 @@
             min-width: fit-content;
             width: fit-content;
             /* z-index: 3; */
-    
+            
             .form-field {
     
                 .form-input, .form-textarea {
@@ -49,25 +59,25 @@
                     margin-top: 0.5rem;
                     border: none;
                 }
-    
+                
                 .form-input {
                     border: none;
                     height: 2.4rem;
                     border-radius: 10px;
                     padding: 0.5rem 0.75rem;     
                 }
-    
+                
                 .form-input:focus, .form-textarea:focus {
                     outline: 3px solid var(--input-border-focus);
                 }
-    
+                
                 .form-textarea {
                     padding: 0.5rem 0.75rem;
                     resize: vertical;
                 }
-    
+                
             }
-    
+            
             .form-button-container {
                 display: flex;
                 align-items: center;
@@ -82,22 +92,22 @@
                     border-radius: 10px;
                     box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
                 }
-    
+                
                 .form-button:hover {
                     background-color: var(--hover-button-color-primary);
                     color: var(--support-color);
                 }
-    
+                
                 .form-button:active {
                     background-color: var(--pressed-button-color-primary);
                 }
-    
+                
                 .form-button:focus {
                     outline: 3px solid var(--input-border-focus);
                 }
             }
         }
-
+        
         .contact-card {
             background-color: var(--primary-color-button-active);
             color: #fff;
@@ -112,7 +122,7 @@
             margin-top: 2.4rem;
             aspect-ratio: 1 / 1;
             /* z-index: 3; */
-
+            
             .contact-info {
                 display: block;
                 
@@ -122,15 +132,15 @@
                     align-items: center;
                     justify-content: space-around;
                     padding: 1rem 0;
-        
+                    
                     .size-6 {
                         height: 2rem;
                     }
                 }
             }
-    
+            
             .social-media {
-        
+                
                 ul {
                     display: flex;
                     flex-direction: row;
@@ -150,8 +160,76 @@
                 }
             }            
         }
-    }    
+    }   
+
+    .contact-modal {
+        filter: blur(3px);
+    }
+
+    .modal-addCart{
+        box-sizing: border-box;
+        display: none; 
+        position: absolute;
+        background-color: transparent;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        color: var(--primary-text-color);
+        z-index: 1000;
+        width: 80%;
+        max-width: 400px; /* Limitar su ancho a 400px en pantallas más grandes */
+        box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
+        padding: 1.6rem 0;
+
+        /*Estilos para el botón de cierre*/
+        .modal-close-button{
+            text-indent: -2000px;
+            position: absolute;
+            background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>') no-repeat center;
+            border: none;
+            cursor: pointer;
+            z-index: 1010; /*Botón encima del contenido*/
+            width: 1.6rem;
+            top: 0.4rem;
+            right: 0.8rem;
+            opacity: 0.6;
+        }
+
+        .modal-close-button:hover {
+            opacity: 1;
+        }
+
+        .modal-message {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            
+            .modal-heart {
+                width: 30px;
+                color: var(--secondary-color);
+                border-bottom: 2px solid transparent; 
+                margin-bottom: 0.8rem;
+            }
+
+            p{
+                font-family: var(--font-secondary);
+                font-size: var(--size-modal-mobile);
+                text-align: center; 
+                line-height: 1.5;  
+                padding-bottom: 1.6rem;         
+            }
+        }
+
+         /* Mostrar el modal cuando la clase 'show' esté presente */
+        &.show {
+            display: block;
+        }
+    }
 }
+
 
 
 
@@ -197,6 +275,28 @@
                 box-shadow: none;
                 padding-right: 4rem;
                 background-color: transparent;
+            }
+        }
+
+        .modal-addCart{
+            width: fit-content;
+            padding: 1.8rem;
+
+            .modal-message {
+                
+                p {
+                    font-family: var(--font-secondary);
+                    font-size: var(--size-modal);
+                }
+    
+                .modal-heart:hover {
+                    transform: translateY(2px);
+                    border-bottom: 2px solid var(--disabled-button-color); 
+                }
+            }
+
+            .modal-close-button {
+                font-size: 1.8rem;
             }
         }
     }
