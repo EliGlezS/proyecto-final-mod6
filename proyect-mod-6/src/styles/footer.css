@@ -10,7 +10,7 @@ footer {
     bottom: 0;
     border-top: 2px solid var(--secondary-color);
     background: linear-gradient(to bottom, var(--disabled-button-color), 2%, white);
-    box-shadow: rgba(0, 0, 0, 0.30) 0px -5px 15px 0px;
+    box-shadow: rgba(0, 0, 0, 0.30) 0px -2px 5px 0px;
     font-family: var(--font-primary);
     min-width: fit-content;
 
@@ -179,6 +179,11 @@ footer {
                     border-bottom: 2px solid transparent; 
                     margin-bottom: 0.8rem;
                 }
+
+                .modal-heart:hover {
+                    transform: translateY(2px);
+                    border-bottom: 2px solid var(--disabled-button-color); 
+                }
     
                 p{
                     font-family: var(--font-secondary);
@@ -190,6 +195,7 @@ footer {
             }
     
         }
+
         /* Mostrar el modal cuando la clase 'show' esté presente */
        .modal-footer.show-footer {
            display: block;
