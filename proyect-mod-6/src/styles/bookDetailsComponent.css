@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-width: 329px;
+    min-width: 410px;
     height: 100%;
     padding: 60px;
     
@@ -247,44 +247,62 @@
             }
         }
     }
+
     .modal-addCart{
         box-sizing: border-box;
-        display: none; /* El modal estará oculto por defecto */
+        display: none; 
         position: fixed;
+        background-color: transparent;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: var(--hover-button-color-primary);
+        background-color: #fff;
         color: var(--primary-text-color);
-        border-radius: 10px;
-        padding: 20px;
         z-index: 1000;
-        text-align: center;
-        width: 80%;  /* Para que sea un 80% del ancho de la pantalla */
+        width: 80%;
         max-width: 400px; /* Limitar su ancho a 400px en pantallas más grandes */
+        box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
+        padding: 1.6rem 0;
         
 
         /*Estilos para el botón de cierre*/
         .modal-close-button{
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
             border: none;
-            font-size: var(--size-h3);
-            color: white;
             cursor: pointer;
-            padding: 5px 10px;
-            border-radius: 5px;
+            background-color: transparent;
             z-index: 1010; /*Botón encima del contenido*/
+            width: 1.6rem;
+            top: 0.4rem;
+            right: 0.8rem;
+            opacity: 0.6;
         }
 
-        p{
-            font-family: var(--font-secondary);
-            font-size: var(--size-modal-mobile);
-            margin: 0;
-            text-align: center; 
-            padding-top: 20px; 
+        .modal-close-button:hover {
+            opacity: 1;
+        }
+
+        .modal-message {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            
+            .modal-heart {
+                width: 30px;
+                color: var(--secondary-color);
+                border-bottom: 2px solid transparent; 
+                margin-bottom: 0.8rem;
+            }
+
+            p{
+                font-family: var(--font-secondary);
+                font-size: var(--size-modal-mobile);
+                text-align: center; 
+                line-height: 1.5;  
+                padding-bottom: 1.6rem;         
+            }
         }
 
          /* Mostrar el modal cuando la clase 'show' esté presente */
@@ -415,7 +433,7 @@
                        margin-bottom: 0;
                        
                         .button-addCart{
-                            width: 51%;
+                            width: 120px;
                         }
                         .button-addCart:hover{
                             border: 1px solid var(--pressed-button-color-primary);
@@ -436,16 +454,24 @@
             }
         }
         .modal-addCart{
-            width: 60%; 
-            padding: 25px;
+            width: fit-content;
+            padding: 1.8rem;
 
-            p {
-                font-size: var( --size-modal);
+            .modal-message{
+                p {
+                    font-family: var(--font-secondary);
+                    font-size: var(--size-modal);
+                }
+    
+                .modal-heart:hover {
+                    transform: translateY(2px);
+                    border-bottom: 2px solid var(--disabled-button-color); 
+                }
             }
 
             .modal-close-button {
-                font-size: 1.7rem;
-            }
+                font-size: 1.8rem;
+            }  
         } 
     }
 }
@@ -583,18 +609,25 @@
         }
 
         .modal-addCart{
-            width: 30%;  /* El modal ocupará el 30% del ancho */
-            padding: 30px;
+            width: fit-content;
+            padding: 1.8rem;
 
-            p {
-                font-family: var(--font-secondary);
-                font-size: var(--size-modal);
+            .modal-message{
+                p {
+                    font-family: var(--font-secondary);
+                    font-size: var(--size-modal);
+                }
+    
+                .modal-heart:hover {
+                    transform: translateY(2px);
+                    border-bottom: 2px solid var(--disabled-button-color); 
+                }
             }
-
+            
             .modal-close-button {
                 font-size: 1.8rem;
-            }
-        }
+            }  
+        } 
     }
 }
 

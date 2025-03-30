@@ -11,7 +11,7 @@ header {
     justify-content: center;
     justify-items: center;
     width: 100%;
-    min-width: 285px;
+    min-width: 412px;
     height: 12rem;
     box-sizing: border-box;
     padding: 1.2rem;
@@ -315,3 +315,19 @@ header {
         }
     }
 }
+
+/*Problemas con IphoneSE y Galaxy S8 TODO*/
+
+/* @media screen and (width: 375px) {
+
+    .header-nav {
+       width: 0;
+    }
+
+    .header-nav.active {
+        right: -35px;
+        min-width: 412px;
+    }
+   
+
+} */

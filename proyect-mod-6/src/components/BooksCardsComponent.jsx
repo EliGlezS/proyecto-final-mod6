@@ -47,9 +47,9 @@ const BooksCardsComponent = () => {
                         <p>{book.price} €</p>
                     </div>
                     {book.stock ? (
-                        <div className="inStock-books"><p>In Stock</p><span className="greenCircle"></span></div>
+                        <div className="inStock-books"><p>En Stock</p><span className="greenCircle"></span></div>
                         ) : (
-                        <div className="noStock-books"><p>Out of stock</p><span className="redCircle"></span></div>
+                        <div className="noStock-books"><p>Sin Stock</p><span className="redCircle"></span></div>
                     )}
                     <p className="see-details-books"><Link to={`/books/${book.id}`}>Ver más</Link></p>
                 </div>

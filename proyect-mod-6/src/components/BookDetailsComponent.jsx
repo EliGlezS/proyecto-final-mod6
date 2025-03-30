@@ -41,7 +41,7 @@ const BookDetailsComponent = () => {
 
         setTimeout(() => {
             closeModal(); // Cierra el modal después de 3 segundos
-        }, 2000);
+        }, 3000);
     };
 
   return (
@@ -95,7 +95,7 @@ const BookDetailsComponent = () => {
                         {/*Si el libro que estamos mirando está en stock (true) aparece un botón que lo añade al carrito, pero 
                         si stock es false aparece un botón desabilitado */}
                         {bookDetails.stock ? (
-                            <button className="button-addCart" onClick={handleAddToCart}>Añadir al Carrito</button>
+                            <button className="button-addCart" onClick={handleAddToCart}>Añadir a la Cesta</button>
                         ) : (
                             <button className="button-disable" disabled>No disponible</button>
                         )}
@@ -119,7 +119,12 @@ const BookDetailsComponent = () => {
         {showModal && (
             <div className={`modal-addCart ${showModal ? 'show' : ''}`}>
                 <button className="modal-close-button" onClick={closeModal}>x</button>
-                <p>Producto agregado a tu cesta</p>
+                <div className='modal-message'>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="modal-heart">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                    </svg>
+                    <p>Producto agregado a tu cesta</p>
+                </div>
             </div>
         )}
 

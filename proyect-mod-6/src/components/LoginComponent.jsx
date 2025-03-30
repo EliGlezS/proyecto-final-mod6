@@ -17,7 +17,7 @@ const LoginComponent = ()=>{
         const handleLogin = (e)=>{
             e.preventDefault();
             if(loginUser(formulario.email,formulario.password)){
-                navigate("/perfil");
+                navigate("/");
             }else{
                 setError("Correo o contraseña incorrectos")
             }

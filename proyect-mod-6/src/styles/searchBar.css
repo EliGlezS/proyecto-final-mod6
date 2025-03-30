@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-width: 285px;
+    min-width: 410px;
     box-sizing: border-box;
     font-family: var(--font-primary);
 
@@ -52,8 +52,7 @@
                 text-indent: -999px;
                 overflow: hidden;
                 width: 20px;
-                padding: 0;
-                margin: 0;
+                margin-right: 5px;
                 border: 1px solid transparent;
                 border-radius: inherit;
                 background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>') no-repeat center;
@@ -67,6 +66,29 @@
             .searchbar-input:focus, .searchbar-button:focus {
                 outline: none;
             }
+        }
+
+        /*Quitar la ‘X’ del Internet Explorer*/
+
+        .searchbar-input::-ms-clear { 
+            display: none; 
+            width : 0; 
+            height: 0; 
+        }
+
+        .searchbar-input::-ms-reveal { 
+            display: none; 
+            width : 0; 
+            height: 0; 
+        }
+
+        /*Quitar la ‘X’ de Chrome*/
+
+        .searchbar-input::-webkit-search-decoration,
+        .searchbar-input::-webkit-search-cancel-button,
+        .searchbar-input::-webkit-search-results-button,
+        .searchbar-input::-webkit-search-results-decoration { 
+            display: none; 
         }
 
         .searchbar-check {

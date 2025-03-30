@@ -2,6 +2,9 @@
 max-width: 350px; 
 
 }
+.section-perfil{
+  min-width: 410px;
+}
 
 .form-perfil{
   

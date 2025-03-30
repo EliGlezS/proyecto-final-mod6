@@ -35,9 +35,20 @@ const logoutUser =()=>{
   setAuthUser(null);
   setIsLoggedIn(false);
   localStorage.removeItem("isLoggedIn");
-  localStorage.removeItem("userData");
+  // localStorage.removeItem("userData"); 
   navigate("/login");
 };
+
+/*TODO FUNCION PARA ELIMINAR CUENTA USUARIO (creariamos un boton en perfil y que use un onclick que tenga esa funcion)
+const deleteUser =()=>{
+  setAuthUser(null);
+  setIsLoggedIn(false);
+  localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("userData");
+  navigate("/login");
+};*/
+
+
 //Funcion para crear el usuario
 const createUser=(newUser)=>{
   setAuthUser(newUser);
