@@ -112,7 +112,7 @@ const validateForm=()=>{
 };
 
     return(
-      <section class="section-perfil">
+      <section className="section-perfil">
 
         <div className="div-perfil">
           <form className="form-perfil" >
@@ -393,7 +393,7 @@ onChange={handleChange} />
 </div>
 
             <div className="div-close">
-              <button onClick={logoutUser}>Cerrar sesion</button>
+              <button className="Logout-Button" onClick={logoutUser}>Cerrar sesion</button>
             </div>
             </form>
         </div>

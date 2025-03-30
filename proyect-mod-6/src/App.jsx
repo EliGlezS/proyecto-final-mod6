@@ -19,19 +19,16 @@ import EventsPage from './pages/EventsPage'
 import NotFound from './pages/NotFound'
 
 //importaciones components
-import UserListComponent from './components/UserListComponent';
-import RegisterComponent from './components/RegisterComponent';
-import LoginComponent from './components/LoginComponent';
+import UserListComponent from './components/UserListComponent'
+import RegisterComponent from './components/RegisterComponent'
+import LoginComponent from './components/LoginComponent'
 import Footer from './components/FooterComponent'
 import ToTopButton from './components/ToTopButtonComponent'
-// import FilterGenre from './components/FilterGenreComponent'
 
 //Estilado del App
 import './App.css'
 
 function App() {
-  //TODO revisa localización submit
-  //document.addEventListener('submit', (e)=>{e.preventDefault();})
   
   return (
     <ModalProvider>

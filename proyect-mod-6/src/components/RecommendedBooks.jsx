@@ -48,10 +48,7 @@ const RecommendedBooks = () => {
                         <div className="noStock-books"><p>Out of stock</p><span className="redCircle"></span></div>
                     )}
                     <p className="see-details-books"><Link to={`/books/${book.id}`}>Ver más</Link></p>
-                    <label class="custom-file-upload">
-                    <input type="file"/>
-                    Subir archivo
-                    </label>
+                   
                 </div>
 
             </div>

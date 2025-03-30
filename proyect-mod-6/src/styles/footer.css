@@ -21,6 +21,7 @@ footer {
         align-items: center;
         justify-content: center;
         min-width: fit-content;
+       
     
         .newsletter-container {
             display: flex;
@@ -29,7 +30,6 @@ footer {
             justify-content: center;
             position: relative;
             z-index: 2;
-            /* overflow: hidden; */
             width: 100%;
             padding: 1rem 0;
 
@@ -57,17 +57,13 @@ footer {
                     font-size: 1.75rem;
                     padding-bottom: 0.2rem;
                 }
-    
-                .newsletter-email, .newsletter-button {
+                    
+                .newsletter-email {
                     width: 70%;
                     height: 2.4rem;
                     border-radius: 10px;
                     padding: 0.5rem 0.75rem;
-                }
-    
-                .newsletter-email {
                     border: none;
-                    /* border: 1px solid var(--primary-color-button-active); */
                     background-color: var(--input-color-empty-label);
                 }
 
@@ -78,13 +74,17 @@ footer {
                 .newsletter-email:focus, .newsletter-button:focus, .newsletter-checkbox:focus{
                     outline: 3px solid var(--input-border-focus);
                 }
-    
+
                 .newsletter-button {
+                    width: 70%;
+                    height: 2.4rem;
+                    border-radius: 10px;
+                    padding: 0.5rem 0.75rem;
                     border: none;
                     background-color: var(--primary-color-button-active);
                     color: white;
                 }
-
+                
                 .newsletter-button:hover {
                     background-color: var(--hover-button-color-primary);
                     color: var(--support-color);
