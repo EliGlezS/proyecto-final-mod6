@@ -15,11 +15,15 @@
     overflow: hidden;
 
     .alert-message {
+        display: flex;
         color: rgb(160, 0, 0);
         width: 20rem;
+        font-size: 1rem;
+        text-align: center;
+        margin: 0;
     }
 
-    .message-hidden {
+    .alert-hidden {
         color: transparent;
     }
     

@@ -40,9 +40,9 @@ const Footer = () => {
             setIsChecked(false);
             setShowFooterModal(true);
 
-            setTimeout(() => {
-                setShowFooterModal(true);
-            }, 0);
+            // setTimeout(() => {
+            //     setShowFooterModal(true);
+            // }, 0);
 
             // setTimeout(() => {
             //     closeModal();
@@ -70,10 +70,11 @@ const Footer = () => {
                         type='email' 
                         placeholder='Escribe tu email' 
                         className='newsletter-email' 
-                        maxLength="320" 
-                        size="20" 
+                        maxLength={320}
+                        size={20} 
                         value={email} 
                         onChange={handleEmail}
+                        required
                     />
                     <button type='submit' className='newsletter-button' onClick={handleSubmit}>Enviar</button>
                     <label>
@@ -82,6 +83,7 @@ const Footer = () => {
                             className='newsletter-checkbox' 
                             checked={isChecked} 
                             onChange={checkHandler}
+                            required
                         />
                         Acepto la <a target="_blank">política de privacidad</a>
                     </label>

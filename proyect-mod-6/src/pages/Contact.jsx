@@ -3,11 +3,18 @@ import { useState } from 'react';
 
 const ContactComponent = () => {
 
+    const isEmailValid = (email) => {
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        return emailPattern.test(email);
+      };
+
     const [name, setName] = useState("");
     const [email, setEmail ] = useState("");
     const [message, setMessage ] = useState("");
+    const [error, setError] = useState("");
+
     const [isReadOnly, setIsReadOnly] = useState(false);
-    const [isComplete, setIsComplete] = useState(true);
+    // const [isComplete, setIsComplete] = useState(true);
     const [showContactModal, setShowContactModal] = useState(false);
 
     const handleName = (e) => {
@@ -26,13 +33,17 @@ const ContactComponent = () => {
         e.preventDefault(); 
 
         if(name.trim()==="" || email.trim()==="" || message.trim()===""){
-           setIsComplete(false);
+            setError("* Revisa si has rellenado todo el formulario");
+        } else if (!isEmailValid(email)) {
+            setError("* Formato de correo no válido"); 
+        } else if (message.length < 5){
+            setError("* Debes escribir al menos 5 caracteres");
         } else {
+            setError("");
             setName("");
             setEmail("");
             setMessage("");
             setIsReadOnly(true);
-            setIsComplete(true);
             setShowContactModal(true);
             }
 
@@ -53,26 +64,23 @@ const ContactComponent = () => {
                 <h1>Contacto</h1>
                 <form className="contact-form">
                     <div className="form-field">
-                        {/* {!isComplete ? <p className='alert-message'>* Revisa si has rellenado todo el formulario</p> : ""} */}
-                        <p className={!isComplete ? 'alert-message' : 'message-hidden'}>
-                            * Revisa si has rellenado todo el formulario
-                        </p>
+                        {error ? <p className="alert-message">{error}</p> : <p className="alert-hidden">Error</p>}
                         <label className="form-label" htmlFor="name">
                         Nombre
                         </label>
-                        <input className="form-input" type="text" id="name" name="name" value={name} onChange={handleName} autoFocus maxLength="50" disabled={isReadOnly}/>
+                        <input className="form-input" type="text" id="name" name="name" value={name} onChange={handleName} autoFocus maxLength={50} required disabled={isReadOnly}/>
                     </div>
                     <div className="form-field">
                         <label className="form-label" htmlFor="email">
                         Email
                         </label>
-                        <input className="form-input" type="email" id="email" name="email" maxLength="320" value={email} onChange={handleEmail} disabled={isReadOnly} />
+                        <input className="form-input" type="email" id="email" name="email" maxLength={320} value={email} onChange={handleEmail} required disabled={isReadOnly} />
                         </div>
                     <div className="form-field">
                         <label className="form-label" htmlFor="message">
                         Mensaje
                         </label>
-                        <textarea className="form-textarea" id="message" name="message" cols="20" rows="6" value={message} onChange={handleMessage} required minLength="5" maxLength="1024" disabled={isReadOnly}/>
+                        <textarea className="form-textarea" id="message" name="message" cols={20} rows={6} value={message} onChange={handleMessage} minLength={5} maxLength={1024} required disabled={isReadOnly}/>
                     </div>
                     <div className="form-button-container">
                         <button className="form-button" type="submit" onClick={handleSubmit} disabled={isReadOnly} >
