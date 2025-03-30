@@ -179,6 +179,7 @@ return(
                     <div>
                         <label>Número de tarjeta</label>
                         <input type="text"
+                        maxLength={16}
                         name ="numeroTarjeta"
                         value={formulario.numeroTarjeta}
                         onChange={handleChange}

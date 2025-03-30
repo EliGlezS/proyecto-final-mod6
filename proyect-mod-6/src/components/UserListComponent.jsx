@@ -3,11 +3,12 @@ import { UserContext } from "../context/UserContext";
 import defaultImage from "../img/IMGusuario.png";
 import "../styles/user.css"
 const UserListComponent = ()=>{
-  const {isLoggedIn,authUser, updatedUser,logoutUser}=useContext(UserContext);
+  const {isLoggedIn,authUser, updatedUser,logoutUser,deleteUser}=useContext(UserContext);
   const[editField, setEditField] = useState(null);
   const [formulario,setFormulario]=useState (authUser||{});
   const [photo, setPhoto]= useState(authUser?.foto ||null);
   const [error,setError] = useState({});
+
  
   useEffect(()=>{
     if (authUser) {
@@ -124,20 +125,19 @@ const validateForm=()=>{
               <input type="file" 
               name="foto"
               accept="image/*"
-              onChange={handleFileChange} />
+              onChange={handleFileChange} 
+              />
               
               <button className="b1" type="button" onClick={() => handleSave("foto")}>Guardar</button>
               <button className="b1" type="button"  onClick={handleCancel}>Cancelar</button>
               {error.foto && <span style={{ color: "red" }}>{error.foto}</span>}
             </div>
           ) : (
-            
             <div className="button-container">
-                <img
-                src={photo|| authUser?.foto || defaultImage} 
-                alt="Foto de perfil" 
-                className="image-perfil"
-
+            <img
+            src={photo|| authUser?.foto || defaultImage}
+            alt="Foto de perfil"
+            className="image-perfil"
 
              />
               <button type="button" onClick={() => setEditField("foto")}className="edit-button-img"> 
@@ -394,6 +394,10 @@ onChange={handleChange} />
 
             <div className="div-close">
               <button className="Logout-Button" onClick={logoutUser}>Cerrar sesion</button>
+            </div>
+            <div className="button-delete">
+            <button className="delete-user" onClick={deleteUser}>Eliminar</button>
+
             </div>
             </form>
         </div>

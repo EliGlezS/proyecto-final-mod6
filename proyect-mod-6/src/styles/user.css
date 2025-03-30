@@ -198,15 +198,34 @@ max-width: 350px;
       width: 120px;
       display: block;
       margin: 40px auto 40px auto;
-      border: 1px solid var(--primary-color-button-active);
+      border: none;
       background-color: var(--secondary-color-button-active);
       color:var( --primary-text-color);
       font-weight: bold;
       border-radius: 0.25rem;
       font-family: var(--font-secondary);
+      box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px;
     }
   }
-   
+  .button-delete{
+    .delete-user{
+         width: 120px;
+      display: block;
+      margin: 40px auto 40px auto;
+      border: none;
+      background-color: #dc3545;
+      color: white;
+      font-weight: bold;
+      border-radius: 0.25rem;
+      font-family: var(--font-secondary);
+      box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px;
+
+      &:hover {
+        background-color: #c82333;
+        font-weight: bolder;
+    }
+    }
+  }
   
   
   .input-container input[type="file"] {

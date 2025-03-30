@@ -39,14 +39,14 @@ const logoutUser =()=>{
   navigate("/login");
 };
 
-/*TODO FUNCION PARA ELIMINAR CUENTA USUARIO (creariamos un boton en perfil y que use un onclick que tenga esa funcion)
+// FUNCION PARA ELIMINAR CUENTA USUARIO
 const deleteUser =()=>{
   setAuthUser(null);
   setIsLoggedIn(false);
   localStorage.removeItem("isLoggedIn");
   localStorage.removeItem("userData");
   navigate("/login");
-};*/
+};
 
 
 //Funcion para crear el usuario
@@ -65,7 +65,7 @@ const updatedUser = (newUserData)=>{
 };
   return(
     <UserContext.Provider
-    value={{isLoggedIn,authUser,loginUser,logoutUser,updatedUser,createUser
+    value={{isLoggedIn,authUser,loginUser,logoutUser,updatedUser,createUser,deleteUser
     }}
         >
         {children}
