@@ -140,7 +140,7 @@ const Footer = () => {
                         <li>Política de cookies</li>
                     </ul>
                 </nav>
-                <nav className='social-media'>
+                <nav  className='social-media'>
                     <ul>
                         <li>
                             <a href='https://www.facebook.com/' title='Ir a Facebook'>
