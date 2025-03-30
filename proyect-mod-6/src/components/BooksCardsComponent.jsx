@@ -25,7 +25,11 @@ const BooksCardsComponent = () => {
 
         <div className="cards-container">
 
-            {currentItems.map((book) => (
+            {currentItems.length === 0 ? (
+                <p className="book-message-notfound">No se han encontrado coincidencias</p>
+            ) : 
+            
+            currentItems.map((book) => (
 
             <div className="books-card" key={book.id}>
 
