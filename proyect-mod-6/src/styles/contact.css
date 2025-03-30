@@ -188,9 +188,8 @@
 
         /*Estilos para el botón de cierre*/
         .modal-close-button{
-            text-indent: -2000px;
             position: absolute;
-            background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>') no-repeat center;
+            background: transparent;
             border: none;
             cursor: pointer;
             z-index: 1010; /*Botón encima del contenido*/
@@ -198,6 +197,11 @@
             top: 0.4rem;
             right: 0.8rem;
             opacity: 0.6;
+
+            svg{
+                margin-top: 5px;
+                width: 25px;
+            }
         }
 
         .modal-close-button:hover {
