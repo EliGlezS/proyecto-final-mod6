@@ -83,7 +83,7 @@ const Footer = () => {
                             checked={isChecked} 
                             onChange={checkHandler}
                         />
-                        Acepto la <a href=''>política de privacidad</a>
+                        Acepto la <a target="_blank">política de privacidad</a>
                     </label>
                     {error ? <p className="error-message">{error}</p> : <p className="error-hidden">Error</p>}
                 </form>

@@ -136,8 +136,7 @@ footer {
         .modal-footer{
             box-sizing: border-box;
             display: none; 
-            position: absolute;
-            background-color: transparent;
+            position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
