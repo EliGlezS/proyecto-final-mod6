@@ -16,6 +16,7 @@ import ShoppingCart from './pages/ShoppingCart'
 import Contact from './pages/Contact'
 import Checkout from './pages/Checkout'
 import EventsPage from './pages/EventsPage'
+import NotFound from './pages/NotFound'
 
 //importaciones components
 import UserListComponent from './components/UserListComponent';
@@ -40,6 +41,7 @@ function App() {
             <Header/>
             <ToTopButton/>
             <Routes>
+              <Route path="*" element={<NotFound />} />
               <Route path='/' element={<Home/>}/>
               <Route path='/books/:id' element={<BooksDetailsPage/>}/>
               <Route path='/cart' element={<ShoppingCart/>}/>

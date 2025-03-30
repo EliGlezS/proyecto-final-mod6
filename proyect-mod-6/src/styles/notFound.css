@@ -1,0 +1,77 @@
+.notfound {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: 285px;
+    box-sizing: border-box;
+
+    .notfound-container {
+        background-color: var(--disabled-button-color);
+        width: 80%;
+        height: fit-content;
+        font-family: var(--font-primary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 1rem;
+
+        h1 {
+            font-size: 8rem;
+            color: var(--secondary-color);
+        }
+
+        h2 {
+            padding-bottom: 2rem;
+        }
+        
+        .notfound-ty {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1rem;
+            padding: 2rem;
+            width: 100%;
+            
+            h3 {
+                font-family: var(--font-secondary);
+                color: var(--secondary-text-color);
+                padding-bottom: 0.4rem;
+                border-bottom: 2px solid var(--secondary-color);
+            }
+
+            .notfound-heart {
+                width: 6rem;
+                color: var(--secondary-color);
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    
+    .notfound {
+        .notfound-container {
+            
+            h1 {
+                font-size: 16rem;
+            }
+
+            .notfound-ty {
+                
+                .notfound-heart:hover {
+                    transform: scale(110%);
+                }
+            }
+        }       
+    }
+}
