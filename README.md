@@ -81,7 +81,7 @@ src/img/          # Imágenes usadas en la página web
 9. **Carrito (`/cart`)**: Gestión de productos en el carrito.
 10. **Autenticación y Pago (`/checkout`)**: Métodos de pago y seguridad de sesión.
 11. **¿Quiénes somos? (`/nosotras`)**: Información sobre las creadoras del proyecto.
-12. Página de error 404, se puede acceder con * o forzando un error en la URL. 
+12. **Página de error 404**, se puede acceder forzando un error en la URL. 
 
 ---
 
