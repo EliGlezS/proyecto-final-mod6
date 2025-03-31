@@ -161,6 +161,9 @@ Este proyecto fue desarrollado en equipo por:
 Este proyecto está licenciado bajo la **MIT License**. Consulta el archivo `LICENSE` para obtener más detalles.
 
 
+
+
+
 ## English Version
 
 # Editorial Luz de Tinta - Final Project Group 3
