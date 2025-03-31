@@ -20,9 +20,8 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-width: fit-content;
-       
-    
+        min-width: 396px;
+        
         .newsletter-container {
             display: flex;
             flex-direction: column;
@@ -31,7 +30,7 @@ footer {
             position: relative;
             z-index: 2;
             width: 100%;
-            padding: 1rem 0;
+            padding: 2.4rem 0;
 
             .newsletter-icon {
                 width: 1.8rem;
@@ -46,7 +45,6 @@ footer {
                 flex-direction: column;
                 width: 100%;
                 align-items: center;
-                gap: 1.6rem;
                 z-index: 3;
                 padding: 0.4rem 0;
                 max-width: 30rem;
@@ -65,6 +63,10 @@ footer {
                     padding: 0.5rem 0.75rem;
                     border: none;
                     background-color: var(--input-color-empty-label);
+                    margin-top: 1.6rem;
+                    font-family: var(--font-primary);
+                    font-size: 1rem;
+                    font-weight: normal;
                 }
 
                 .newsletter-email::placeholder {
@@ -83,6 +85,7 @@ footer {
                     border: none;
                     background-color: var(--primary-color-button-active);
                     color: white;
+                    margin-top: 1.6rem;
                 }
                 
                 .newsletter-button:hover {
@@ -101,6 +104,7 @@ footer {
 
                 label {
                     padding: 0;
+                    margin-top: 1.6rem;
                 }
     
                 .newsletter-checkbox {
@@ -109,7 +113,10 @@ footer {
                 }
 
                 .error-hidden {
-                    color: transparent;
+                    visibility: hidden;
+                    position: absolute;
+                    top: -9999px;
+                    margin-top: 1.6rem;
                 }
 
                 .error-message {
@@ -118,7 +125,7 @@ footer {
                     width: fit-content;
                     font-size: 1rem;
                     text-align: center;
-                    margin: 0;
+                    margin-top: 1.6rem;
                 }
             }
         }
@@ -223,6 +230,7 @@ footer {
         }
 
         .address {
+            font-family: var(--font-primary);
             color: var(--secondary-text-color);
         }
 
@@ -275,7 +283,6 @@ footer {
             .newsletter-container {
                 
                 form {
-                    gap: 2.4rem;
                     max-width: 30rem;
                 }
             }
@@ -323,7 +330,6 @@ footer {
             .newsletter-container {
 
                 form {
-                    gap: 2.4rem;
                     max-width: 30rem;
                 }
             }

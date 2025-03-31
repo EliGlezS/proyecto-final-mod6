@@ -1,0 +1,54 @@
+.nosotras  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 329px;
+    padding: 2rem;
+    font-family: var(--font-secondary);
+
+    .nosotras-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .nosotras-logo {
+            padding-bottom: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nosotras-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            h1 {
+                border-bottom: 2px solid var(--secondary-color);
+                font-size: var(--size-h1);
+            }
+
+            p {
+                padding: 2rem 0;
+                font-size: var(--size-modal-mobile);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    
+    .nosotras {
+        padding: 2rem 6rem 4rem 6rem;
+
+        .nosotras-container {
+
+            .nosotras-info {
+                align-items: unset;
+            }
+        }
+    }
+}

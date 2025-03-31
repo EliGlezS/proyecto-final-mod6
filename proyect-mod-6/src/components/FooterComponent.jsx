@@ -39,14 +39,6 @@ const Footer = () => {
             setEmail("");
             setIsChecked(false);
             setShowFooterModal(true);
-
-            // setTimeout(() => {
-            //     setShowFooterModal(true);
-            // }, 0);
-
-            // setTimeout(() => {
-            //     closeModal();
-            // }, 4000);
         }
     };
 
@@ -87,7 +79,7 @@ const Footer = () => {
                         />
                         Acepto la <a target="_blank">política de privacidad</a>
                     </label>
-                    {error ? <p className="error-message">{error}</p> : <p className="error-hidden">Error</p>}
+                    {error ? <p className="error-message">{error}</p> : <p className="error-hidden">.</p>}
                 </form>
                 </div>
                 <div className={`modal-footer ${showFooterModal ? 'show-footer' : ''}`}>
@@ -126,7 +118,9 @@ const Footer = () => {
                 </div>
                 <nav className='info-menu'>
                     <ul>
-                        <li>Quiénes somos</li>
+                        <li>
+                            <Link to="/nosotras">Quiénes somos</Link>
+                        </li>
                         <li>
                             <Link to="/contact">Contacto</Link>
                         </li>
