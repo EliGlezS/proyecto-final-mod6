@@ -49,7 +49,7 @@ const LoginComponent = ()=>{
                 </div>
             </form>
            
-            <div>
+            <div className="container-button-register">
                 <p className="p-create">¿No tienes cuenta aun?</p>
                     <button className="button-create" onClick={()=>navigate("/register")}>Crear cuenta</button>
             </div>

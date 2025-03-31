@@ -32,7 +32,7 @@ const RegisterComponent = ()=>{
         localStorage.setItem("userData", JSON.stringify(myUser));
         createUser(myUser);
 
-        navigate("/login")
+        navigate("/")
       }
     }
     //FUNCION PARA VALIDAR EL FORMULARIO
@@ -180,6 +180,7 @@ return(
                         <label>Número de tarjeta</label>
                         <input type="text"
                         name ="numeroTarjeta"
+                        maxLength={16}
                         value={formulario.numeroTarjeta}
                         onChange={handleChange}
                         required />
