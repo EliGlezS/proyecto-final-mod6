@@ -32,7 +32,7 @@ const ContactComponent = () => {
         e.preventDefault(); 
 
         if(name.trim()==="" || email.trim()==="" || message.trim()===""){
-            setError("* Revisa si has rellenado todo el formulario");
+            setError("* Revisa si has rellenado todo");
         } else if (!isEmailValid(email)) {
             setError("* Formato de correo no válido"); 
         } else if (message.length < 5){
