@@ -5,10 +5,9 @@
     justify-content: center;
     box-sizing: border-box;
     width: 100%;
-    min-width: 329px;
     padding: 1rem 2rem;
     font-family: var(--font-secondary);
-    min-width: 396px;
+    min-width: 329px;
 
     .nosotras-container {
         display: flex;
@@ -75,10 +74,14 @@
                 padding: 0 3rem;
                 text-decoration: underline;
             }
-            
-            a:hover {
-                color: black;
-            }
+        }
+
+        a {
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: black;
         }
     }
 }
@@ -91,6 +94,7 @@
 
         .nosotras-container {
             align-items: end;
+            max-width: 80%;
 
             .nosotras-info {
                 align-items: unset;

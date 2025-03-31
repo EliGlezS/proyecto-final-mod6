@@ -15,7 +15,7 @@ const Nosotras = () => {
                 </div>
                 <div className='nosotras-info'>
                     <h1>Nosotras</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit suscipit porttitor, feugiat etiam risus metus eu integer vehicula mi ornare, vel dapibus potenti dictum rhoncus donec at est. Habitasse interdum pellentesque lacinia sodales curae libero hendrerit suspendisse venenatis, suscipit quis mus ac turpis ullamcorper aliquam pretium, urna tellus neque vitae vel fusce aliquet dignissim. Vestibulum fringilla cubilia lacus vehicula in dictumst eros ultricies congue, himenaeos mus et sodales auctor risus euismod turpis etiam, iaculis cras at praesent eu libero integer facilisis.</p>
+                    <p>Somos Elena, Ifara y Elizabeth, tres apasionadas del desarrollo web que, tras completar el bootcamp de Front-End de <a href='https://codespaceacademy.com/'>Codespace</a>, hemos creado algo que al inicio parecía inimaginable: una editorial digital funcional y atractiva. Venimos de mundos distintos, pero unimos fuerzas, creatividad y conocimientos para dar vida a este proyecto. Ha sido un viaje desafiante y gratificante, que nos ha impulsado aún más a seguir aprendiendo y creciendo en este apasionante camino tecnológico. ¡Esto es solo el comienzo!</p>
                 </div>
                 <div className='nosotras-name'>
                     <a href='https://github.com/ElenaDelHer'>Elena</a>
