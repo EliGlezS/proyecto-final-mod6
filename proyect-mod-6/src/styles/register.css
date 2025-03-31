@@ -5,10 +5,10 @@
   min-width: 410px;
 
   }
+
   
   .form-register label{
     display: block;
-  
     width: 100%;
 
   }
@@ -26,17 +26,19 @@
     font-family: var(--font-primary);
     font-size: 1rem;
     line-height: 1.5rem;
-    border: 2px solid var(--secondary-text-color);
-    border-radius: 3px;
+    border: none;
+    border-radius: 0.50rem;
     width: 300px;
     height: 1000px;
     font-weight: bold;
     background-color: var(--disabled-button-color);
+    box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px;
   }
       .title-register {
         font-family: var(--font-secondary);
         padding: 0.4rem 0;
         color: var(--secondary-text-color);
+        margin-bottom: 20px;
        
       }
       .div-save{
