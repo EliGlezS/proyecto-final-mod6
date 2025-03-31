@@ -17,6 +17,7 @@ import Contact from './pages/Contact'
 import Checkout from './pages/Checkout'
 import EventsPage from './pages/EventsPage'
 import NotFound from './pages/NotFound'
+import Nosotras from './pages/Nosotras'
 
 //importaciones components
 import UserListComponent from './components/UserListComponent'
@@ -49,6 +50,7 @@ function App() {
               <Route path="/login" element={<LoginComponent/>}/>
               <Route path="/contact" element={<Contact/>}/>
               <Route path="/events" element={<EventsPage/>}/>
+              <Route path="/nosotras" element={<Nosotras/>}/>
             </Routes>
             <Footer/>
           </UsuarioProvider>

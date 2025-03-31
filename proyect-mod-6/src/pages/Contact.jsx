@@ -14,7 +14,6 @@ const ContactComponent = () => {
     const [error, setError] = useState("");
 
     const [isReadOnly, setIsReadOnly] = useState(false);
-    // const [isComplete, setIsComplete] = useState(true);
     const [showContactModal, setShowContactModal] = useState(false);
 
     const handleName = (e) => {
@@ -33,7 +32,7 @@ const ContactComponent = () => {
         e.preventDefault(); 
 
         if(name.trim()==="" || email.trim()==="" || message.trim()===""){
-            setError("* Revisa si has rellenado todo el formulario");
+            setError("* Revisa si has rellenado todo");
         } else if (!isEmailValid(email)) {
             setError("* Formato de correo no válido"); 
         } else if (message.length < 5){
@@ -46,10 +45,6 @@ const ContactComponent = () => {
             setIsReadOnly(true);
             setShowContactModal(true);
             }
-
-            // setTimeout(() => {
-            //     closeModal(); 
-            // }, 4000);
     }
 
     const handleCloseContactModal = () => {
@@ -64,7 +59,6 @@ const ContactComponent = () => {
                 <h1>Contacto</h1>
                 <form className="contact-form">
                     <div className="form-field">
-                        {error ? <p className="alert-message">{error}</p> : <p className="alert-hidden">Error</p>}
                         <label className="form-label" htmlFor="name">
                         Nombre
                         </label>
@@ -87,6 +81,7 @@ const ContactComponent = () => {
                         Enviar
                         </button>
                     </div>
+                    {error ? <p className="alert-message">{error}</p> : <p className="alert-hidden">Error</p>}
                 </form>
                 <div className="contact-card">
                     <div className='contact-info'>

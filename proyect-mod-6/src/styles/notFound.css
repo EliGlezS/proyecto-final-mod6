@@ -29,7 +29,12 @@
         }
 
         h2 {
-            padding-bottom: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        .notfound-link {
+            color: var(--secondary-text-color);
+            text-decoration: underline;
         }
         
         .notfound-ty {
@@ -38,21 +43,25 @@
             align-items: center;
             justify-content: flex-end;
             gap: 1rem;
-            padding: 2rem;
+            padding: 1rem 2rem;
             width: 100%;
             
-            h3 {
+            .ty-message {
                 font-family: var(--font-secondary);
-                color: var(--secondary-text-color);
+                /* color: var(--secondary-text-color); */
                 padding-bottom: 0.4rem;
                 border-bottom: 2px solid var(--secondary-color);
             }
 
-            .notfound-heart {
-                width: 6rem;
-                color: var(--secondary-color);
-            }
+            .notfound-button {
+                background-color: transparent;
+                border: none;
 
+                .notfound-heart {
+                    width: 6rem;
+                    color: var(--secondary-color);
+                }
+            }
         }
     }
 }

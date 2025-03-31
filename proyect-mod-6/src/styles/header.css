@@ -17,7 +17,6 @@ header {
     padding: 1.2rem;
     margin-bottom: 2rem;
     border-bottom: 2px solid var(--secondary-color);
-    /* background: linear-gradient(to top, var(--support-color), 2%, white); */
     background: linear-gradient(to top, var(--disabled-button-color), 2%, white);
     box-shadow: rgba(0, 0, 0, 0.30) 0px 2px 5px 0px;
 
@@ -46,6 +45,27 @@ header {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                font-family: var(--font-primary);
+                text-align: center;
+                text-transform: uppercase;
+                position: relative;
+            }
+
+            .user-img::before {
+                content: attr(alt);
+                width: 100%;
+                height: 100%;  
+                background-color: var(--disabled-button-color);
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 50%; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: var(--font-primary);
+                text-align: center;
+                text-transform: uppercase;
             }
         }
     } 
@@ -129,7 +149,6 @@ header {
             position: absolute;
             right: 0;
             top: 12rem;
-            /* background-color: rgba(224, 217, 208, 0.75); */
             background-color: #fff;
             width: 0;
             height: calc(100vh - 60px);

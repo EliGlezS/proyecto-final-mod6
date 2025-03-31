@@ -10,31 +10,15 @@
     width: 100%;
     padding: 2.4rem;
     margin-bottom: 1rem;
-    position: relative;
+    /* position: relative;
     z-index: 2;
-    overflow: hidden;
-
-    .alert-message {
-        display: flex;
-        color: #a00000;
-        width: 20rem;
-        font-size: 1rem;
-        text-align: center;
-        margin: 0;
-    }
-
-    .alert-hidden {
-        color: transparent;
-    }
+    overflow: hidden; */
     
     .contact-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-width: fit-content;
-        position: relative;
-
         
         h1 {
             font-family: var(--font-secondary);
@@ -48,12 +32,10 @@
             background-color: var(--disabled-button-color);
             display: flex;
             flex-direction: column;
-            padding: 2.4rem;
+            padding: 3rem 2.4rem 4rem 2.4rem;
             border-radius: 20px;
             row-gap: 1.5rem;
             box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
-            min-width: fit-content;
-            width: fit-content;
             /* z-index: 3; */
             
             .form-field {
@@ -62,6 +44,9 @@
                     width: 100%;
                     margin-top: 0.5rem;
                     border: none;
+                    font-family: var(--font-primary);
+                    font-size: 1rem;
+                    font-weight: normal;
                 }
                 
                 .form-input {
@@ -109,7 +94,26 @@
                 .form-button:focus {
                     outline: 3px solid var(--input-border-focus);
                 }
+
+                .form-button:disabled {
+                    background-color: var(--primary-color-button-active);
+                }
             }
+
+
+            .alert-hidden, .alert-message {
+                height: 1.5rem;
+                line-height: 1.5rem;
+                text-align: center;
+            }
+            
+            .alert-hidden {
+                visibility: hidden;
+            }
+
+            .alert-message {
+                color: #a00000;
+            }        
         }
         
         .contact-card {
@@ -245,7 +249,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../img/background/pawel-czerwinski-YWIOwHvRBvU-unsplash.jpg);
+    background-image: url();
     background-size: cover;
     z-index: -1; 
     opacity: 0.6;
@@ -269,7 +273,6 @@
             box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 15px 0px;
 
             h1 {
-                /* color: #000; */
                 border-bottom: 2px solid var(--secondary-color);
                 margin-top: 100px;
             }

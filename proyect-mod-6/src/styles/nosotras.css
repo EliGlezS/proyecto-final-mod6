@@ -1,0 +1,104 @@
+.nosotras  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-family: var(--font-secondary);
+    min-width: 329px;
+
+    .nosotras-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .nosotras-image {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            box-sizing: border-box;
+            width: 100%;
+                
+            .img-eli {
+                width: 6rem;
+                margin-right: 1rem;
+            }
+
+            .img-elena {
+                width: 5rem;
+            }
+
+            .img-ifara {
+                width: 8rem;
+                padding-top: 1rem;
+            }
+        }
+
+        
+        .nosotras-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 2rem;
+            
+            h1 {
+                border-bottom: 2px solid var(--secondary-color);
+                font-size: var(--size-h1);
+            }
+            
+            p {
+                padding: 2rem 0;
+                font-size: var(--size-modal-mobile);
+            }
+        }
+
+        .nosotras-name {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-secondary);
+            text-align: center;
+            font-size: var(--size-modal-mobile);
+            border-bottom: 2px solid var(--disabled-button-color);
+            padding-bottom: 1rem;
+            color: var(--secondary-text-color);
+    
+            a {
+                padding: 0 3rem;
+                text-decoration: underline;
+            }
+        }
+
+        a {
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: black;
+        }
+    }
+}
+
+
+@media screen and (min-width: 769px) {
+    
+    .nosotras {
+        padding: 2rem 6rem 4rem 6rem;
+
+        .nosotras-container {
+            align-items: end;
+            max-width: 80%;
+
+            .nosotras-info {
+                align-items: unset;
+            }
+        }
+    }
+}
