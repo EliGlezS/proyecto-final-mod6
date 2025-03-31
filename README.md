@@ -81,7 +81,7 @@ src/img/          # Imágenes usadas en la página web
 9. **Carrito (`/cart`)**: Gestión de productos en el carrito.
 10. **Autenticación y Pago (`/checkout`)**: Métodos de pago y seguridad de sesión.
 11. **¿Quiénes somos? (`/nosotras`)**: Información sobre las creadoras del proyecto.
-12. * : Página de error 404, se puede acceder con * o forzando un error en la URL. 
+12. (*) : Página de error 404, se puede acceder con * o forzando un error en la URL. 
 
 ---
 
@@ -212,7 +212,7 @@ To improve organization, the project was developed under the main `develop` bran
 - Contact form with validation and confirmation messages.
 - Newsletter subscription with email validation and confirmation via modal.
 - "Who We Are" page, accessible from the footer, featuring a brief introduction about our joint experience in the bootcamp and in this project.
-- **404 Error Page**: If the user types the wrong URL, such as `/conta` instead of `/contact`, a 404 error page will display an appropriate message.
+- (*) : **404 Error Page** If the user types the wrong URL, such as `/conta` instead of `/contact`, a 404 error page will display an appropriate message.
 
 ### Mobile First and Responsive Design
 
