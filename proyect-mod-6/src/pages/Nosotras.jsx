@@ -18,8 +18,8 @@ const Nosotras = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit suscipit porttitor, feugiat etiam risus metus eu integer vehicula mi ornare, vel dapibus potenti dictum rhoncus donec at est. Habitasse interdum pellentesque lacinia sodales curae libero hendrerit suspendisse venenatis, suscipit quis mus ac turpis ullamcorper aliquam pretium, urna tellus neque vitae vel fusce aliquet dignissim. Vestibulum fringilla cubilia lacus vehicula in dictumst eros ultricies congue, himenaeos mus et sodales auctor risus euismod turpis etiam, iaculis cras at praesent eu libero integer facilisis.</p>
                 </div>
                 <div className='nosotras-name'>
-                    <a href='https://github.com/EliGlezS'>Eli</a>
                     <a href='https://github.com/ElenaDelHer'>Elena</a>
+                    <a href='https://github.com/EliGlezS'>Eli</a>
                     <a href='https://github.com/tinadanit'>Ifara</a>
                 </div>
             </div>
